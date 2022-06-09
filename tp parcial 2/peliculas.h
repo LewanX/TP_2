@@ -7,7 +7,7 @@ class pelicula
       int idPelicula, idDirector, duracion, sala, calificacion;
       char nombrePelicula[30], genero[20];
       Fecha FechaPelicula;
-       bool estado;
+      bool estado;
     public:
         ///sets()
       void setidPelicula (int idP){idPelicula=idP;}
