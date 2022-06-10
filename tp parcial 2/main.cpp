@@ -1,13 +1,16 @@
 #include <iostream>
-
+#include <cstdio>
+#include <string.h>
+#include <cstring>
 
 using namespace std;
-#include "peliculas.h"
+#include "funcionesGlobales.h"
 #include "Fecha.h"
+#include "ventas.h"
 #include "directores.h"
 #include "salas.h"
-#include "ventas.h"
-#include "funcionesGlobales.h"
+#include "peliculas.h"
+
 
 int main(){
     int opc;
@@ -23,10 +26,10 @@ int main(){
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1: subMenuCli();
+            case 1:
                     break;
             case 2:
-                    subMenuArt();
+
                     break;
             case -1:
                     break;

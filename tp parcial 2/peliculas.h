@@ -17,6 +17,7 @@ class pelicula
       void setCalificacion(int c){calificacion=c;}
       void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
       void setGenero (const char *g){strcpy(genero,g);}
+      void setFechaPelicula (Fecha F){FechaPelicula=F;}
       void setEstado(bool e){estado=e;}
       ///gets()
       int getidPelicula (){return idPelicula;}
@@ -25,7 +26,8 @@ class pelicula
       int getSala (){return sala;}
       int getCalificacion (){return calificacion;}
       const char *getNombrePelicula (){return nombrePelicula;}
-      const char *getGenero (){return ;}
+      const char *getGenero (){return genero;}
+      Fecha getFechaPelicula () {return FechaPelicula;}
       bool getEstado(){return estado;}
       ///disco
       void cargar();
@@ -36,12 +38,10 @@ class pelicula
 
 void pelicula::cargar()
 {
-    salas reg;
-    ventas obj;
-    director aux;
+
 
     cout<<"Ingrese el nombre de la pelicula " << endl;
-    cin>>cargarCadena(nombrePelicula,29);
+    cin.getline(nombrePelicula,30);
     cout <<"Genero"<<genero<<endl;
     cout<<"Ingresar el formato de la pelicula (2D,3D,4D)"<<endl;
     cin>>formato;
@@ -53,7 +53,7 @@ void pelicula::cargar()
     cout<<"Horario final de la pelicula"<<horarioFin<<endl;
     cout<<"Ingresar los asientos que desea"<<endl;
     cin>>asientos;
-    cout<<<"Ingresar el metodo de pago"<<endl;
+    cout<<"Ingresar el metodo de pago"<<endl;
     cin>>metodoPago;
     cout<<"Precio" << precio<<endl;
 

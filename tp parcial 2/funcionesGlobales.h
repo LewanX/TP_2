@@ -1,10 +1,10 @@
 #ifndef FUNCIONESGLOBALES_H_INCLUDED
 #define FUNCIONESGLOBALES_H_INCLUDED
 
-void cargarCadena(char pal, int tam);
+void cargarCadena(char *pal, int tam);
 ///FIN PROTOTIPOS
 
-void cargarCadena(charpal, int tam)
+void cargarCadena(char *pal, int tam)
 {
     int i;
     fflush(stdin);
