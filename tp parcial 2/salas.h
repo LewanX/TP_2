@@ -35,5 +35,9 @@ void Salas::cargar(){
 
 
 }
+void Salas::mostrar()
+{
+    cout<<idSala;
+}
 
 #endif // SALAS_H_INCLUDED

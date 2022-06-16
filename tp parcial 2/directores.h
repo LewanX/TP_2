@@ -1,6 +1,5 @@
 #ifndef DIRECTORES_H_INCLUDED
 #define DIRECTORES_H_INCLUDED
-
 class director
 {
     private:
@@ -22,23 +21,35 @@ class director
       Fecha getFechaNacimiento () {return FechaNacimiento;}
       bool getEstado(){return estado;}
       ///disco
-      void cargar();
-      void mostrar();
+
       int grabarEnDisco();
       int leerEnDisco(int);
-};
 
-void director::cargar()
+
+void cargar()
 {
 
     cout<<"Ingrese el nombre del director " <<endl;
-    cin.getline(nombreDirector,30);
-    cout<<"ingrese el Id del director"<<endl;
-    cin >>idDirector;
+    cargarCadena(nombreDirector,29);
+    fflush(stdin);
+    ///cout<<"ingrese el Id del director"<<endl;
+    ///cin >>idDirector;
     cout<<"Ingrese la nacionalidad del director"<<endl;
-    cin.getline(Nacionalidad,20);
+    cargarCadena(Nacionalidad,19);
+    fflush(stdin);
     cout<<"Fecha de nacimiento del director"<<endl;
-    ///cin >> FechaNacimiento;
-
+    FechaNacimiento.Cargar();
 }
+void mostrar()
+{
+    cout<<"id: ";
+    cout<<idDirector<<endl;
+    cout<<"Nombre del director: ";
+    cout<<nombreDirector<<endl;
+    cout<<"Nacionalidad: ";
+    cout<<Nacionalidad<<endl;
+    cout<<"fecha de nacimiento: ";
+    FechaNacimiento.Mostrar();
+}
+};
 #endif // DIRECTORES_H_INCLUDED
