@@ -5,8 +5,10 @@ class Salas{
 private:
     int idSala;
     int tipo;
+    int cantFilas;
     int cantButacas;
     bool estado;
+    int matriz[30][20]={0};
 public:
      ///sets()
 
@@ -26,30 +28,45 @@ public:
       int grabarEnDisco();
       int leerEnDisco(int);
       void mostrarsalas();
+      void mostrarSalaCine();
 
 
 };
 
 void Salas::cargar(){
-    estado=true;
     cout<<"INGRESE EL ID DE SALA:";cin>>idSala;
     cout<<"INGRESE EL TIPO DE SALA:";cin>>tipo;
-    cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>cantButacas;
-
-
+    if (tipo==1) cout<<"Sala Normal"<<endl;
+    if (tipo==2) cout<<"Sala Con asientos Especiales"<<endl;
+    cout<<"INGRESE LA CANTIDAD DE ASIENTOS POR FILA:";cin>>cantButacas;
+    cout<<"INGRESE LA CANTIDAD DE FILAS:";cin>>cantFilas;
+    for(int i=0; i<cantButacas; i++)
+    {
+    for(int j=0; j<cantFilas; j++)
+    {
+    matriz[30][20]=0;
+    }
+    }
 }
 void Salas::mostrar()
 {
-
-      if(estado=true){
-
-    cout<<"INGRESE EL ID DE SALA:"<<idSala<<endl;
-    cout<<"INGRESE EL TIPO DE SALA:"<<tipo<<endl;
-    cout<<"INGRESE LA CANTIDAD DE BUTACAS:"<<cantButacas<<endl;
-    cout<<endl<<endl;
-
- }
+    cout<<idSala;
 }
+void Salas::mostrarSalaCine()
+{
+    cout<<"------Pantalla-----\n";
+    cout<<"     (1)(2)(3)(4)(5)(6)\n";
+    for(int i=0;i<cantButacas;i++)
+    {
+        cout<<"("<<i+1<<")";
+        for(int j=0;j<cantFilas;j++)
+        {
+            cout<<"["<<matriz[30][20]<<"]";
+        }
+        cout<<"\n";
+    }
+}
+
 
 
 ///DISCO///

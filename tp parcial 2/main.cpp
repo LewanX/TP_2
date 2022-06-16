@@ -8,12 +8,15 @@ using namespace std;
 #include "Fecha.h"
 #include "directores.h"
 #include "salas.h"
+#include "SubMenuVentas.h"
+#include "SubMenuDatos.h"
 #include "peliculas.h"
 #include "ventas.h"
 
 
 int main(){
     int opc;
+    Salas aux;
     pelicula reg;
     director obj;
     while(true){
@@ -28,10 +31,9 @@ int main(){
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1:
+            case 1: SubMenuVentas();
                     break;
-            case 2:
-
+            case 2: SubMenuDatos();
                     break;
             case -1: reg.cargar();
             if(reg.grabarEnDisco()==true)
@@ -47,6 +49,10 @@ int main(){
                     break;
             case -3:
                 reg.mostrarPeliculas();
+                break;
+            case -4: aux.mostrarSalaCine();
+                break;
+            case -5: aux.cargar();
                 break;
 
             case 0: return 0;

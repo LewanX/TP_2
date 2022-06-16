@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Fecha.h" />
+		<Unit filename="SubMenuDatos.h" />
+		<Unit filename="SubMenuVentas.h" />
 		<Unit filename="directores.h" />
 		<Unit filename="funcionesGlobales.h" />
 		<Unit filename="main.cpp" />
