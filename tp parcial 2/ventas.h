@@ -36,7 +36,7 @@ class ventas
 void cargar(){
     estado=true;
 
-    cout<<"Id de la Pelicula : " << Idpelicula.getidPelicula <<endl;
+    cout<<"Id de la Pelicula : "<<Idpelicula.getidPelicula();
     cout<<"Ingrese el numero de venta : "<<endl;
     cin >>Nventa;
     cout<<"Ingrese la cantidad de entradas : "<<endl;
