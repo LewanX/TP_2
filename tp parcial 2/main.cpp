@@ -4,15 +4,15 @@
 #include <cstring>
 
 using namespace std;
+
 #include "funcionesGlobales.h"
 #include "Fecha.h"
 #include "directores.h"
 #include "salas.h"
-#include "SubMenuVentas.h"
-#include "SubMenuDatos.h"
 #include "peliculas.h"
 #include "ventas.h"
-
+#include "SubMenuVentas.h"
+#include "SubMenuDatos.h"
 
 int main(){
     int opc;

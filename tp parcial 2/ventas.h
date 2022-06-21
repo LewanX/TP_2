@@ -49,4 +49,12 @@ void cargar(){
 
 }
 };
+
+void ventas::mostrar(){
+cout<<"Id de la Pelicula : "<<Idpelicula.getidPelicula();
+    cout<<"EL NUMERO DE VENTA ES : " << Nventa <<endl;
+    cout<<"CANTIDAD DE ENTRADAS : "<< CantEntradas <<endl;
+    cout<<"Importe : "<< Importe <<endl;
+    cout<<"EL METODO DE PAGO ELEGIDO ES : "<< Pago <<endl;
+}
 #endif // VENTAS_H_INCLUDED

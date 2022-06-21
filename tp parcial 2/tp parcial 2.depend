@@ -23,7 +23,7 @@
 
 1655403767 c:\users\jason\documents\github\tp_2\tp parcial 2\ventas.h
 
-1655407919 source:c:\users\axel\documents\github\tp_2\tp parcial 2\main.cpp
+1655847645 source:c:\users\axel\documents\github\tp_2\tp parcial 2\main.cpp
 	<iostream>
 	<cstdio>
 	<string.h>
@@ -32,10 +32,10 @@
 	"Fecha.h"
 	"directores.h"
 	"salas.h"
-	"SubMenuVentas.h"
-	"SubMenuDatos.h"
 	"peliculas.h"
 	"ventas.h"
+	"SubMenuVentas.h"
+	"SubMenuDatos.h"
 
 1654886080 c:\users\axel\documents\github\tp_2\tp parcial 2\funcionesglobales.h
 
@@ -43,13 +43,13 @@
 
 1655403357 c:\users\axel\documents\github\tp_2\tp parcial 2\directores.h
 
-1655408054 c:\users\axel\documents\github\tp_2\tp parcial 2\salas.h
+1655408153 c:\users\axel\documents\github\tp_2\tp parcial 2\salas.h
 
 1655403357 c:\users\axel\documents\github\tp_2\tp parcial 2\peliculas.h
 
-1655403866 c:\users\axel\documents\github\tp_2\tp parcial 2\ventas.h
+1655847917 c:\users\axel\documents\github\tp_2\tp parcial 2\ventas.h
 
-1655406927 c:\users\axel\documents\github\tp_2\tp parcial 2\submenuventas.h
+1655847937 c:\users\axel\documents\github\tp_2\tp parcial 2\submenuventas.h
 
 1655407281 c:\users\axel\documents\github\tp_2\tp parcial 2\submenudatos.h
 

@@ -4,23 +4,23 @@ void SubMenuVentas();
 
 void SubMenuVentas(){
     int opc;
-
+    ventas aux;
     while(true){
         system("cls");
         cout<<"MENU VENTAS : "<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"1) AGREGAR VENTA "<<endl;
         cout<<"2) MOSTRAR VENTAS  "<<endl;
-        cout<<"2) ELIMINAR VENTAS  "<<endl;
+        cout<<"3) ELIMINAR VENTAS  "<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
         cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1:
+            case 1: aux.cargar();
                     break;
-            case 2:
+            case 2: aux.mostrar();
 
                     break;
 
