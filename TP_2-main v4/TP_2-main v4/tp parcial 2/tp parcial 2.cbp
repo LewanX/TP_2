@@ -38,6 +38,9 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="peliculas.h" />
 		<Unit filename="salas.h" />
+		<Unit filename="submenudatos.h" />
+		<Unit filename="submenupeliculas.h" />
+		<Unit filename="submenuventas.h" />
 		<Unit filename="ventas.h" />
 		<Extensions />
 	</Project>

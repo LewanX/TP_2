@@ -10,16 +10,16 @@ using namespace std;
 #include "salas.h"
 #include "peliculas.h"
 #include "ventas.h"
-
+#include "submenuventas.h"
+#include "submenudatos.h"
+#include "submenupeliculas.h"
 
 
 
 
 int main(){
     int opc;
-    pelicula reg;
     director obj;
-    Salas aux;
     ventas lol;
     while(true){
         system("cls");
@@ -27,61 +27,18 @@ int main(){
         cout<<"-----------------------------"<<endl;
         cout<<"1) MENU VENTAS ENTRADAS "<<endl;
         cout<<"2) MENU DATOS "<<endl;
-        cout<<"3) CARGAR PELICULAS "<<endl;
-        cout<<"4) MOSTRAR PELICULAS "<<endl;
+        cout<<"3) MENU PELICULAS Y SALAS "<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"0) FIN DEL PROGRAMA "<<endl;
         cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1:
+            case 1: SubMenuVentas();
                     break;
-            case 2:
-
+            case 2: SubMenuDatos();
                     break;
-            case 3: reg.cargar();
-            if(reg.grabarEnDisco()==true)
-            {
-                cout << "registro agregado"<<endl;
-            }
-            else
-            {
-                cout <<"No se pudo agregar el registro"<<endl;
-            }
-                    break;
-            case 4:
-
-                reg.mostrarPeliculas();
-                system("pause");
-                 system("cls");
-                break;
-            case -2: obj.cargar();
-                    break;
-                case -4: aux.mostrarSalas();
-                break;
-                case -5: aux.cargar();
-                if(aux.grabarEnDisco()==true)
-            {
-                cout << "registro agregado"<<endl;
-            }
-            else
-            {
-                cout <<"No se pudo agregar el registro"<<endl;
-            }
-                break;
-                case -6:  lol.cargar();
-                if(lol.grabarEnDisco()==true)
-            {
-                cout << "registro agregado"<<endl;
-            }
-            else
-            {
-                cout <<"No se pudo agregar el registro"<<endl;
-            }
-                break;
-                case -7: lol.mostrarVentas();
-
+            case 3: SubMenuPeliculas();
 
             case 0: return 0;
                     break;

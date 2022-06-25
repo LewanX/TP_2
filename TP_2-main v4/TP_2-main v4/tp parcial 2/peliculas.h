@@ -69,18 +69,18 @@ void cargar()
     estado=true;
 
     cout<<"Ingrese el nombre de la pelicula " << endl;
-    cin.getline(nombrePelicula,30);
+    cargarCadena(nombrePelicula,29);
     fflush(stdin);
     cout<<"Ingrese el ID de la pelicula "<<endl;
     cin>> idPelicula;
     cout <<"Ingresar el Genero de la pelicula"<<endl;
-    cin.getline(genero,20);
+    cargarCadena(genero,19);
     fflush(stdin);
     cout<<"Ingresar el formato de la pelicula (2D,3D,4D)"<<endl;
-    cin.getline(formato,3);
+    cargarCadena(formato,2);
     fflush(stdin);
     cout<<"Ingresar el idioma (cast=Castellano o sub=subtitulado)"<<endl;
-    cin.getline(idioma,5);
+    cargarCadena(idioma,4);
     fflush(stdin);
     cout<<"Ingresar la duracion de la pelicula"<<endl;
     cin>>duracion; ///en minutos
