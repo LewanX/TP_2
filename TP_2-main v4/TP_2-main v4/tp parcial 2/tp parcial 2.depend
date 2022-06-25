@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1655323455 source:c:\users\nahuel\downloads\tp_2-main\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\directores.h
+
+1655323388 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\peliculas.h
+
+1655323231 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\salas.h
+
+1655403479 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\ventas.h
+
+1655686561 source:c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\directores.h
+
+1655686379 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\salas.h
+
+1655686904 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\peliculas.h
+
+1655686712 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\ventas.h
+
+1656011886 source:c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\directores.h
+
+1656009463 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\salas.h
+
+1656011264 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\peliculas.h
+
+1656012401 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\ventas.h
+
+1656011886 source:c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1655322632 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656009463 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656180424 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1656012401 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
