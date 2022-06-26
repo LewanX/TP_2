@@ -30,6 +30,9 @@ void SubMenuVentas(){
                     break;
             case 2: lol.mostrarVentas();
                     break;
+            case 0: return;
+                    break;
+
 
             default: cout<<"OPCION INCORRECTA"<<endl;
                     break;

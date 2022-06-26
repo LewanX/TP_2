@@ -5,21 +5,24 @@ class Salas{
 private:
     int idSala;
     int tipo;
-    int cantButacas, cantFilas;
-    int matriz[30][20]={0};
+    int c=1;
+    int Butacas, fila;
+    int asientos[15][15]={0};
+    int asientosEspeciales[10][10]={0};
     bool estado;
+
 public:
      ///sets()
 
      void setidSala(int S){idSala=S;}
      void setTipo(int T){tipo=T;}
-     void setcantButacas(int B){cantButacas=B;}
+     void setButacas(int B){Butacas=B;}
 
      ///gets()
 
      int getidSala(){return idSala;}
      int getTipo(){return tipo;}
-     int getcantButacas(){return cantButacas;}
+     int getButacas(){return Butacas;}
 
     ///disco
       int grabarEnDisco();
@@ -55,47 +58,105 @@ void mostrarSalas()
 
 
 void cargar(){
+    cout<<"INGRESE EL ID DE LA SALA: ";cin>>idSala;
     cout<<"INGRESE EL TIPO DE SALA:";cin>>tipo;
-    if (tipo==1) cout<<"Sala Normal"<<endl;
-    if (tipo==2) cout<<"Sala Con asientos Especiales"<<endl;
-    cout<<"INGRESE LA CANTIDAD DE FILAS:";cin>>cantFilas;
-    cout<<"INGRESE LA CANTIDAD DE ASIENTOS POR FILA:";cin>>cantButacas;
-    for(int i=0; i<cantButacas; i++)
+    if (tipo==1)
     {
-    for(int j=0; j<cantFilas; j++)
+        cout<<"Sala Normal"<<endl;
+    }
+
+    if (tipo==2)
     {
-    matriz[i][j]=0;
+        cout<<"Sala Con asientos Especiales"<<endl;
     }
-    }
+
 }
 void mostrarSalaCine()
 {
     cout<<"Numro de ID de sala: "<< idSala<<endl;
     cout<<"Tipo de sala: "<< tipo<<endl;
-    cout<<"------------Pantalla----------\n";
-    for(int i=0;i<cantButacas;i++)
+    if (tipo==1)
     {
-        cout<<"("<<i+1<<")";
-        for(int j=0;j<cantFilas;j++)
+        cout<<"------------Pantalla----------\n";
+        for (int i=0; i<15;i++)
         {
-            cout<<"["<<matriz[i][j]<<"]";
+            for(int j=0; j<15;i++)
+            {
+            cout<<asientos[i][j]<<"\t";
+            cout<<endl;
+            }
         }
-        cout<<"\n";
+                }
+    if (tipo==2)
+    {
+     cout<<"------------Pantalla----------\n";
+      for (int i=0; i<10;i++)
+    {
+        for(int j=0; j<10;i++)
+        {
+            cout<<asientosEspeciales[i][j]<<"\t";
+            cout<<endl;
+        }
     }
 }
-bool reservarAsiento(int i, int j)
+}
+void reservarAsiento(int fila,int Butacas)
 {
-    if(matriz[i][j]==0)
+    if(tipo==1)
     {
-        matriz[i][j]==1;
-        cout<<"Se pudo reservar";
-        return true;
+     cout<<"Ingresar Numero de Fila deseada(1-15)";
+     cin>>fila;
+     cout<<"Ingresar Numero de Columna deseada(1-15)";
+     cin>>Butacas;
+     if(asientos[fila-1][Butacas-1]==0)
+     {
+         asientos[fila-1][Butacas-1]=1;
+         c=c+1;
+         cout<<"Reserva Exitosa";
+     }
+     else
+     {
+         cout<<"Asiento Ocupado";
+     }
+
+    for (int i=0; i<15;i++)
+    {
+        for(int j=0; j<15;i++)
+        {
+            cout<<asientos[i][j]<<"\t";
+            cout<<endl;
+        }
+    }
     }
     else
     {
-        cout<<"Ese asiento esta ocupado, seleccione otro\n";
+        if(tipo==2)
+        {
+     cout<<"Ingresar Numero de Fila deseada(1-15)";
+     cin>>fila;
+     cout<<"Ingresar Numero de Columna deseada(1-15)";
+     cin>>Butacas;
+     if(asientosEspeciales[fila-1][Butacas-1]==0)
+     {
+         asientosEspeciales[fila-1][Butacas-1]=1;
+         c=c+1;
+         cout<<"Reserva Exitosa";
+     }
+     else
+     {
+         cout<<"Asiento Ocupado";
+     }
+
+    for (int i=0; i<10;i++)
+    {
+        for(int j=0; j<10;i++)
+        {
+            cout<<asientosEspeciales[i][j]<<"\t";
+            cout<<endl;
+        }
     }
-    return false;
+        }
+    }
 }
 
 };
@@ -120,6 +181,5 @@ int Salas::leerEnDisco(int pos)
     fclose(s);
     return leyo;
 }
-
 
 #endif // SALAS_H_INCLUDED
