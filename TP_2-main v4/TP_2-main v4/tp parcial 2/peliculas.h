@@ -4,8 +4,8 @@
 class pelicula
 {
     private:
-      int idPelicula,idDirector, duracion, precio, sala;
-      char nombrePelicula[30], genero[20], formato[3], idioma[5];
+      int idPelicula,idDirector, duracion, precio, sala, idioma;
+      char nombrePelicula[30], genero[20], formato[3];
       Fecha fechaIni;
       Fecha fechaFin;
       director direc;
@@ -16,7 +16,7 @@ class pelicula
       void setidPelicula (int idP){idPelicula=idP;}
       void setidDirector (int idD) {idDirector=idD;}
       void setFormato (const char *f) {strcpy(formato,f);}
-      void setIdioma (const char *i) {strcpy(idioma,i);}
+      void setIdioma (int I) {idioma=I;}
       void setDuracion (int d) {duracion=d;}
       void setPrecio (int p) {precio=p;}
       void setSala (int s) {sala=s;}
@@ -27,7 +27,7 @@ class pelicula
       int getidPelicula (){return idPelicula;}
       int getidDirector () {return idDirector;}
       const char *getFormato () {return formato;}
-      const char *getIdioma () {return idioma;}
+      int getIdioma() {return idioma;}
       int getDuracion () {return duracion;}
       int getPrecio () {return precio;}
       int getSala () {return sala;}
@@ -68,44 +68,47 @@ void cargar()
 {
     estado=true;
 
-    cout<<"Ingrese el nombre de la pelicula " << endl;
-    cargarCadena(nombrePelicula,29);
+    //cin.getline(nombreDirector,30,'\n');
     fflush(stdin);
+
+    cout<<"Ingrese el nombre de la pelicula " << endl;
+    cin.getline(nombrePelicula,30,'\n');
+    fflush(stdin);
+
     cout<<"Ingrese el ID de la pelicula "<<endl;
     cin>> idPelicula;
+
     cout <<"Ingresar el Genero de la pelicula"<<endl;
-    cargarCadena(genero,19);
+    cin.ignore();
+    cin.getline(genero,20,'\n');
     fflush(stdin);
+
     cout<<"Ingresar el formato de la pelicula (2D,3D,4D)"<<endl;
-    cargarCadena(formato,2);
+    cin.getline(formato,3,'\n');
     fflush(stdin);
-    cout<<"Ingresar el idioma (cast=Castellano o sub=subtitulado)"<<endl;
-    cargarCadena(idioma,4);
+
+    cout<<"Ingresar el idioma [ (1=Castellano) , (2=subtitulado) ]"<<endl;
+    cin>>idioma;
     fflush(stdin);
-    cout<<"Ingresar la duracion de la pelicula"<<endl;
+
+    cout<<"Ingresar la duracion de la pelicula [minutos]"<<endl;
     cin>>duracion; ///en minutos
+
     cout<<"Ingresar id del director"<<endl;
     cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del directos
-    direc.cargar();
+    if(validacionDir(idDirector)==0){
+        cout<<"ESTE DIRECTOR NO SE ENCUENTRA EN LOS REGISTROS"<<endl;
+    }
     cout<<endl;
-    cout<<"Ingresar la fecha incial de proyeccion de la pelicula"<<endl;
+
+    cout<<"INGRESAR LA EMISION INICIAL DE LA PELICULA:"<<endl;
     fechaIni.Cargar();
-    cout<<"Ingresar la fecha final de proyeccion de la pelicula"<<endl;
+    cout<<"INGRESAR LA EMISION FINAL DE LA PELICULA:"<<endl;
     fechaFin.Cargar();
+
     cout<<"Ingresar el ID de la sala en donde ver la pelicula"<<endl;
     cin>>sala;
-    salaNum.cargar();
-    if(salaNum.getTipo()==1)
-    {
-        precio=500;
-    }
-    else
-    {
-        if(salaNum.getTipo()==2)
-        {
-            precio=600;
-        }
-    }
+    precio=validacionSala(sala);
     cout<<"Precio de la entrada: "<<precio<<endl;
 
 }
@@ -115,19 +118,21 @@ void mostrar()
         cout<<nombrePelicula<<endl;
         cout<<"GENERO: ";
         cout<<genero<<endl;
-        cout<<"Formato: ";
+        cout<<"FORMATO: ";
         cout<<formato<<endl;
         cout<<"Idioma: ";
         cout<<idioma<<endl;
         cout<<"Duracion: ";
         cout<<duracion<<" Minutos"<<endl;
-        direc.mostrar();
+        validacionDir(idDirector);
+        //NomDir(idDirector);
+        cout<<endl;
+        //direc.mostrar();
         cout<<"Fecha inicial de la proyeccion: ";
         fechaIni.Mostrar();
         cout<<"Fecha final de la proyeccion: ";
         fechaFin.Mostrar();
-        cout<<"Numero de sala asignada: ";
-        salaNum.mostrarSalas();
+        cout<<"Numero de sala asignada:"<<sala;
         cout<<endl;
         cout<<"Precio de la entrada: ";
         cout<<precio<<endl;

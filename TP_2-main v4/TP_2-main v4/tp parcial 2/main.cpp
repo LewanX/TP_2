@@ -4,16 +4,19 @@
 #include <cstring>
 
 using namespace std;
-#include "funcionesGlobales.h"
+#include "protofuncionesGlobales.h"
 #include "Fecha.h"
 #include "directores.h"
 #include "salas.h"
 #include "peliculas.h"
 #include "ventas.h"
-//#include "datos.h"
+#include "datos.h"
 #include "submenuventas.h"
 #include "submenudatos.h"
 #include "submenupeliculas.h"
+#include "submenudirector.h"
+#include "funcionesGlobales.h"
+
 
 
 
@@ -29,6 +32,7 @@ int main(){
         cout<<"1) MENU VENTAS ENTRADAS "<<endl;
         cout<<"2) MENU DATOS "<<endl;
         cout<<"3) MENU PELICULAS Y SALAS "<<endl;
+        cout<<"4) MENU DIRECTORES"<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"0) FIN DEL PROGRAMA "<<endl;
         cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
@@ -40,7 +44,9 @@ int main(){
             case 2: SubMenuDatos();
                     break;
             case 3: SubMenuPeliculas();
-
+                    break;
+            case 4: SubMenuDirector();
+                    break;
             case 0: return 0;
                     break;
             default: cout<<"OPCION INCORRECTA"<<endl;

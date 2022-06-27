@@ -6,6 +6,7 @@ private:
     int idSala;
     int tipo;
     int c=1;
+    int plazas;
     int Butacas, fila;
     int asientos[15][15]={0};
     int asientosEspeciales[10][10]={0};
@@ -27,6 +28,7 @@ public:
     ///disco
       int grabarEnDisco();
       int leerEnDisco(int);
+      void mostrarDeDisco();
 
        bool cargarSalas()
       {
@@ -59,21 +61,23 @@ void mostrarSalas()
 
 void cargar(){
     cout<<"INGRESE EL ID DE LA SALA: ";cin>>idSala;
-    cout<<"INGRESE EL TIPO DE SALA:";cin>>tipo;
-    if (tipo==1)
-    {
-        cout<<"Sala Normal"<<endl;
-    }
-
-    if (tipo==2)
-    {
-        cout<<"Sala Con asientos Especiales"<<endl;
-    }
-
+    cout<<"INGRESE EL TIPO DE SALA [ 1(NORMAL) , 2(4D) ]:";cin>>tipo;
+    cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>plazas;
+}
+void  mostrar(){
+    cout<<"ID SALA:"<<idSala<<endl;
+    cout<<"TIPO DE SALA:";
+        if(tipo==1){
+            cout<<"NORMAL";
+        }else{
+            cout<<"4D";
+        }
+        cout<<endl;
+        cout<<"CANTIDAD DE BUTACAS:"<<plazas<<endl;
 }
 void mostrarSalaCine()
 {
-    cout<<"Numro de ID de sala: "<< idSala<<endl;
+    cout<<"Numero de ID de sala: "<< idSala<<endl;
     cout<<"Tipo de sala: "<< tipo<<endl;
     if (tipo==1)
     {
@@ -181,5 +185,16 @@ int Salas::leerEnDisco(int pos)
     fclose(s);
     return leyo;
 }
+void Salas::mostrarDeDisco(){
+    int pos=0;
+    while(leerEnDisco(pos++)==1){
 
+        mostrar();
+        cout<<endl;
+
+    }
+
+
+
+}
 #endif // SALAS_H_INCLUDED

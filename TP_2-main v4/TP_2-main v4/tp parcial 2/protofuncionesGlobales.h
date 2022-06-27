@@ -1,0 +1,12 @@
+#ifndef PROTOFUNCIONESGLOBALES_H_INCLUDED
+#define PROTOFUNCIONESGLOBALES_H_INCLUDED
+//PROTOTIPOS
+
+int validacionDir(int id);
+
+int validacionSala(int id);
+
+
+
+
+#endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

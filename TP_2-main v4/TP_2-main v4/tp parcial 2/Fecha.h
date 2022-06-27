@@ -15,9 +15,9 @@ public:///es accesible dentro y fuera de la clase
     int getMes(){return mes;}
     int getAnio(){return anio;}
     ///sets() funciones que permiten modificar los valores de cada una de las propiedades
-    void setDia(int d){if(d>=1 && d<=31) dia=d;}
-    void setMes(int m){if (m>=1 && m<=12) mes=m;}
-    void setAnio(int a){if (a>=2021 && a<=2022) anio=a;}
+    void setDia(int d){dia=d;}
+    void setMes(int m){mes=m;}
+    void setAnio(int a){anio=a;}
 
 
     void Cargar();

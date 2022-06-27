@@ -3,13 +3,13 @@
 
 class datos
 {
-public:
+private:
     int recaudacionTotal=0;
     int recaudacionTotalCine=0;
     int idRecaudado;
     int idDirector;
     ventas reg;
-private:
+public:
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
     void setIdRecaudado(int idR){idRecaudado=idR;}
     void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
@@ -21,7 +21,8 @@ private:
 
 float calcularRecaudacion (int id)
 {
-    int pos=0, sumaRecaudacion=0;
+    int pos=0;
+    float sumaRecaudacion=0;
     while (reg.leerEnDisco(pos++))
     {
         if(reg.getidPelicula()==id)
@@ -37,8 +38,8 @@ void peliculaMasTaquillera()
     int pos=0;
     while(reg.leerEnDisco(pos++))
     {
-        getRecaudacionTotal()=calcularRecaudacion(reg.getidPelicula())
-        getIdRecaudado(reg.getidPelicula());
+        setRecaudacionTotal(calcularRecaudacion(reg.getidPelicula()));
+        setIdRecaudado(reg.getidPelicula());
 
     }
     cout<<"La Pelicula mas Taquillera es la: "<<getIdRecaudado()<<endl;
@@ -87,8 +88,9 @@ void RecaudacionCine()
     int pos=0;
     while(reg.leerEnDisco(pos++))
     {
-        getRecaudacionTotalCine(reg.getImporte())+=;
+        setRecaudacionTotalCine(reg.getImporte());
     }
     cout<<"La recaudacion Total del cine fue de: "<<getRecaudacionTotalCine()<<endl;
 }
 };
+#endif // DATOS_H_INCLUDED
