@@ -30,27 +30,27 @@ class director
 void cargar()
 {
     fflush(stdin);
-    cout<<"Ingrese el nombre del director " <<endl;
+    cout<<"INGRESAR EL NOMBRE DEL DIRECTOR " <<endl;
     cin.getline(nombreDirector,30,'\n');
     fflush(stdin);
-    cout<<"ingrese el Id del director"<<endl;
+    cout<<"INGRESAR EL ID DE DIRECTOR"<<endl;
     cin >>idDirector;
-    cout<<"Ingrese la nacionalidad del director"<<endl;
+    cout<<"INGRESE LA NACIONALIDAD DEL DIRECTOR"<<endl;
     cin.ignore();
     cin.getline(Nacionalidad,20,'\n');
     fflush(stdin);
-    cout<<"Fecha de nacimiento del director"<<endl;
+    cout<<"FECHA DE NACIMIENTO DEL DIRECTOR"<<endl;
     FechaNacimiento.Cargar();
 }
 void mostrar()
 {
-    cout<<"id: ";
+    cout<<"ID: ";
     cout<<idDirector<<endl;
-    cout<<"Nombre del director: ";
+    cout<<"NOMBRE DEL DIRECTOR: ";
     cout<<nombreDirector<<endl;
-    cout<<"Nacionalidad: ";
+    cout<<"NACIONALIDAD: ";
     cout<<Nacionalidad<<endl;
-    cout<<"fecha de nacimiento: ";
+    cout<<"FECHA DE NACIMIENTO: ";
     FechaNacimiento.Mostrar();
 }
 

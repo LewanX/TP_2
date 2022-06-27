@@ -71,30 +71,30 @@ void cargar()
     //cin.getline(nombreDirector,30,'\n');
     fflush(stdin);
 
-    cout<<"Ingrese el nombre de la pelicula " << endl;
+    cout<<"INGRESE EL NOMBRE DE LA PELICULA: " << endl;
     cin.getline(nombrePelicula,30,'\n');
     fflush(stdin);
 
-    cout<<"Ingrese el ID de la pelicula "<<endl;
+    cout<<"INGRESE ID: "<<endl;
     cin>> idPelicula;
 
-    cout <<"Ingresar el Genero de la pelicula"<<endl;
+    cout <<"INGRESE EL GENERO: "<<endl;
     cin.ignore();
     cin.getline(genero,20,'\n');
     fflush(stdin);
 
-    cout<<"Ingresar el formato de la pelicula (2D,3D,4D)"<<endl;
+    cout<<"INGRESE EL FOTMATO (2D,3D,4D): "<<endl;
     cin.getline(formato,3,'\n');
     fflush(stdin);
 
-    cout<<"Ingresar el idioma [ (1=Castellano) , (2=subtitulado) ]"<<endl;
+    cout<<"INGRESE EL IDIOMA [ (1=Castellano) , (2=subtitulado) ] :"<<endl;
     cin>>idioma;
     fflush(stdin);
 
-    cout<<"Ingresar la duracion de la pelicula [minutos]"<<endl;
+    cout<<"INGRESE LA DURACION [minutos]: "<<endl;
     cin>>duracion; ///en minutos
 
-    cout<<"Ingresar id del director"<<endl;
+    cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
     cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del directos
     if(validacionDir(idDirector)==0){
         cout<<"ESTE DIRECTOR NO SE ENCUENTRA EN LOS REGISTROS"<<endl;
@@ -106,36 +106,37 @@ void cargar()
     cout<<"INGRESAR LA EMISION FINAL DE LA PELICULA:"<<endl;
     fechaFin.Cargar();
 
-    cout<<"Ingresar el ID de la sala en donde ver la pelicula"<<endl;
+    cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
     cin>>sala;
     precio=validacionSala(sala);
-    cout<<"Precio de la entrada: "<<precio<<endl;
+    cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
 
 }
 void mostrar()
 {
-        cout<<"Nombre de pelicula: ";
+        cout<<"NOMBRE DE LA PELICULA: ";
         cout<<nombrePelicula<<endl;
         cout<<"GENERO: ";
         cout<<genero<<endl;
         cout<<"FORMATO: ";
         cout<<formato<<endl;
-        cout<<"Idioma: ";
+        cout<<"IDIOMA: ";
         cout<<idioma<<endl;
-        cout<<"Duracion: ";
-        cout<<duracion<<" Minutos"<<endl;
+        cout<<"DURACION: ";
+        cout<<duracion<<" MINUTOS"<<endl;
         validacionDir(idDirector);
         //NomDir(idDirector);
         cout<<endl;
         //direc.mostrar();
-        cout<<"Fecha inicial de la proyeccion: ";
+        cout<<"FECHA INICIAL DE LA PROYECCION: ";
         fechaIni.Mostrar();
-        cout<<"Fecha final de la proyeccion: ";
+        cout<<"FECHA FINAL DE LA PROYECCION: ";
         fechaFin.Mostrar();
-        cout<<"Numero de sala asignada:"<<sala;
+        cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala;
         cout<<endl;
-        cout<<"Precio de la entrada: ";
+        cout<<"PRECIO DE LA ENTRADA: ";
         cout<<precio<<endl;
+        cout<<""<<endl<<endl;
 
 
 }

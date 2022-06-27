@@ -24,7 +24,7 @@ void SubMenuPeliculas(){
 
             case 1://AGREGAR PELICULA
                 reg.cargar();
-                if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO";}else{"ERROR AL GRABAR";}
+                if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO! ";}else{"ERROR AL GRABAR! ";}
             break;
 
             case 2://MOSTRAR PELICULAS
@@ -33,7 +33,7 @@ void SubMenuPeliculas(){
 
             case 3://AGREGAR SALA
                 aux.cargar();
-                if(aux.grabarEnDisco()==1){cout<<"REGISTRO AGREAGADO"<<endl;}else{cout<<"ERROR AL GRABAR"<<endl;}
+                if(aux.grabarEnDisco()==1){cout<<"REGISTRO AGREAGADO! "<<endl;}else{cout<<"ERROR AL GRABAR! "<<endl;}
             break;
 
             case 4://MOSTRAR SALAS
@@ -44,7 +44,7 @@ void SubMenuPeliculas(){
 
             case 0: return ;
                     break;
-            default: cout<<"OPCION INCORRECTA"<<endl;
+            default: cout<<"OPCION INCORRECTA! "<<endl;
                     break;
         }
         cout <<endl;

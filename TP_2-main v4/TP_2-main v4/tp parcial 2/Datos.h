@@ -79,9 +79,9 @@ void peliculaMasTaquilleraEnUnMes()
     }
     int mesMax=calcularPosMaximo(meses,12);
     int recaudacionMax=calcularMayor(meses,12);
-    cout<<"La pelicula mas Taquillera en un mes es la: " <<PeliculaMes<<endl;
-    cout<<"En el mes: " <<mesMax<<endl;
-    cout<<"Con una recaudacion de: "<<recaudacionMax<<endl;
+    cout<<"LA PELICULA MAS TAQUILLERA: " <<PeliculaMes<<endl;
+    cout<<"EN EL MES: " <<mesMax<<endl;
+    cout<<"CON UNA RECAUDACION DE: "<<recaudacionMax<<endl;
 }
 void RecaudacionCine()
 {
@@ -90,7 +90,7 @@ void RecaudacionCine()
     {
         setRecaudacionTotalCine(reg.getImporte());
     }
-    cout<<"La recaudacion Total del cine fue de: "<<getRecaudacionTotalCine()<<endl;
+    cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<getRecaudacionTotalCine()<<endl;
 }
 };
 #endif // DATOS_H_INCLUDED

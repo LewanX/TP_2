@@ -62,43 +62,43 @@ void mostrarVentas()
 
 void cargar(){
     estado=true;
-    cout<<"Ingrese el numero de venta : "<<endl;
+    cout<<"INGRESE EL NUMERO DE VENTA : "<<endl;
     cin >>Nventa;///aleatorio
-    cout<<"Ingrese el Id de la Pelicula : " <<endl;
+    cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
     cin>>idPelicula;
-    cout<<"Ingrese la cantidad de entradas : "<<endl;
+    cout<<"INGRESE CANTIDAD DE ENTRADAS : "<<endl;
     cin>>CantEntradas;
     for (int i=0; i<CantEntradas;i++)
     {
-     cout<<"Elegir fila: " << endl;
+     cout<<"ELEGIR FILA: " << endl;
      cin>> fila;
-     cout<<"Elegir Asiento: " << endl;
+     cout<<"ELEGIR ASIENTO: " << endl;
      cin>> asiento;
      aux.reservarAsiento(fila,asiento);
     }
 
     cout<<endl;
-    cout<<"Ingrese el metodo de pago (1-efectivo 2-credito 3-debito)"<<endl;
+    cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
     cin >>Pago;
-    cout<<"El importe es de: "<<endl;
+    cout<<"EL IMPORTE ES DE: "<<endl;
     Importe=150;
     cout<< Importe;
 }
 void mostrar()
 {
-    cout<<"Id de la pelicula: " <<endl;
+    cout<<"ID DE LA PELICULA: " <<endl;
     cout<<idPelicula<<endl;
-    cout<<"Numero de venta : "<<endl;
+    cout<<"NUMERO DE VENTA: "<<endl;
     cout<<Nventa<<endl;
-    cout<<"Cantidad de entradas : "<<endl;
+    cout<<"CANTIDAD DE ENTRADAS: "<<endl;
     cout<<CantEntradas<<endl;
-    cout<<"Fila Elegida: " << endl;
+    cout<<"FILA ELEGIDA: " << endl;
     cout<< fila<<endl;
-    cout<<"Asiento Elegido: " << endl;
+    cout<<"ASIENTO ELEGIDO: " << endl;
     cout<<asiento<<endl;
-    cout<<"Metodo de pago Elegido"<<endl;
+    cout<<"METODO DE PAGO: "<<endl;
     cout<<Pago<<endl;
-    cout<<"El importe es de: "<<endl;
+    cout<<"IMPORTE: "<<endl;
     cout<< Importe<<endl;
 }
 

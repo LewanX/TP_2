@@ -21,11 +21,11 @@ void SubMenuVentas(){
             case 1: lol.cargar();
                 if(lol.grabarEnDisco()==true)
             {
-                cout << "registro agregado"<<endl;
+                cout << "REGISTRO AGREGADO! "<<endl;
             }
             else
             {
-                cout <<"No se pudo agregar el registro"<<endl;
+                cout <<"ERROR AL AGREGAR REGISTRO! "<<endl;
             }
                     break;
             case 2: lol.mostrarVentas();

@@ -30,7 +30,7 @@ void SubMenuDatos(){
 
             case 0: return ;
                     break;
-            default: cout<<"OPCION INCORRECTA"<<endl;
+            default: cout<<"OPCION INCORRECTA! "<<endl;
                     break;
         }
         cout <<endl;

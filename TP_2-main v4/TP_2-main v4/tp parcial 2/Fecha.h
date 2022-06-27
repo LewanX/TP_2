@@ -46,7 +46,6 @@ void Fecha::Cargar(){
 
 void Fecha::Mostrar(){
         cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
-        cout<<endl<<endl;
 
     }
 

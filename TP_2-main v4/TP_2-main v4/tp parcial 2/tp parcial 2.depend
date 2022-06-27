@@ -71,35 +71,39 @@
 
 1656012401 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\ventas.h
 
-1656182273 source:c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+1656364343 source:c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
 	<iostream>
 	<cstdio>
 	<string.h>
 	<cstring>
-	"funcionesGlobales.h"
+	"protofuncionesGlobales.h"
 	"Fecha.h"
 	"directores.h"
 	"salas.h"
 	"peliculas.h"
 	"ventas.h"
+	"datos.h"
 	"submenuventas.h"
 	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"funcionesGlobales.h"
 
-1654887704 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+1656364343 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
 
-1654887704 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+1656364812 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
 
-1655322632 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+1656364488 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
 
-1656009463 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+1656364343 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
 
-1656181738 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+1656365124 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
 
-1656012401 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
 
-1656182418 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
 
-1656182035 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
 
 1656362432 source:c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
 	<iostream>
@@ -142,4 +146,12 @@
 1656357783 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
 
 1656364131 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656364343 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656364561 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656364343 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
 
