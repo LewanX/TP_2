@@ -10,7 +10,7 @@ using namespace std;
 #include "salas.h"
 #include "peliculas.h"
 #include "ventas.h"
-#include "datos.h"
+//#include "datos.h"
 #include "submenuventas.h"
 #include "submenudatos.h"
 #include "submenupeliculas.h"

@@ -5,7 +5,7 @@ void SubMenuDatos();
 
 void SubMenuDatos(){
     int opc;
-    datos reg;
+   // datos reg;
     while(true){
         system("cls");
         cout<<"MENU DATOS : "<<endl;
@@ -20,13 +20,13 @@ void SubMenuDatos(){
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1: reg.peliculaMasTaquillera();
+            case 1: //reg.peliculaMasTaquillera();
                     break;
-            case 2: reg.peliculaMasTaquilleraEnUnMes();
+            case 2: //reg.peliculaMasTaquilleraEnUnMes();
                     break;
             case 3:
                     break;
-            case 4: reg.RecaudacionCine();
+            case 4: //reg.RecaudacionCine();
 
             case 0: return ;
                     break;
