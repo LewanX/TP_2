@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Datos.h" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="directores.h" />
 		<Unit filename="funcionesGlobales.h" />
