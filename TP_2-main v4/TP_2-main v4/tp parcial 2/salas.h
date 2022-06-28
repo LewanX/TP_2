@@ -43,7 +43,7 @@ public:
               return escribio;
 
       }
-
+/*
 void mostrarSalas()
 {
     FILE *s;
@@ -55,7 +55,7 @@ void mostrarSalas()
     }
     fclose(s);
 }
-
+*/
 
 
 
@@ -75,6 +75,7 @@ void  mostrar(){
         cout<<endl;
         cout<<"CANTIDAD DE BUTACAS:"<<plazas<<endl;
 }
+/*
 void mostrarSalaCine()
 {
     cout<<"Numero de ID de sala: "<< idSala<<endl;
@@ -162,7 +163,7 @@ void reservarAsiento(int fila,int Butacas)
         }
     }
 }
-
+*/
 };
 
 int Salas::grabarEnDisco()

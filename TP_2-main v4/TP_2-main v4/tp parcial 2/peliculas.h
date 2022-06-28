@@ -133,7 +133,6 @@ void mostrar()
         cout<<"FECHA FINAL DE LA PROYECCION: ";
         fechaFin.Mostrar();
         cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala;
-        cout<<endl;
         cout<<"PRECIO DE LA ENTRADA: ";
         cout<<precio<<endl;
         cout<<""<<endl<<endl;

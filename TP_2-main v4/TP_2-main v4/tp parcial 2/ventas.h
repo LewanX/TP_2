@@ -5,8 +5,9 @@ class ventas
 {
     private:
 
-      int Nventa, CantEntradas, Importe, Pago,fila,asiento, idPelicula;
+      int Nventa, CantEntradas, Importe=150, Pago,fila,asiento, idPelicula;
       Fecha FechaVenta;
+      int Total;
        Salas aux;
        pelicula obj;
        bool estado;
@@ -62,10 +63,17 @@ void mostrarVentas()
 
 void cargar(){
     estado=true;
-    cout<<"INGRESE EL NUMERO DE VENTA : "<<endl;
-    cin >>Nventa;///aleatorio
+    cout<<"NUMERO DE VENTA : "<<endl;
+    VentaAutonumerica();
     cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
     cin>>idPelicula;
+    while(validacionPrecio(idPelicula, Pago)==0){
+        cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
+        cin>>idPelicula;
+    }
     cout<<"INGRESE CANTIDAD DE ENTRADAS : "<<endl;
     cin>>CantEntradas;
     for (int i=0; i<CantEntradas;i++)
@@ -74,32 +82,34 @@ void cargar(){
      cin>> fila;
      cout<<"ELEGIR ASIENTO: " << endl;
      cin>> asiento;
-     aux.reservarAsiento(fila,asiento);
+ ///    aux.reservarAsiento(fila,asiento);
     }
 
     cout<<endl;
     cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
     cin >>Pago;
     cout<<"EL IMPORTE ES DE: "<<endl;
-    Importe=150;
-    cout<< Importe;
+    Total=validacionPrecio(idPelicula, Pago)+Importe;
+    cout<< Total;
 }
 void mostrar()
 {
-    cout<<"ID DE LA PELICULA: " <<endl;
+    cout<<"ID DE LA PELICULA: ";
     cout<<idPelicula<<endl;
-    cout<<"NUMERO DE VENTA: "<<endl;
+    cout<<"NUMERO DE VENTA: ";
     cout<<Nventa<<endl;
-    cout<<"CANTIDAD DE ENTRADAS: "<<endl;
+    cout<<"CANTIDAD DE ENTRADAS: ";
     cout<<CantEntradas<<endl;
-    cout<<"FILA ELEGIDA: " << endl;
+    cout<<"FILA ELEGIDA: ";
     cout<< fila<<endl;
-    cout<<"ASIENTO ELEGIDO: " << endl;
+    cout<<"ASIENTO ELEGIDO: ";
     cout<<asiento<<endl;
-    cout<<"METODO DE PAGO: "<<endl;
+    cout<<"METODO DE PAGO: ";
     cout<<Pago<<endl;
-    cout<<"IMPORTE: "<<endl;
-    cout<< Importe<<endl;
+    cout<<"IMPORTE: ";
+    cout<< Total<<endl;
+
+cout <<" "<<endl<<endl;
 }
 
 };

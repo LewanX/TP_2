@@ -10,10 +10,12 @@ private:
     int idDirector;
     ventas reg;
 public:
+    ///sets
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
     void setIdRecaudado(int idR){idRecaudado=idR;}
     void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
     void setIdDirector(int idD){idDirector=idD;}
+    ///gets
     int getIDdirector(){return idDirector;}
     int getRecaudacionTotal(){return recaudacionTotal;}
     int getIdRecaudado(){return idRecaudado;}

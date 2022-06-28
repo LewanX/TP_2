@@ -38,6 +38,7 @@
 		<Unit filename="funcionesGlobales.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="peliculas.h" />
+		<Unit filename="protofuncionesGlobales.h" />
 		<Unit filename="salas.h" />
 		<Unit filename="submenudatos.h" />
 		<Unit filename="submenupeliculas.h" />

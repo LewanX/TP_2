@@ -2,6 +2,7 @@
 #define FUNCIONESGLOBALES_H_INCLUDED
 
 void cargarCadena(char *pal, int tam);
+
 ///FIN PROTOTIPOS
 
 void cargarCadena(char *pal, int tam)
@@ -47,6 +48,22 @@ int validacionSala(int id){
         }
 
 }
+int validacionPrecio(int id, int pago){
+ ventas aux;
+ pelicula obj;
+ Salas reg;
+ int importe;
+ int pos=0;
+ while (obj.leerEnDisco(pos++)==1)
+ {
+     if(obj.getidPelicula()==id){
+        importe=obj.getPrecio();
+        return importe;
+     }
+ }
+return 0;
+
+}
 int NomDir(int id){
     director aux;
         int pos=0;
@@ -57,8 +74,24 @@ int NomDir(int id){
 
             }
         }
+}
 
-
+int VentaAutonumerica(){
+ventas aux;
+int pos=0;
+int autonumerico;
+while(aux.leerEnDisco(pos++)==1){
+    if(aux.getNventa>=0){
+        autonumerico=aux.getNventa()+1;
+        return autonumerico;
+    }
+}
+if(contador>0){
+    autonumerico=aux.getNventa();
+}
 
 }
+
+
+
 #endif // FUNCIONESGLOBALES_H_INCLUDED
