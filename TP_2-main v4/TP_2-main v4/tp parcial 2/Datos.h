@@ -7,16 +7,15 @@ private:
     int recaudacionTotal=0;
     int recaudacionTotalCine=0;
     int idRecaudado;
-    int idDirector;
     ventas reg;
 public:
     ///sets
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
     void setIdRecaudado(int idR){idRecaudado=idR;}
     void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
-    void setIdDirector(int idD){idDirector=idD;}
+
     ///gets
-    int getIDdirector(){return idDirector;}
+
     int getRecaudacionTotal(){return recaudacionTotal;}
     int getIdRecaudado(){return idRecaudado;}
     int getRecaudacionTotalCine(){return recaudacionTotalCine;}
@@ -29,14 +28,18 @@ float calcularRecaudacion (int id)
     {
         if(reg.getidPelicula()==id)
         {
-            sumaRecaudacion+=reg.getImporte();
+            sumaRecaudacion+=reg.getTotal();
         }
         return(float)sumaRecaudacion;
     }
 }
+float mayorVenta(float v){
 
+
+
+}
 void peliculaMasTaquillera()
-{
+{   float mayor=0;
     int pos=0;
     while(reg.leerEnDisco(pos++))
     {
@@ -44,6 +47,7 @@ void peliculaMasTaquillera()
         setIdRecaudado(reg.getidPelicula());
 
     }
+
     cout<<"La Pelicula mas Taquillera es la: "<<getIdRecaudado()<<endl;
     cout<<"Con una recaudacion total de: "<<getRecaudacionTotal()<<endl;
 }
