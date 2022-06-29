@@ -66,6 +66,7 @@ void mostrarPeliculas()
 
 void cargar()
 {
+    precio=500;
     estado=true;
 
     //cin.getline(nombreDirector,30,'\n');
@@ -83,7 +84,7 @@ void cargar()
     cin.getline(genero,20,'\n');
     fflush(stdin);
 
-    cout<<"INGRESE EL FOTMATO (2D,3D,4D): "<<endl;
+    cout<<"INGRESE EL FORMATO (2D,3D): "<<endl;
     cin.getline(formato,3,'\n');
     fflush(stdin);
 
@@ -108,12 +109,19 @@ void cargar()
 
     cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
     cin>>sala;
-    precio=validacionSala(sala);
+    while(validacionSala(sala)==0){
+        cout<<"ESTA ID DE SALA NO EXISTE"<<endl;
+        cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
+        cin>>sala;
+    }
+    if(strcmp(formato,"3D")==0){
+        precio+=100;
+    }
     cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
 
 }
 void mostrar()
-{
+{       cout<<"ID DE LA PELICULA: "<<idPelicula<<endl;
         cout<<"NOMBRE DE LA PELICULA: ";
         cout<<nombrePelicula<<endl;
         cout<<"GENERO: ";
@@ -132,7 +140,7 @@ void mostrar()
         fechaIni.Mostrar();
         cout<<"FECHA FINAL DE LA PROYECCION: ";
         fechaFin.Mostrar();
-        cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala;
+        cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala<<endl;
         cout<<"PRECIO DE LA ENTRADA: ";
         cout<<precio<<endl;
         cout<<""<<endl<<endl;

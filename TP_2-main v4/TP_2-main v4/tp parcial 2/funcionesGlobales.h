@@ -38,15 +38,12 @@ int validacionSala(int id){
         while(aux.leerEnDisco(pos++)==1)
         {
             if(aux.getidSala()==id){
-                if(id==1){
-                    return precio=500;
-                }else{
-                    return precio=600;
-                }
+                    return 1;
 
-            }
         }
 
+        }
+        return 0;
 }
 int validacionPrecio(int id, int pago){
  ventas aux;
@@ -54,10 +51,20 @@ int validacionPrecio(int id, int pago){
  Salas reg;
  int importe;
  int pos=0;
+
  while (obj.leerEnDisco(pos++)==1)
  {
      if(obj.getidPelicula()==id){
         importe=obj.getPrecio();
+        if(pago==1){
+            importe=importe*0.95;
+        }else if(pago==2){
+            importe=importe*1.20;
+        }else{
+
+            importe=importe*1.05;
+        }
+
         return importe;
      }
  }
@@ -76,22 +83,38 @@ int NomDir(int id){
         }
 }
 
-int VentaAutonumerica(){
-ventas aux;
+int calcularVentas(int id){
+    ventas obj;
+    pelicula reg;
+    int ventas=0;
+    int pos=0;
+    int pos2=0;
+        while(reg.leerEnDisco(pos++)==1){
+
+            if(reg.getSala()==id){
+                    while(obj.leerEnDisco(pos2++)==1){
+                ventas+=obj.getCantEntradas();
+                    }
+            }
+
+
+
+        }
+
+    return ventas;
+
+}
+
+int autonumerico(){
+ventas obj;
 int pos=0;
-int autonumerico;
-while(aux.leerEnDisco(pos++)==1){
-    if(aux.getNventa>=0){
-        autonumerico=aux.getNventa()+1;
-        return autonumerico;
+int c=0;
+    while(obj.leerEnDisco(pos++)==1){
+       c++;
     }
-}
-if(contador>0){
-    autonumerico=aux.getNventa();
-}
+
+    return c;
 
 }
-
-
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED

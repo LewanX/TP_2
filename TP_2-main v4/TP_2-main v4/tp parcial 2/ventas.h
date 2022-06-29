@@ -25,6 +25,7 @@ class ventas
       int getNventa (){return Nventa;}
       int getCantEntradas (){return CantEntradas;}
       int getImporte (){return Importe;}
+      int getTotal (){return Total;}
       int getPago (){return Pago;}
       Fecha getFechaVenta () {return FechaVenta;}
       bool getEstado(){return estado;}
@@ -48,6 +49,8 @@ class ventas
 
       }
 
+
+
 void mostrarVentas()
 {
     FILE *p;
@@ -63,10 +66,18 @@ void mostrarVentas()
 
 void cargar(){
     estado=true;
-    cout<<"NUMERO DE VENTA : "<<endl;
-    VentaAutonumerica();
-    cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
+    Nventa=autonumerico()+1;
+    cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
+    cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;//falta validacion
     cin>>idPelicula;
+
+     cout<<"INGRESE CANTIDAD DE ENTRADAS : "<<endl;
+    cin>>CantEntradas;
+
+    cout<<endl;
+    cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
+    cin >>Pago;
+
     while(validacionPrecio(idPelicula, Pago)==0){
         cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
         system("pause");
@@ -74,42 +85,26 @@ void cargar(){
         cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
         cin>>idPelicula;
     }
-    cout<<"INGRESE CANTIDAD DE ENTRADAS : "<<endl;
-    cin>>CantEntradas;
-    for (int i=0; i<CantEntradas;i++)
-    {
-     cout<<"ELEGIR FILA: " << endl;
-     cin>> fila;
-     cout<<"ELEGIR ASIENTO: " << endl;
-     cin>> asiento;
- ///    aux.reservarAsiento(fila,asiento);
-    }
 
-    cout<<endl;
-    cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
-    cin >>Pago;
-    cout<<"EL IMPORTE ES DE: "<<endl;
-    Total=validacionPrecio(idPelicula, Pago)+Importe;
-    cout<< Total;
+    cout<<"EL IMPORTE ES DE: ";
+    Total=validacionPrecio(idPelicula, Pago);
+    Total=Total*CantEntradas;
+    cout<< Total<<endl;
+    FechaVenta.Cargar();
 }
 void mostrar()
 {
     cout<<"ID DE LA PELICULA: ";
     cout<<idPelicula<<endl;
-    cout<<"NUMERO DE VENTA: ";
-    cout<<Nventa<<endl;
+    cout<<"NUMERO DE VENTA: "<<Nventa<<endl;
     cout<<"CANTIDAD DE ENTRADAS: ";
     cout<<CantEntradas<<endl;
-    cout<<"FILA ELEGIDA: ";
-    cout<< fila<<endl;
-    cout<<"ASIENTO ELEGIDO: ";
-    cout<<asiento<<endl;
     cout<<"METODO DE PAGO: ";
     cout<<Pago<<endl;
     cout<<"IMPORTE: ";
     cout<< Total<<endl;
-
-cout <<" "<<endl<<endl;
+    FechaVenta.Mostrar();
+    cout <<" "<<endl<<endl;
 }
 
 };

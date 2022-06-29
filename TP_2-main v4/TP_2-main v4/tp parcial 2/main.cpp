@@ -40,6 +40,7 @@ int main(){
         system("cls");
         switch(opc){
             case 1: SubMenuVentas();
+
                     break;
             case 2: SubMenuDatos();
                     break;

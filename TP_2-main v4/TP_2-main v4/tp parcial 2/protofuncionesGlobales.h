@@ -10,5 +10,7 @@ int validacionPrecio(int id, int pago);
 
 int NomDir(int id);
 
-int VentaAutonumerica();
+int calcularVentas(int id);
+int autonumerico();
+//int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

@@ -61,19 +61,12 @@ void mostrarSalas()
 
 void cargar(){
     cout<<"INGRESE EL ID DE LA SALA: ";cin>>idSala;
-    cout<<"INGRESE EL TIPO DE SALA [ 1(NORMAL) , 2(4D) ]:";cin>>tipo;
     cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>plazas;
 }
 void  mostrar(){
     cout<<"ID SALA:"<<idSala<<endl;
-    cout<<"TIPO DE SALA:";
-        if(tipo==1){
-            cout<<"NORMAL";
-        }else{
-            cout<<"4D";
-        }
-        cout<<endl;
-        cout<<"CANTIDAD DE BUTACAS:"<<plazas<<endl;
+    plazas-=calcularVentas(idSala);
+    cout<<"CANTIDAD DE BUTACAS:"<<plazas<<endl;
 }
 /*
 void mostrarSalaCine()
