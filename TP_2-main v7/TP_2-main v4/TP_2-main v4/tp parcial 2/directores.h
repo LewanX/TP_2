@@ -1,0 +1,96 @@
+#ifndef DIRECTORES_H_INCLUDED
+#define DIRECTORES_H_INCLUDED
+
+class director
+{
+    private:
+      int idDirector;
+      char nombreDirector[30], Nacionalidad[20];
+      Fecha FechaNacimiento;
+       bool estado;
+    public:
+        ///sets()
+      void setidDirector (int idD){idDirector=idD;}
+      void setnombreDirector (const char *Nd){strcpy(nombreDirector,Nd);}
+      void setNacionalidad (const char *N){strcpy(Nacionalidad,N);}
+      void setFechaNacimiento(Fecha F) {FechaNacimiento=F;}
+      void setEstado(bool e){estado=e;}
+      ///gets()
+      int getidDirector (){return idDirector;}
+      const char *getnombreDirector (){return nombreDirector;}
+      const char *getNacionalidad (){return Nacionalidad;}
+      Fecha getFechaNacimiento () {return FechaNacimiento;}
+      bool getEstado(){return estado;}
+      ///disco
+      void mostrarDeDisco();
+      int grabarEnDisco();
+      int leerEnDisco(int);
+
+
+void cargar()
+{
+    fflush(stdin);
+    cout<<"INGRESAR EL ID DE DIRECTOR"<<endl;
+    cin >>idDirector;
+    while(validacionDir(idDirector)==1){
+        cout <<" TIENE ESE ID "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DEL DIRECTOR : " <<endl;
+        cin>>idDirector;
+    }
+    cout<<"INGRESAR EL NOMBRE DEL DIRECTOR " <<endl;
+    cin.getline(nombreDirector,30,'\n');
+    fflush(stdin);
+    cout<<"INGRESE LA NACIONALIDAD DEL DIRECTOR"<<endl;
+    cin.ignore();
+    cin.getline(Nacionalidad,20,'\n');
+    fflush(stdin);
+    cout<<"FECHA DE NACIMIENTO DEL DIRECTOR"<<endl;
+    FechaNacimiento.Cargar();
+}
+void mostrar()
+{
+    cout<<"ID: ";
+    cout<<idDirector<<endl;
+    cout<<"NOMBRE DEL DIRECTOR: ";
+    cout<<nombreDirector<<endl;
+    cout<<"NACIONALIDAD: ";
+    cout<<Nacionalidad<<endl;
+    cout<<"FECHA DE NACIMIENTO: ";
+    FechaNacimiento.Mostrar();
+}
+
+};
+
+
+
+///DISCO
+int director::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("director.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(director),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int director::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("director.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(director)*pos,0);
+    int leyo=fread(this,sizeof(director),1,p);
+    fclose(p);
+    return leyo;
+}
+void director::mostrarDeDisco(){
+    int pos=0;
+    while(leerEnDisco(pos++)==1){
+            mostrar();
+            cout<<endl;
+    }
+}
+#endif // DIRECTORES_H_INCLUDED
