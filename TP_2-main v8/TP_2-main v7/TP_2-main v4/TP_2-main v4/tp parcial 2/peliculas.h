@@ -89,6 +89,7 @@ void cargar()
         cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
         cin>>idPelicula;
     }
+    cin.ignore();
     cout<<"INGRESE EL NOMBRE DE LA PELICULA: " << endl;
     cin.getline(nombrePelicula,30,'\n');
     fflush(stdin);

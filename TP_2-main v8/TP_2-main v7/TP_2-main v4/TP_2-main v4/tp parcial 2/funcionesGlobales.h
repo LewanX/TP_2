@@ -177,11 +177,8 @@ int c=0;
 }
 int calcularPlazas(int id,int dia, int mes, int anio){
     ventas obj;
-    pelicula reg;
-    Salas aux;
-    int plazas=0;
     int canttotal=0;
-    int pos=0,pos2=0,pos3=0;
+    int pos=0;
     int diaIni,mesIni,anioIni;
         while(obj.leerEnDisco(pos++)==1){
                 if(obj.getidPelicula()==id){
@@ -197,6 +194,31 @@ int calcularPlazas(int id,int dia, int mes, int anio){
         }
 
     return canttotal;
+}
+int cantButacasSala(int id){
+    pelicula reg;
+    Salas aux;
+    int cantbutacas=0;
+        int pos=0;
+        int pos2=0;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==id){
+
+            while(aux.leerEnDisco(pos2++)==1){
+                if(aux.getidSala()==reg.getSala()){
+                    cantbutacas=aux.getPlazas();
+                    return cantbutacas;
+
+                }
+
+
+
+            }
+
+        }
+    }
+return 0;
+
 }
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED

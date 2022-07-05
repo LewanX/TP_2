@@ -7,9 +7,6 @@ private:
     int tipo;
     int c=1;
     int plazas;
-    int Butacas, fila;
-    int asientos[15][15]={0};
-    int asientosEspeciales[10][10]={0};
     bool estado;
 
 public:
@@ -17,15 +14,15 @@ public:
 
      void setidSala(int S){idSala=S;}
      void setTipo(int T){tipo=T;}
-     void setButacas(int B){Butacas=B;}
      void setEstado(bool e){estado=e;}
 
      ///gets()
 
      int getidSala(){return idSala;}
      int getTipo(){return tipo;}
-     int getButacas(){return Butacas;}
+     int getPlazas(){return plazas;}
      bool getEstado(){return estado;}
+
 
     ///disco
       void EliminarDeDisco();

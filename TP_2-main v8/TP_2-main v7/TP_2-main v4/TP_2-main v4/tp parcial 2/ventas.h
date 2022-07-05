@@ -5,7 +5,7 @@ class ventas
 {
     private:
 
-      int Nventa, CantEntradas, Importe=150, Pago,fila,asiento, idPelicula;
+      int butacastotal=0,butacasvendidas=0,butacassala=0,Nventa, CantEntradas, Importe=150, Pago,fila,asiento, idPelicula;
       fechaAct fecha;
       int Total;
        Salas aux;
@@ -95,9 +95,12 @@ void cargar(){
         cin>>idPelicula;
     }
 
-cout<<"cantidad entradas vendidas esa fecha:"<<calcularPlazas(idPelicula,diaAct,mesAct,anioAct);
+    butacassala=cantButacasSala(idPelicula);
+    butacasvendidas=calcularPlazas(idPelicula,diaAct,mesAct,anioAct);
+    butacastotal=butacassala-butacasvendidas;
+    cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
 
-     cout<<"INGRESE CANTIDAD DE ENTRADAS: "<<endl;
+     cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
     while(CantEntradas>10){
         cout <<" SE PUEDEN COMPRAR HASTA 10 ENTRADAS! "<< endl;
