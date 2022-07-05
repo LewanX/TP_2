@@ -72,6 +72,9 @@ void cargar(){
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
     cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;//falta validacion
     cin>>idPelicula;
+    fechaPelicula(idPelicula);
+
+
     fecha.Cargar();
     int diaAct=getFecha().getDia();
     int mesAct=getFecha().getMes();
@@ -80,7 +83,11 @@ void cargar(){
         cout <<"LA FECHA INGRESADA NO ES CORRECTA"<< endl;
         system("pause");
         system("cls");
+        fechaPelicula(idPelicula);
         fecha.Cargar();
+        diaAct=getFecha().getDia();
+        mesAct=getFecha().getMes();
+        anioAct=getFecha().getAnio();
     }
     while(validacionPrecio(idPelicula, Pago)==0){
         cout <<"EL ID INGRESADO NO EXISTE! "<< endl;

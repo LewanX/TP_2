@@ -117,54 +117,53 @@ int calcularVentas(int id){
     return ventas;
 
 }
-int validacionFecha(int id, int dia, int mes, int anio)
-{
+void fechaPelicula(int id){
     pelicula reg;
-        int pos=0, diaIni,mesIni,anioIni;
+    int pos=0;
         int diaFin,mesFin,anioFin;
-        int diaAct, mesAct,anioAct;
-        while(reg.leerEnDisco(pos++)==1){
-            if(reg.getidPelicula()==id){
+        int diaIni,mesIni,anioIni;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==id){
+                cout<<"ELIJA UNA FECHA  VALIDA "<<endl;
                     diaIni=reg.getFechaIni().getDia();
                     mesIni=reg.getFechaIni().getMes();
                     anioIni=reg.getFechaIni().getAnio();
+
                     diaFin=reg.getFechaFin().getDia();
                     mesFin=reg.getFechaFin().getMes();
                     anioFin=reg.getFechaFin().getAnio();
-                    cout<<diaIni<<"/"<<mesIni<<"/"<<anioIni<<endl;
-                    cout<<diaFin<<"/"<<mesFin<<"/"<<anioFin<<endl;
-                    cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
-            }
+
+                    cout<<"INICIO DE PROYECION:"<<diaIni<<"/"<<mesIni<<"/"<<anioIni<<endl;
+                    cout<<"FINAL DE PROYECION :"<<diaFin<<"/"<<mesFin<<"/"<<anioFin<<endl;
+
+
         }
-        if(anio>=anioIni && anio<=anioFin)
-                    {
-                        cout<<"Anio correcto";
-                        if(mes>=mesIni&&mes<=mesFin)
-                        {
-                            cout<<"Mes correcto";
-                            if(dia>=diaIni&&dia<=diaFin || dia>=diaIni&&dia>=diaFin )
-                            {
-                                cout<<"dia correcto";
-                                return 1;
-                            }
-                            else
-                        {
-                         return 0;
-                        }
-                        }
-                        else
-                     {
-                         return 0;
-                     }
-                    }
-                    else
-                    {
-                         return 0;
-                    }
+    }
+}
+int validacionFecha(int id, int dia, int mes, int anio)
+{
+    pelicula reg;
+        int pos=0, fechaIni, fechaFin, fechaActual;
+        while(reg.leerEnDisco(pos++)==1){
+            if(reg.getidPelicula()==id){
+                    fechaIni=(reg.getFechaIni().getAnio()*10000)+(reg.getFechaIni().getMes()*100)+reg.getFechaIni().getDia();
+                    fechaFin=(reg.getFechaFin().getAnio()*10000)+(reg.getFechaFin().getMes()*100)+reg.getFechaFin().getDia();
+                    fechaActual=(anio*10000)+(mes*100)+dia;
+                    if(fechaActual>=fechaIni && fechaActual<=fechaFin)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+            }
+
+        }
+
 
 
 }
-
 int autonumerico(){
 ventas obj;
 int pos=0;

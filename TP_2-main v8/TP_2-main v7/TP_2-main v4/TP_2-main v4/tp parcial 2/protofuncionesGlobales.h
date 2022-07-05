@@ -13,5 +13,6 @@ int NomDir(int id);
 int calcularVentas(int id);
 int validacionFecha(int id, int dia, int mes, int anio);
 int autonumerico();
+void fechaPelicula(int id);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

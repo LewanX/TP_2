@@ -245,3 +245,48 @@
 
 1656966222 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
 
+1656966683 source:c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+
+1657045134 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1657045900 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1657048162 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
