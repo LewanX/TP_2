@@ -73,8 +73,6 @@ void cargar(){
     cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;//falta validacion
     cin>>idPelicula;
     fechaPelicula(idPelicula);
-
-
     fecha.Cargar();
     int diaAct=getFecha().getDia();
     int mesAct=getFecha().getMes();
@@ -96,6 +94,9 @@ void cargar(){
         cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
         cin>>idPelicula;
     }
+
+cout<<"cantidad entradas vendidas esa fecha:"<<calcularPlazas(idPelicula,diaAct,mesAct,anioAct);
+
      cout<<"INGRESE CANTIDAD DE ENTRADAS: "<<endl;
     cin>>CantEntradas;
     while(CantEntradas>10){

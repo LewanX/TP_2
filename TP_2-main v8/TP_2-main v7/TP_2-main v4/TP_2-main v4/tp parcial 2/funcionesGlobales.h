@@ -175,5 +175,28 @@ int c=0;
     return c;
 
 }
+int calcularPlazas(int id,int dia, int mes, int anio){
+    ventas obj;
+    pelicula reg;
+    Salas aux;
+    int plazas=0;
+    int canttotal=0;
+    int pos=0,pos2=0,pos3=0;
+    int diaIni,mesIni,anioIni;
+        while(obj.leerEnDisco(pos++)==1){
+                if(obj.getidPelicula()==id){
+                    diaIni=obj.getFecha().getDia();
+                    mesIni=obj.getFecha().getMes();
+                    anioIni=obj.getFecha().getAnio();
+                    if(anio==anioIni&&mes==mesIni&&dia==diaIni){
+                        canttotal+=obj.getCantEntradas();
+                    }
+
+                }
+
+        }
+
+    return canttotal;
+}
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED
