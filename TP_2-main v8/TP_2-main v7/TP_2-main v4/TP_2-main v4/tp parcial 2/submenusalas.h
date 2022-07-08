@@ -21,10 +21,12 @@ void SubMenuSalas(){
             case 1:
                 aux.cargar();
                 if(aux.grabarEnDisco()==1){cout<<"REGISTRO AGREAGADO! "<<endl;}else{cout<<"ERROR AL GRABAR! "<<endl;}
+                system("pause");
             break;
 
             case 2:
                 aux.mostrarDeDisco();
+                system("pause");
             break;
             case 0: return ;
                     break;
@@ -32,7 +34,7 @@ void SubMenuSalas(){
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return ;

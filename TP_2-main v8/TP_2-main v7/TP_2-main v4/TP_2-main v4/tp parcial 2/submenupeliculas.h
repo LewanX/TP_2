@@ -23,20 +23,23 @@ void SubMenuPeliculas(){
             case 1://AGREGAR PELICULA
                 reg.cargar();
                 if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO! ";}else{"ERROR AL GRABAR! ";}
+                system("pause");
             break;
 
             case 2://MOSTRAR PELICULAS
                 reg.mostrarPeliculas();
+                system("pause");
             break;
             case 3: //ELIMINAR PELICULA
                 reg.EliminarDeDisco();
+                system("pause");
             case 0: return ;
                     break;
             default: cout<<"OPCION INCORRECTA! "<<endl;
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return ;

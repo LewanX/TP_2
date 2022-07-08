@@ -117,7 +117,10 @@ void cargar(){
     Total=Total*CantEntradas;
     cout<< Total<<endl;
 
+
 }
+
+
 void mostrar()
 {
     if(estado==true)

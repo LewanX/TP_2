@@ -20,9 +20,11 @@ void SubMenuDirector(){
             case 1:
                 reg.cargar();
                 if(reg.grabarEnDisco()==1){cout<<"\nREGISTRO AGREGADO"<<endl;}else{cout<<"\nERROR AL GRABAR"<<endl;}
+                system("pause");
             break;
             case 2:
                 reg.mostrarDeDisco();
+                system("pause");
             break;
             case 0:
             return ;
@@ -31,7 +33,7 @@ void SubMenuDirector(){
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return ;

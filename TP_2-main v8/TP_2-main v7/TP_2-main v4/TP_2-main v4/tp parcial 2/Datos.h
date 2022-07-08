@@ -7,7 +7,12 @@ private:
     int recaudacionTotal=0;
     int recaudacionTotalCine=0;
     int idRecaudado;
+    int idtaquillera;
+    int totalRecaudado=0, totalpeliculataquillera=0;
+    float sumaRecaudacion=0;
+
     ventas reg;
+    pelicula aux;
 public:
     ///sets
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
@@ -23,7 +28,6 @@ public:
 float calcularRecaudacion (int id)
 {
     int pos=0;
-    float sumaRecaudacion=0;
     while (reg.leerEnDisco(pos++))
     {
         if(reg.getidPelicula()==id)
@@ -33,23 +37,18 @@ float calcularRecaudacion (int id)
         return(float)sumaRecaudacion;
     }
 }
-float mayorVenta(float v){
 
-
-
-}
 void peliculaMasTaquillera()
-{   float mayor=0;
+{   float mayor;
     int pos=0;
-    while(reg.leerEnDisco(pos++))
+    while(reg.leerEnDisco(pos++)==1)
     {
-        setRecaudacionTotal(calcularRecaudacion(reg.getidPelicula()));
-        setIdRecaudado(reg.getidPelicula());
-
+        mayor+=reg.getTotal();
+        idtaquillera=reg.getidPelicula();
     }
 
-    cout<<"La Pelicula mas Taquillera es la: "<<getIdRecaudado()<<endl;
-    cout<<"Con una recaudacion total de: "<<getRecaudacionTotal()<<endl;
+    cout<<"La Pelicula mas Taquillera es la: "<<idtaquillera<<endl;
+    cout<<"Con una recaudacion total de: "<<mayor<<endl;
 }
 
 int calcularPosMaximo(int *meses, int tam)
@@ -68,37 +67,38 @@ int calcularMayor(int *meses, int tam)
     for(i=1;i<tam;i++)
     {
         if(meses[i]>mayor)
-            mayor=i;
+            mayor=meses[i];
     }
     return mayor;
 }
-/*
+
 void peliculaMasTaquilleraEnUnMes()
 {
     int pos=0;
     int meses[12]={0};
     int PeliculaMes;
-    while(reg.leerEnDisco(pos++))
+    while(reg.leerEnDisco(pos++)==1)
     {
-        meses[reg.getFechaVenta().getMes()-1]+=reg.getImporte();
+        meses[reg.getFecha().getMes()-1]+=reg.getTotal();
         PeliculaMes=reg.getidPelicula();
 
     }
     int mesMax=calcularPosMaximo(meses,12);
     int recaudacionMax=calcularMayor(meses,12);
     cout<<"LA PELICULA MAS TAQUILLERA: " <<PeliculaMes<<endl;
-    cout<<"EN EL MES: " <<mesMax<<endl;
+    cout<<"EN EL MES: " <<mesMax+1<<endl;
     cout<<"CON UNA RECAUDACION DE: "<<recaudacionMax<<endl;
 }
-*/
+
 void RecaudacionCine()
 {
     int pos=0;
-    while(reg.leerEnDisco(pos++))
+    while(reg.leerEnDisco(pos++)==1)
     {
-        setRecaudacionTotalCine(reg.getImporte());
+        setRecaudacionTotalCine(reg.getTotal());
+        totalRecaudado+=getRecaudacionTotalCine();
     }
-    cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<getRecaudacionTotalCine()<<endl;
+    cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<totalRecaudado<<endl;
 }
 };
 #endif // DATOS_H_INCLUDED

@@ -28,11 +28,14 @@ void SubMenuVentas(){
             {
                 cout <<"ERROR AL AGREGAR REGISTRO! "<<endl;
             }
+            system("pause");
                     break;
             case 2: lol.mostrarVentas();
+                system("pause");
                     break;
             case 3:
                 lol.EliminarDeDisco();
+                system("pause");
             case 0: return;
                     break;
 
@@ -41,7 +44,7 @@ void SubMenuVentas(){
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return ;

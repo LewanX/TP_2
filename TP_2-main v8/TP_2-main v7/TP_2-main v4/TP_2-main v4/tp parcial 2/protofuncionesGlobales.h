@@ -16,5 +16,6 @@ int autonumerico();
 void fechaPelicula(int id);
 int calcularPlazas(int id, int dia, int mes, int anio);
 int cantButacasSala(int id);
+
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

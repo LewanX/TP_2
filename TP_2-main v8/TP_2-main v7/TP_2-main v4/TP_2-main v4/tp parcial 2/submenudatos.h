@@ -21,20 +21,24 @@ void SubMenuDatos(){
         system("cls");
         switch(opc){
             case 1: reg.peliculaMasTaquillera();
+            system("pause");
                     break;
-            case 2: /*reg.peliculaMasTaquilleraEnUnMes();*/
+            case 2: reg.peliculaMasTaquilleraEnUnMes();
+                system("pause");
                     break;
             case 3:
+                system("pause");
                     break;
-            case 4: reg.RecaudacionCine();
-
+            case 4: reg.RecaudacionCine(); ///funca
+                    system("pause");
+                    break;
             case 0: return ;
                     break;
             default: cout<<"OPCION INCORRECTA! "<<endl;
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return ;

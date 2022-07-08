@@ -58,7 +58,7 @@ int main(){
                     break;
         }
         cout <<endl;
-        system("pause");
+
     }
 
     return 0;
