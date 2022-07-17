@@ -38,19 +38,49 @@ float calcularRecaudacion (int id)
     }
 }
 
-void peliculaMasTaquillera()
-{   float mayor;
+int IDmastaquillero(int ID){
+    ventas reg;
     int pos=0;
+    int acumImporte=0;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==ID){
+            acumImporte+=reg.getTotal();
+
+        }
+    }
+    return acumImporte;
+}
+
+void peliculaMasTaquillera()
+{
+    int pos=0;
+    ventas reg;
+    pelicula aux;
+    director lol;
     while(reg.leerEnDisco(pos++)==1)
     {
-        mayor+=reg.getTotal();
+        recaudacionTotal=IDmastaquillero(reg.getidPelicula());
         idtaquillera=reg.getidPelicula();
     }
 
     cout<<"La Pelicula mas Taquillera es la: "<<idtaquillera<<endl;
-    cout<<"Con una recaudacion total de: "<<mayor<<endl;
+    cout<<"Con una recaudacion total de: "<<recaudacionTotal<<endl;
 }
-
+/*
+int IDdirectortaquillero(int ID){
+    ventas reg;
+    director lol;
+    int pos=0;
+    int hola;
+    const char idnombre[30];
+    while(lol.leerEnDisco(pos++)==1){
+        hola=peliculaMasTaquillera(lol.getidDirector());
+        if(hola==1){
+            strcpy(idnombre,lol.getnombreDirector());
+            cout <<"EL DIRECTOR MAS TAQUILLERO ES: "<<idnombre<<endl;
+        }
+}
+*/
 int calcularPosMaximo(int *meses, int tam)
 {
     int i,posMax=0;
