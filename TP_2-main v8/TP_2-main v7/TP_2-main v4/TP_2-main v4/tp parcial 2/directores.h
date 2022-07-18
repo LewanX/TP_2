@@ -42,11 +42,12 @@ void cargar()
         cout<<"INGRESE EL ID DEL DIRECTOR : " <<endl;
         cin>>idDirector;
     }
+    cin.ignore();
     cout<<"INGRESAR EL NOMBRE DEL DIRECTOR " <<endl;
     cin.getline(nombreDirector,30,'\n');
     fflush(stdin);
     cout<<"INGRESE LA NACIONALIDAD DEL DIRECTOR"<<endl;
-    cin.ignore();
+
     cin.getline(Nacionalidad,20,'\n');
     fflush(stdin);
     cout<<"FECHA DE NACIMIENTO DEL DIRECTOR"<<endl;
@@ -65,7 +66,20 @@ void mostrar()
     cout<<"FECHA DE NACIMIENTO: ";
     FechaNacimiento.Mostrar();
     }
+    cout<< endl;
 
+}
+
+void mostrardirectores()
+{
+    FILE *p;
+    p=fopen("director.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (director),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
 }
 
 };
@@ -120,11 +134,5 @@ int director::leerEnDisco(int pos)
     fclose(p);
     return leyo;
 }
-void director::mostrarDeDisco(){
-    int pos=0;
-    while(leerEnDisco(pos++)==1){
-            mostrar();
-            cout<<endl;
-    }
-}
+
 #endif // DIRECTORES_H_INCLUDED

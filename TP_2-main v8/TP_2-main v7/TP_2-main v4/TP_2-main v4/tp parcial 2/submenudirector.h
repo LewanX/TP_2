@@ -7,7 +7,7 @@ void SubMenuDirector(){
     director reg;
     while(true){
         system("cls");
-        cout<<"MENU PDIRECTORES : "<<endl;
+        cout<<"MENU DIRECTORES : "<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"1) AGREGAR DIRECTOR"<<endl;
         cout<<"2) MOSTRAR DIRECTORES "<<endl;
@@ -23,7 +23,7 @@ void SubMenuDirector(){
                 system("pause");
             break;
             case 2:
-                reg.mostrarDeDisco();
+                reg.mostrardirectores();
                 system("pause");
             break;
             case 0:

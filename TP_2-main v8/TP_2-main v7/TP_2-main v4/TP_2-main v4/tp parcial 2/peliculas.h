@@ -95,7 +95,6 @@ void cargar()
     fflush(stdin);
 
     cout <<"INGRESE EL GENERO: "<<endl;
-    cin.ignore();
     cin.getline(genero,20,'\n');
     fflush(stdin);
 
