@@ -28,21 +28,19 @@ int main(){
     director obj;
     ventas lol;
     while(true){
-
-    //system("mode con: cols=79"); //SE DEFINE LAS DIMENSIONES DE LA VENTANA DEL PROGRAMA A 80 COLUMNAS Y 25 FILAS
     system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
-    dibujarCuadro(0,0,78,24); //SE DIBUJA EL CUADRO PRINCIPAL
-    dibujarCuadro(1,1,77,3); //SE DIBUJA EL CUADRO DEL TITULO
+    dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+    dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
 
-        gotoxy(30,2); printf("MENU PRINCIPAL "); //// 10 puntos
-        gotoxy(25,8);cout<<"1) MENU DIRECTORES "<<endl;
-        gotoxy(25,9);cout<<"2) MENU SALAS "<<endl;
-        gotoxy(25,10);cout<<"3) MENU PELICULAS"<<endl;
-        gotoxy(25,11);cout<<"4) MENU VENTAS ENTRADAS"<<endl;
-        gotoxy(25,12);cout<<"5) MENU DATOS"<<endl;
-        gotoxy(25,13);cout<<"-----------------------------"<<endl;
-        gotoxy(25,14);cout<<"0) FIN DEL PROGRAMA "<<endl;
-        gotoxy(25,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(51,2); printf("MENU PRINCIPAL "); //// 10 puntos
+        gotoxy(45,8);cout<<"1) MENU DIRECTORES "<<endl;
+        gotoxy(45,9);cout<<"2) MENU SALAS "<<endl;
+        gotoxy(45,10);cout<<"3) MENU PELICULAS"<<endl;
+        gotoxy(45,11);cout<<"4) MENU VENTAS ENTRADAS"<<endl;
+        gotoxy(45,12);cout<<"5) MENU DATOS"<<endl;
+        gotoxy(45,13);cout<<"-----------------------------"<<endl;
+        gotoxy(45,14);cout<<"0) FIN DEL PROGRAMA "<<endl;
+        gotoxy(45,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){

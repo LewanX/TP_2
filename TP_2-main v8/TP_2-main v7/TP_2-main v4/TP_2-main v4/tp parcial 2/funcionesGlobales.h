@@ -23,7 +23,7 @@ int validacionIDpelicula(int id)
         int pos=0;
         while(reg.leerEnDisco(pos++)==1){
             if(reg.getidPelicula()==id){
-                    cout<<"ID PELICULA: "<<reg.getidPelicula();
+
                      return 1;
 
             }
@@ -34,7 +34,7 @@ int validacionDir(int id){
     director aux;
         int pos=0;
         while(aux.leerEnDisco(pos++)==1){
-            if(aux.getidDirector()==id){
+            if(aux.getidDirector()==id&&aux.getEstado()==true){
                     cout<<"DIRECTOR:"<<aux.getnombreDirector();
                      return 1;
 

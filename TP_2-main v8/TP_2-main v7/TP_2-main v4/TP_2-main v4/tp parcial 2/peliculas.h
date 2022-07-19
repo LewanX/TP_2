@@ -83,7 +83,7 @@ void cargar()
     cout<<"INGRESE ID: "<<endl;
     cin>> idPelicula;
     while(validacionIDpelicula(idPelicula)==1){
-        cout <<"EL ID INGRESADO YA EXISTE! "<< endl;
+        cout <<"\n EL ID INGRESADO YA EXISTE! "<< endl;
         system("pause");
         system("cls");
         cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
@@ -111,8 +111,12 @@ void cargar()
 
     cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
     cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del directos
-    if(validacionDir(idDirector)==0){
+    while(validacionDir(idDirector)==0){
         cout<<"ESTE DIRECTOR NO SE ENCUENTRA EN LOS REGISTROS"<<endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
+        cin>>idDirector;
     }
     cout<<endl;
 

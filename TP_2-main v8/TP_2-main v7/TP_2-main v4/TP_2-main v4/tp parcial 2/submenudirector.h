@@ -10,22 +10,22 @@ void SubMenuDirector(){
         system("cls");
 
          system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
-        dibujarCuadro(0,0,78,24); //SE DIBUJA EL CUADRO PRINCIPAL
-        dibujarCuadro(1,1,77,3); //SE DIBUJA EL CUADRO DEL TITULO
+    dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+    dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
 
 
 
-        gotoxy(30,2);cout<<"MENU DIRECTORES ";
+        gotoxy(51,2);cout<<"MENU DIRECTORES ";
 
-        gotoxy(25,8);cout<<"1) AGREGAR DIRECTOR";
-        gotoxy(25,9);cout<<"2) MOSTRAR DIRECTORES ";
+        gotoxy(45,8);cout<<"1) AGREGAR DIRECTOR";
+        gotoxy(45,9);cout<<"2) MOSTRAR DIRECTORES ";
 
-        gotoxy(25,10);cout<<"3) ELIMINAR DIRECTOR";
+        gotoxy(45,10);cout<<"3) ELIMINAR DIRECTOR";
 
 
-        gotoxy(25,11);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(25,12);cout<<"--------------------------------------";
-        gotoxy(25,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,11);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,12);cout<<"--------------------------------------";
+        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
