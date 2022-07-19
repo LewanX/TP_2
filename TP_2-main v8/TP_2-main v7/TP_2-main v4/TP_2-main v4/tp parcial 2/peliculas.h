@@ -133,7 +133,7 @@ void cargar()
         cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
         cin>>sala;
     }
-    if(strcmp(formato,"3D")==0){
+    if(strcmp(formato,"3D")==0 && strcmp(formato,"3d")==0){
         precio+=100;
     }
     cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;

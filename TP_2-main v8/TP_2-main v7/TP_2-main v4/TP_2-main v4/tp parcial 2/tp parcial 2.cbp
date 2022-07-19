@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="Datos.h" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="decorado.h" />
 		<Unit filename="directores.h" />
 		<Unit filename="funcionesGlobales.h" />
 		<Unit filename="main.cpp" />

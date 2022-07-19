@@ -3,17 +3,29 @@
 void SubMenuDirector();
 
 void SubMenuDirector(){
+
     int opc;
     director reg;
     while(true){
         system("cls");
-        cout<<"MENU DIRECTORES : "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"1) AGREGAR DIRECTOR"<<endl;
-        cout<<"2) MOSTRAR DIRECTORES "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
-        cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+
+         system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+        dibujarCuadro(0,0,78,24); //SE DIBUJA EL CUADRO PRINCIPAL
+        dibujarCuadro(1,1,77,3); //SE DIBUJA EL CUADRO DEL TITULO
+
+
+
+        gotoxy(30,2);cout<<"MENU DIRECTORES ";
+
+        gotoxy(25,8);cout<<"1) AGREGAR DIRECTOR";
+        gotoxy(25,9);cout<<"2) MOSTRAR DIRECTORES ";
+
+        gotoxy(25,10);cout<<"3) ELIMINAR DIRECTOR";
+
+
+        gotoxy(25,11);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(25,12);cout<<"--------------------------------------";
+        gotoxy(25,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -26,6 +38,9 @@ void SubMenuDirector(){
                 reg.mostrardirectores();
                 system("pause");
             break;
+            case 3:
+                reg.EliminarDeDisco();
+                system("pause");
             case 0:
             return ;
             break;

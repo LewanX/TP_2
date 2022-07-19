@@ -8,25 +8,56 @@ private:
     int recaudacionTotalCine=0;
     int idRecaudado;
     int idtaquillera;
-    int totalRecaudado=0, totalpeliculataquillera=0;
-    float sumaRecaudacion=0;
+    int totalpeliculataquillera=0;
+
 
     ventas reg;
     pelicula aux;
+    director obj;
 public:
     ///sets
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
     void setIdRecaudado(int idR){idRecaudado=idR;}
     void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
 
+
     ///gets
 
     int getRecaudacionTotal(){return recaudacionTotal;}
     int getIdRecaudado(){return idRecaudado;}
     int getRecaudacionTotalCine(){return recaudacionTotalCine;}
+    void cantrecaudir(int id){
+
+    }
+    float recdir(int id){
+    int pos=0;
+    float canttotal=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getidDirector()==id){
+                    canttotal+=calcularRecaudacion(aux.getidPelicula());
+                }
+
+            }
+            return canttotal;
+
+    }
+    void recaudaciondirector(){
+            int pos=0;
+            int totaldir=0;
+        while(obj.leerEnDisco(pos++)==1){
+                if(obj.getEstado()==true){
+                    cout<<"EL DIRECTOR "<<obj.getnombreDirector()<<" RECAUDO UN TOTAL DE "<<recdir(obj.getidDirector())<<" PESOS"<<endl<<endl;
+                }
+
+
+
+        }
+
+    }
 
 float calcularRecaudacion (int id)
 {
+    float sumaRecaudacion=0;
     int pos=0;
     while (reg.leerEnDisco(pos++))
     {
@@ -34,8 +65,9 @@ float calcularRecaudacion (int id)
         {
             sumaRecaudacion+=reg.getTotal();
         }
-        return(float)sumaRecaudacion;
+
     }
+    return(float)sumaRecaudacion;
 }
 
 int IDmastaquillero(int ID){
@@ -122,6 +154,7 @@ void peliculaMasTaquilleraEnUnMes()
 
 void RecaudacionCine()
 {
+    int totalRecaudado=0;
     int pos=0;
     while(reg.leerEnDisco(pos++)==1)
     {
@@ -131,4 +164,8 @@ void RecaudacionCine()
     cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<totalRecaudado<<endl;
 }
 };
+
+
+
+
 #endif // DATOS_H_INCLUDED

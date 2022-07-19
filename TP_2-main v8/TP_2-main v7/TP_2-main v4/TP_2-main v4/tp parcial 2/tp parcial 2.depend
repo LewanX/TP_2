@@ -245,11 +245,13 @@
 
 1656966222 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
 
-1656966683 source:c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+1658264568 source:c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
 	<iostream>
 	<cstdio>
 	<string.h>
 	<cstring>
+	<windows.h>
+	"decorado.h"
 	"protofuncionesGlobales.h"
 	"Fecha.h"
 	"directores.h"
@@ -264,31 +266,31 @@
 	"submenuventas.h"
 	"funcionesGlobales.h"
 
-1657053590 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
 
 1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
 
-1657054513 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
 
-1657054599 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+1658264352 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
 
-1657054811 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+1658264352 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+1658263251 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+1658262057 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+1658263200 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
 
-1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
 
-1657054500 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+1658259332 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
 
 1658173286 source:c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
 	<iostream>
@@ -334,4 +336,6 @@
 1658173286 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
 
 1657311158 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1658262386 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\decorado.h
 

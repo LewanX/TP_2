@@ -99,7 +99,13 @@ void cargar(){
     butacasvendidas=calcularPlazas(idPelicula,diaAct,mesAct,anioAct);
     butacastotal=butacassala-butacasvendidas;
     cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
+    if(butacastotal<=0){
+        cout<<"LA SALA YA SE ENCUENTRA COMPLETA"<<endl;
+        system("pause");
+        system("cls");
+        return cargar();
 
+    }
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
     while(CantEntradas>10){
@@ -108,6 +114,16 @@ void cargar(){
         system("cls");
         cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
         cin>>CantEntradas;
+    }
+    while(CantEntradas>butacastotal){
+         cout <<"NO HAY SUFICIENTES BUTACAS!"<< endl;
+        cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
+        cin>>CantEntradas;
+
+
     }
     cout<<endl;
     cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;

@@ -4,6 +4,7 @@
 #include <cstring>
 #include <windows.h>
 using namespace std;
+#include "decorado.h"
 #include "protofuncionesGlobales.h"
 #include "Fecha.h"
 #include "directores.h"
@@ -19,34 +20,7 @@ using namespace std;
 #include "funcionesGlobales.h"
 
 
-void gotoxy(int x, int y){
-     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    COORD poss;
-    poss.X = x;
-    poss.Y = y;
 
-    SetConsoleCursorPosition(handle,poss);
-
-}
-//FUNCION QUE DIBUJA EL CUADRO
-void dibujarCuadro(int x1,int y1,int x2,int y2){
-    int i;
-
-    for (i=x1;i<x2;i++){
-        gotoxy(i,y1); cout << "\304"; //linea horizontal superior
-        gotoxy(i,y2); cout << "\304"; //linea horizontal inferior
-    }
-
-    for (i=y1;i<y2;i++){
-        gotoxy(x1,i); cout <<"\263"; //linea vertical izquierda
-        gotoxy(x2,i); cout <<"\263"; //linea vertical derecha
-    }
-
-    gotoxy(x1,y1); cout<< "\332";
-    gotoxy(x1,y2); cout<< "\300";
-    gotoxy(x2,y1); cout<< "\277";
-    gotoxy(x2,y2); cout<< "\331";
-}
 
 
 int main(){
@@ -55,7 +29,7 @@ int main(){
     ventas lol;
     while(true){
 
-    system("mode con: cols=80 lines=30"); //SE DEFINE LAS DIMENSIONES DE LA VENTANA DEL PROGRAMA A 80 COLUMNAS Y 25 FILAS
+    //system("mode con: cols=79"); //SE DEFINE LAS DIMENSIONES DE LA VENTANA DEL PROGRAMA A 80 COLUMNAS Y 25 FILAS
     system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
     dibujarCuadro(0,0,78,24); //SE DIBUJA EL CUADRO PRINCIPAL
     dibujarCuadro(1,1,77,3); //SE DIBUJA EL CUADRO DEL TITULO

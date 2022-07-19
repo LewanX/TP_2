@@ -12,7 +12,7 @@ void SubMenuDatos(){
         cout<<"-----------------------------"<<endl;
         cout<<"1) MOSTRAR PELICULA MAS TAQUILLERA "<<endl;
         cout<<"2) MOSTRAR PELICULA MAS TAQUILLERA EN EL MES "<<endl;
-        cout<<"3) MOSTRAR DIRECTOR DE LA PELICULA MAS TAQUILLERA "<<endl;
+        cout<<"3) MOSTRAR RECAUDACION POR CADA DIRECTOR"<<endl;//preferible mostrar recaudaciones por director
         cout<<"4) RECAUDACION TOTAL DEL CINE TEEMOPOLIS "<<endl;
         cout<<"-----------------------------"<<endl;
         cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
@@ -27,6 +27,7 @@ void SubMenuDatos(){
                 system("pause");
                     break;
             case 3:
+                reg.recaudaciondirector();
                 system("pause");
                     break;
             case 4: reg.RecaudacionCine(); ///funca

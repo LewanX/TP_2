@@ -222,4 +222,5 @@ return 0;
 }
 
 
+
 #endif // FUNCIONESGLOBALES_H_INCLUDED
