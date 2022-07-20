@@ -7,14 +7,20 @@ void SubMenuSalas(){
     int opc;
     Salas aux;
     while(true){
+
+
         system("cls");
-        cout<<"MENU SALAS: "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"1) AGREGAR SALA "<<endl;
-        cout<<"2) MOSTRAR SALAS "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
-        cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+            system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+            gotoxy(51,2);cout<<"MENU SALAS: ";
+
+        gotoxy(45,8);cout<<"1) AGREGAR SALA "<<endl;
+        gotoxy(45,9);cout<<"2) MOSTRAR SALAS "<<endl;
+        gotoxy(45,10);cout<<"3) ELIMINAR SALA "<<endl;
+        gotoxy(45,11);cout<<"-----------------------------"<<endl;
+        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -26,6 +32,10 @@ void SubMenuSalas(){
 
             case 2:
                 aux.mostrarDeDisco();
+                system("pause");
+            break;
+            case 3:
+                aux.EliminarDeDisco();
                 system("pause");
             break;
             case 0: return ;

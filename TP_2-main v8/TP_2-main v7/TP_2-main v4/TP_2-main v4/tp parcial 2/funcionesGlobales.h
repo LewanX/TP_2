@@ -47,7 +47,6 @@ int validacionDir(int id){
 int validacionSala(int id){
     Salas aux;
     int pos=0;
-    int precio=0;
         while(aux.leerEnDisco(pos++)==1)
         {
             if(aux.getidSala()==id){
@@ -94,6 +93,7 @@ int NomDir(int id){
 
             }
         }
+        return 0;
 }
 
 int calcularVentas(int id){
@@ -162,7 +162,7 @@ int validacionFecha(int id, int dia, int mes, int anio)
         }
 
 
-
+return -1;
 }
 int autonumerico(){
 ventas obj;

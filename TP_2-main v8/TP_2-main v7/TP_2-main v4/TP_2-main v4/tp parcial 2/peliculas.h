@@ -122,14 +122,8 @@ void cargar()
 
     cout<<"INGRESAR LA EMISION INICIAL DE LA PELICULA:"<<endl;
     fechaIni.Cargar();
-    int diaIni=getFechaIni().getDia();
-    int mesIni=getFechaIni().getMes();
-    int anioIni=getFechaIni().getAnio();
     cout<<"INGRESAR LA EMISION FINAL DE LA PELICULA:"<<endl;
     fin.Cargar();
-    int diaFin=getFechaFin().getDia();
-    int mesFin=getFechaFin().getMes();
-    int anioFin=getFechaFin().getAnio();
     cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
     cin>>sala;
     while(validacionSala(sala)==0){
@@ -137,7 +131,7 @@ void cargar()
         cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
         cin>>sala;
     }
-    if(strcmp(formato,"3D")==0 && strcmp(formato,"3d")==0){
+    if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
         precio+=100;
     }
     cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;

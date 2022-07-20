@@ -9,27 +9,135 @@ private:
     int idRecaudado;
     int idtaquillera;
     int totalpeliculataquillera=0;
-
+    float recaudacionporpelicula=0;
+    char nombrePelicula[30];
+    char nombreDirector[30];
 
     ventas reg;
     pelicula aux;
     director obj;
 public:
     ///sets
+    void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
+    void setRecaudacionporpelicula(int rt){recaudacionporpelicula=rt;}
     void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
     void setIdRecaudado(int idR){idRecaudado=idR;}
     void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
-
+    void setNombreDirector (const char *Nd){strcpy(nombreDirector,Nd);}
 
     ///gets
-
+    float getrecaudacionporpelicula(){return recaudacionporpelicula;}
     int getRecaudacionTotal(){return recaudacionTotal;}
     int getIdRecaudado(){return idRecaudado;}
     int getRecaudacionTotalCine(){return recaudacionTotalCine;}
-    void cantrecaudir(int id){
+    const char *getnombreDirector (){return nombreDirector;}
+    ///funciones
+
+
+
+
+    void Mostrar(){
+        cout<<nombrePelicula<<endl;
+        cout<<recaudacionporpelicula<<endl;
 
     }
-    float recdir(int id){
+    void MostrarDirector(){
+         cout<<nombreDirector<<endl;
+        cout<<recaudacionporpelicula<<endl;
+    }
+    //////////////////////////////PUNTO 1///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+float recpeli(int id){
+    int pos=0;
+    float canttotal=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getidPelicula()==id){
+                    canttotal+=calcularRecaudacion(aux.getidPelicula());
+                }
+
+            }
+            return canttotal;
+
+    }
+   void recaudacionpeliculas(){
+
+
+            int pos=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getEstado()==true){
+                    cout<<aux.getNombrePelicula()<<" RECAUDO UN TOTAL DE "<<recpeli(aux.getidPelicula())<<" PESOS"<<endl<<endl;
+                }
+
+
+
+        }
+
+    }
+
+//////////////////////////////PUNTO 2///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+int IDmastaquillero(int ID){
+    ventas reg;
+    int pos=0;
+    int acumImporte=0;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==ID){
+            acumImporte+=reg.getTotal();
+
+        }
+    }
+    return acumImporte;
+}
+
+
+int contarpeliculas(){
+    int pos=0;
+    int tam=0;
+    while(aux.leerEnDisco(pos++)==1){
+            if(aux.getEstado()==true){
+                    tam+=1;
+            }
+
+    }
+    return tam;
+}
+void peliculaMasTaquillera()
+{   int max=0,posmax=0;
+    datos *vDinamico;
+    int cantpeliculas=contarpeliculas();
+    vDinamico=new datos[cantpeliculas];
+    if(vDinamico==NULL)return;
+
+    for(int i=0;i<cantpeliculas;i++){
+        aux.leerEnDisco(i);
+        vDinamico[i].setNombrePelicula(aux.getNombrePelicula());
+        vDinamico[i].setRecaudacionporpelicula(IDmastaquillero(aux.getidPelicula()));
+
+    }
+    max=vDinamico[0].getrecaudacionporpelicula();
+    for(int i=0;i<cantpeliculas;i++){
+
+        if(vDinamico[i].getrecaudacionporpelicula()>max){
+            max=vDinamico[i].getrecaudacionporpelicula();
+            posmax=i;
+        }
+
+    }
+
+    for(int i=0;i<cantpeliculas;i++){
+        if(posmax==i){
+            vDinamico[posmax].Mostrar();
+        }
+    }
+
+    delete vDinamico;
+
+}
+
+
+//////////////////////////////PUNTO 3///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+ float recdir(int id){
     int pos=0;
     float canttotal=0;
         while(aux.leerEnDisco(pos++)==1){
@@ -43,7 +151,6 @@ public:
     }
     void recaudaciondirector(){
             int pos=0;
-            int totaldir=0;
         while(obj.leerEnDisco(pos++)==1){
                 if(obj.getEstado()==true){
                     cout<<"EL DIRECTOR "<<obj.getnombreDirector()<<" RECAUDO UN TOTAL DE "<<recdir(obj.getidDirector())<<" PESOS"<<endl<<endl;
@@ -69,89 +176,78 @@ float calcularRecaudacion (int id)
     }
     return(float)sumaRecaudacion;
 }
-
-int IDmastaquillero(int ID){
-    ventas reg;
+//////////////////////////////////PUNTO 4//////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+int contardirectores(){
     int pos=0;
-    int acumImporte=0;
-    while(reg.leerEnDisco(pos++)==1){
-        if(reg.getidPelicula()==ID){
-            acumImporte+=reg.getTotal();
+    int tam=0;
+    while(obj.leerEnDisco(pos++)==1){
+            if(obj.getEstado()==true){
+                    tam+=1;
+            }
 
+    }
+    return tam;
+}
+
+void directormastaquillero()
+{   int max=0,posmax=0;
+    datos *vDinamico;
+    int cantdirectores=contardirectores();
+    vDinamico=new datos[cantdirectores];
+    if(vDinamico==NULL)return;
+
+    for(int i=0;i<cantdirectores;i++){
+        obj.leerEnDisco(i);
+        vDinamico[i].setNombreDirector(obj.getnombreDirector());
+        vDinamico[i].setRecaudacionporpelicula(recdir(obj.getidDirector()));
+
+    }
+    max=vDinamico[0].getrecaudacionporpelicula();
+    for(int i=0;i<cantdirectores;i++){
+
+        if(vDinamico[i].getrecaudacionporpelicula()>max){
+            max=vDinamico[i].getrecaudacionporpelicula();
+            posmax=i;
+        }
+
+    }
+
+    for(int i=0;i<cantdirectores;i++){
+        if(posmax==i){
+            vDinamico[posmax].MostrarDirector();
         }
     }
-    return acumImporte;
+
+    delete vDinamico;
+
 }
 
-void peliculaMasTaquillera()
-{
-    int pos=0;
-    ventas reg;
-    pelicula aux;
-    director lol;
-    while(reg.leerEnDisco(pos++)==1)
-    {
-        recaudacionTotal=IDmastaquillero(reg.getidPelicula());
-        idtaquillera=reg.getidPelicula();
-    }
 
-    cout<<"La Pelicula mas Taquillera es la: "<<idtaquillera<<endl;
-    cout<<"Con una recaudacion total de: "<<recaudacionTotal<<endl;
-}
-/*
-int IDdirectortaquillero(int ID){
-    ventas reg;
-    director lol;
-    int pos=0;
-    int hola;
-    const char idnombre[30];
-    while(lol.leerEnDisco(pos++)==1){
-        hola=peliculaMasTaquillera(lol.getidDirector());
-        if(hola==1){
-            strcpy(idnombre,lol.getnombreDirector());
-            cout <<"EL DIRECTOR MAS TAQUILLERO ES: "<<idnombre<<endl;
-        }
-}
-*/
-int calcularPosMaximo(int *meses, int tam)
-{
-    int i,posMax=0;
-    for(i=1;i<tam;i++)
-    {
-        if(meses[i]>meses[posMax])
-            posMax=i;
-    }
-    return posMax;
-}
-int calcularMayor(int *meses, int tam)
-{
-    int i,mayor=0;
-    for(i=1;i<tam;i++)
-    {
-        if(meses[i]>mayor)
-            mayor=meses[i];
-    }
-    return mayor;
-}
 
-void peliculaMasTaquilleraEnUnMes()
-{
-    int pos=0;
-    int meses[12]={0};
-    int PeliculaMes;
-    while(reg.leerEnDisco(pos++)==1)
-    {
-        meses[reg.getFecha().getMes()-1]+=reg.getTotal();
-        PeliculaMes=reg.getidPelicula();
 
-    }
-    int mesMax=calcularPosMaximo(meses,12);
-    int recaudacionMax=calcularMayor(meses,12);
-    cout<<"LA PELICULA MAS TAQUILLERA: " <<PeliculaMes<<endl;
-    cout<<"EN EL MES: " <<mesMax+1<<endl;
-    cout<<"CON UNA RECAUDACION DE: "<<recaudacionMax<<endl;
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////PUNTO 5//////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 void RecaudacionCine()
 {
     int totalRecaudado=0;
@@ -163,6 +259,9 @@ void RecaudacionCine()
     }
     cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<totalRecaudado<<endl;
 }
+
+
+
 };
 
 

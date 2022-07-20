@@ -7,15 +7,20 @@ void SubMenuVentas(){
     int opc;
     ventas lol;
     while(true){
+
+
         system("cls");
-        cout<<"MENU VENTAS : "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"1) AGREGAR VENTA "<<endl;
-        cout<<"2) MOSTRAR VENTAS "<<endl;
-        cout<<"3) ELIMINAR VENTAS "<<endl;
-        cout<<"-----------------------------"<<endl;
-        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
-        cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+        dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+        dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+        gotoxy(51,2);cout<<"MENU VENTAS : ";
+
+        gotoxy(45,8);cout<<"1) AGREGAR VENTA ";
+        gotoxy(45,9);cout<<"2) MOSTRAR VENTAS ";
+        gotoxy(45,10);cout<<"3) ELIMINAR VENTAS ";
+        gotoxy(45,11);cout<<"-----------------------------";
+        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){

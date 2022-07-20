@@ -9,6 +9,7 @@ void gotoxy(int x, int y){
     SetConsoleCursorPosition(handle,poss);
 
 }
+
 //FUNCION QUE DIBUJA EL CUADRO
 void dibujarCuadro(int x1,int y1,int x2,int y2){
     int i;
