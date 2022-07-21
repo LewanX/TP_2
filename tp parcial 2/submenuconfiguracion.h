@@ -38,19 +38,19 @@ void SubmenuConfiguracion();
         {
         case 1:
 
-            if(aux.backupdirector()==true){cout<<"COPIA REALIZADA";}
+            if(aux.backupdirector()==true){cout<<"COPIA DE DIRECTOR REALIZADA";}
             break;
         case 2:
 
-            if(salaux.backupsala()==true){cout<<"COPIA REALIZADA";}
+            if(salaux.backupsala()==true){cout<<"COPIA DE SALA REALIZADA";}
             break;
         case 3:
 
-            if(obj.backuppelicula()==true){cout<<"COPIA REALIZADA";}
+            if(obj.backuppelicula()==true){cout<<"COPIA DE PELICULA REALIZADA";}
             break;
         case 4:
 
-            if(reg.backupventa()==true){cout<<"COPIA REALIZADA;";}
+            if(reg.backupventa()==true){cout<<"COPIA DE VENTA REALIZADA;";}
             break;
         case 5:
 

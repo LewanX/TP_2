@@ -41,6 +41,7 @@
 		<Unit filename="peliculas.h" />
 		<Unit filename="protofuncionesGlobales.h" />
 		<Unit filename="salas.h" />
+		<Unit filename="submenuconfiguracion.h" />
 		<Unit filename="submenudatos.h" />
 		<Unit filename="submenudirector.h" />
 		<Unit filename="submenupeliculas.h" />
