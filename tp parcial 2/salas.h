@@ -30,6 +30,9 @@ public:
       int grabarEnDisco();
       int leerEnDisco(int);
       void mostrarDeDisco();
+      int LeerDeDiscobkp(int);
+      bool backupsala();
+      bool recusala();
 
        bool cargarSalas()
       {
@@ -142,4 +145,52 @@ void Salas::mostrarDeDisco(){
 
 
 }
+
+///BACKUP
+int Salas::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/sala.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(Salas)*pos,0);
+    int leyo=fread(this,sizeof(Salas),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool Salas::backupsala(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/sala.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(Salas),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool Salas::recusala(){
+int pos=0;
+FILE *br;
+    br=fopen("director.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(Salas),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+
+
+
+
 #endif // SALAS_H_INCLUDED

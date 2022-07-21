@@ -36,8 +36,11 @@ class ventas
       int ModificarEnDisco(int pos);
       int grabarEnDisco();
       int leerEnDisco(int);
+      bool recuventa();
+      bool backupventa();
+      int LeerDeDiscobkp(int pos);
 
-      bool cargarVentas()
+    bool cargarVentas()
       {
           FILE *p;
           bool escribio;
@@ -204,4 +207,50 @@ int ventas::leerEnDisco(int pos)
     fclose(p);
     return leyo;
 }
+///BACKUP
+int ventas::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/ventas.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(ventas)*pos,0);
+    int leyo=fread(this,sizeof(ventas),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool ventas::backupventa(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/ventas.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(ventas),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool ventas::recuventa(){
+int pos=0;
+FILE *br;
+    br=fopen("ventas.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(ventas),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+
+
+
 #endif // VENTAS_H_INCLUDED

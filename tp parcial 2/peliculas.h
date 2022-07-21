@@ -43,6 +43,9 @@ class pelicula
       void EliminarDeDisco();
       int grabarEnDisco();
       int leerEnDisco(int);
+      int LeerDeDiscobkp(int pos);
+      bool backuppelicula();
+      bool recupelicula();
 
       bool cargarPeliculas()
       {
@@ -215,5 +218,47 @@ int pelicula::leerEnDisco(int pos)
     fclose(p);
     return leyo;
 }
+///BACKUP
+int pelicula::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/pelicula.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(pelicula)*pos,0);
+    int leyo=fread(this,sizeof(pelicula),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool pelicula::backuppelicula(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/pelicula.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(pelicula),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool pelicula::recupelicula(){
+int pos=0;
+FILE *br;
+    br=fopen("pelicula.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(pelicula),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
 
 #endif // PELICULAS_H_INCLUDED

@@ -18,7 +18,7 @@ using namespace std;
 #include "submenudirector.h"
 #include "submenuventas.h"
 #include "funcionesGlobales.h"
-
+#include "submenuconfiguracion.h"
 
 
 
@@ -38,9 +38,10 @@ int main(){
         gotoxy(45,10);cout<<"3) MENU PELICULAS"<<endl;
         gotoxy(45,11);cout<<"4) MENU VENTAS ENTRADAS"<<endl;
         gotoxy(45,12);cout<<"5) MENU DATOS"<<endl;
-        gotoxy(45,13);cout<<"-----------------------------"<<endl;
-        gotoxy(45,14);cout<<"0) FIN DEL PROGRAMA "<<endl;
-        gotoxy(45,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,13);cout<<"6) MENU CONFIGURACION"<<endl;
+        gotoxy(45,14);cout<<"-----------------------------"<<endl;
+        gotoxy(45,15);cout<<"0) FIN DEL PROGRAMA "<<endl;
+        gotoxy(45,16);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -54,6 +55,8 @@ int main(){
             case 4: SubMenuVentas();
                     break;
             case 5: SubMenuDatos();
+                    break;
+            case 6: SubmenuConfiguracion();
                     break;
             case 0: return 0;
                     break;
