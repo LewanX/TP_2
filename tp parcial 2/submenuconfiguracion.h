@@ -54,7 +54,7 @@ void SubmenuConfiguracion();
             break;
         case 5:
 
-            if(aux.backupdirector()==true){cout<<"RECUPERACION  DE DIRECTORES REALIZADA";}
+            if(aux.recudirector()==true){cout<<"RECUPERACION  DE DIRECTORES REALIZADA";}
             break;
         case 6:
 

@@ -15,7 +15,7 @@ public:
      void setidSala(int S){idSala=S;}
      void setTipo(int T){tipo=T;}
      void setEstado(bool e){estado=e;}
-
+     void setPlazas(int P){plazas=P;}
      ///gets()
 
      int getidSala(){return idSala;}
@@ -28,6 +28,7 @@ public:
       void EliminarDeDisco();
       int ModificarEnDisco(int pos);
       int grabarEnDisco();
+      void ModificarButacas();
       int leerEnDisco(int);
       void mostrarDeDisco();
       int LeerDeDiscobkp(int);
@@ -79,8 +80,9 @@ void  mostrar(){
     if(estado==true)
        {
            cout<<"ID SALA:"<<idSala<<endl;
+           cout<<"BUTACAS TOTALES:"<<plazas<<endl;
            plazas-=calcularVentas(idSala);
-           cout<<"CANTIDAD DE BUTACAS:"<<plazas<<endl;
+           cout<<"CANTIDAD DISPONIBLES:"<<plazas<<endl;
        }
 
 }
@@ -102,6 +104,30 @@ void Salas::EliminarDeDisco(){
         }
 
 }
+
+void Salas::ModificarButacas(){
+        int pos=0;
+        int Id, butaca;
+        cout<<"INTRODUCE EL ID DE SALA A LISTAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidSala()==Id){
+                    if(getEstado()==true){
+                       /*cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
+                       cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
+                       */
+                       mostrar();
+                cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
+                           setPlazas(butaca);
+                    if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+    }
+
+
 int Salas::ModificarEnDisco(int pos)
 {
 
@@ -147,9 +173,13 @@ void Salas::mostrarDeDisco(){
 }
 
 ///BACKUP
+
+
+
+
 int Salas::LeerDeDiscobkp(int pos){
     FILE *A;
-        A=fopen("backup/sala.bkp","rb");
+        A=fopen("backup/salas.bkp","rb");
             if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
     fseek(A,sizeof(Salas)*pos,0);
     int leyo=fread(this,sizeof(Salas),1,A);
@@ -163,7 +193,7 @@ bool Salas::backupsala(){
 
 int pos=0;
 FILE *b;
-    b=fopen("backup/sala.bkp","wb");
+    b=fopen("backup/salas.bkp","wb");
     if(b==NULL){return false;}
     while(leerEnDisco(pos)==1){
         fwrite(this,sizeof(Salas),1,b);
@@ -176,10 +206,11 @@ FILE *b;
  bool Salas::recusala(){
 int pos=0;
 FILE *br;
-    br=fopen("director.dat","wb");
+    br=fopen("salas.dat","wb");
     if(br==NULL){return false;}
     while(LeerDeDiscobkp(pos)==1){
         fwrite(this,sizeof(Salas),1,br);
+
         pos++;
     }
     fclose(br);

@@ -23,6 +23,7 @@ class director
       bool getEstado(){return estado;}
       ///disco
       void EliminarDeDisco();
+      void ModificarNombre();
       int ModificarEnDisco(int pos);
       void mostrarDeDisco();
       int grabarEnDisco();
@@ -149,7 +150,28 @@ int director::LeerDeDiscobkp(int pos){
 
 
 }
+void director::ModificarNombre(){
+        int pos=0;
+        char N[20];
+        int I;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>I;
+        while(leerEnDisco(pos)==1){
+             if(getidDirector()==I){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE : "<<getnombreDirector()<<endl;
+                        cout<<"NACIONALIDAD : "<<getNacionalidad()<<endl;
+                cout<<"INTRODUCE UN NUEVO NOMBRE PARA EL DIRECTOR: ";cin>>N;
+                           setnombreDirector(N);
+                    if(ModificarEnDisco(pos)==1){cout<<"NOMBRE MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
 
+                }
+                pos++;
+        }
+
+
+    }
 bool director::backupdirector(){
 
 int pos=0;
@@ -171,6 +193,7 @@ FILE *br;
     if(br==NULL){return false;}
     while(LeerDeDiscobkp(pos)==1){
         fwrite(this,sizeof(director),1,br);
+        system("pause");
         pos++;
     }
     fclose(br);

@@ -17,10 +17,11 @@ void SubMenuSalas(){
 
         gotoxy(45,8);cout<<"1) AGREGAR SALA "<<endl;
         gotoxy(45,9);cout<<"2) MOSTRAR SALAS "<<endl;
-        gotoxy(45,10);cout<<"3) ELIMINAR SALA "<<endl;
-        gotoxy(45,11);cout<<"-----------------------------"<<endl;
-        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
-        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,10);cout<<"3) MODIFICAR BUTACAS "<<endl;
+        gotoxy(45,11);cout<<"4) ELIMINAR SALA "<<endl;
+        gotoxy(45,12);cout<<"-----------------------------"<<endl;
+        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -35,6 +36,10 @@ void SubMenuSalas(){
                 system("pause");
             break;
             case 3:
+                aux.ModificarButacas();
+                system("pause");
+            break;
+            case 4:
                 aux.EliminarDeDisco();
                 system("pause");
             break;
