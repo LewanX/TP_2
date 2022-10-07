@@ -14,10 +14,11 @@ void SubMenuPeliculas(){
         gotoxy(51,2);cout<<"MENU PELICULAS";
         gotoxy(45,8);cout<<"1) AGREGAR PELICULA ";
         gotoxy(45,9);cout<<"2) MOSTRAR PELICULAS ";
-        gotoxy(45,10);cout<<"3) ELIMINAR PELICULA ";
-        gotoxy(45,11);cout<<"-----------------------------";
-        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,10);cout<<"3) MODIFICAR NOMBRE DE PELICULA ";
+        gotoxy(45,11);cout<<"4) ELIMINAR PELICULA ";
+        gotoxy(45,12);cout<<"-----------------------------";
+        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -33,8 +34,12 @@ void SubMenuPeliculas(){
                 system("pause");
             break;
             case 3: //ELIMINAR PELICULA
+                reg.ModificarNombrePelicula();
+                system("pause");
+            case 4: //ELIMINAR PELICULA
                 reg.EliminarDeDisco();
                 system("pause");
+            break;
             case 0: return ;
                     break;
             default: cout<<"OPCION INCORRECTA! "<<endl;
