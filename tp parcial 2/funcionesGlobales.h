@@ -106,17 +106,17 @@ int calcularVentas(int id){
 
             if(reg.getSala()==id){
                     while(obj.leerEnDisco(pos2++)==1){
-                ventas+=obj.getCantEntradas();
+                    ventas+=obj.getCantEntradas();
                     }
             }
 
 
-
+       return ventas;
         }
 
-    return ventas;
 
 }
+
 void fechaPelicula(int id){
     pelicula reg;
     int pos=0;

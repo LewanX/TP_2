@@ -99,7 +99,7 @@ void cargar(){
     }
 
     butacassala=cantButacasSala(idPelicula);
-    butacasvendidas=calcularPlazas(idPelicula,diaAct,mesAct,anioAct);
+    butacasvendidas=calcularVentas(idPelicula);
     butacastotal=butacassala-butacasvendidas;
     cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
     if(butacastotal<=0){
@@ -111,7 +111,7 @@ void cargar(){
     }
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
-    while(CantEntradas>10){
+    while(CantEntradas<10){
         cout <<" SE PUEDEN COMPRAR HASTA 10 ENTRADAS! "<< endl;
         system("pause");
         system("cls");
