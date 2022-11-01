@@ -27,6 +27,7 @@ int main(){
     int opc;
     director obj;
     ventas lol;
+
     while(true){
     system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
     dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL

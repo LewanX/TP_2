@@ -32,7 +32,8 @@ void SubMenuSalas(){
             break;
 
             case 2:
-                aux.mostrarDeDisco();
+                 estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");//tabla
+                 aux.mostrarDeDisco();
                 system("pause");
             break;
             case 3:

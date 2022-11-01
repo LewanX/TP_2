@@ -16,6 +16,7 @@ public:
      void setTipo(int T){tipo=T;}
      void setEstado(bool e){estado=e;}
      void setPlazas(int P){plazas=P;}
+
      ///gets()
 
      int getidSala(){return idSala;}
@@ -76,13 +77,20 @@ void cargar(){
     }
     cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>plazas;
 }
-void  mostrar(){
+void  mostrar(int y){
     if(estado==true)
        {
-           cout<<"ID SALA:"<<idSala<<endl;
-           cout<<"BUTACAS TOTALES:"<<plazas<<endl;
+           //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
+
+
+           gotoxy(12,y);cout<<idSala<<endl;
+
+           gotoxy(56,y);cout<<plazas<<endl;
+
            plazas-=calcularVentas(idSala);
-           cout<<"CANTIDAD DISPONIBLES:"<<plazas<<endl;
+           gotoxy(98,y);cout<<plazas<<endl;
+
+
        }
 
 }
@@ -91,11 +99,12 @@ void  mostrar(){
 void Salas::EliminarDeDisco(){
        int pos=0;
        int idS;
+       int y=4;
         cout<<"INTRODUZCA EL ID DE SALA A ELIMINAR: ";cin>>idS;
         while(leerEnDisco(pos)==1){
                 if(getidSala()==idS){
                         cout<<"EL ID DE SALA TIENE LOS SIGUIENTES DATOS"<<endl;
-                        mostrar();
+                        mostrar(y);
                         cout<<endl<<endl;
                         setEstado(false);
                         if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
@@ -108,6 +117,7 @@ void Salas::EliminarDeDisco(){
 void Salas::ModificarButacas(){
         int pos=0;
         int Id, butaca;
+        int y=4;
         cout<<"INTRODUCE EL ID DE SALA A LISTAR: ";cin>>Id;
         while(leerEnDisco(pos)==1){
              if(getidSala()==Id){
@@ -115,7 +125,8 @@ void Salas::ModificarButacas(){
                        /*cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
                        cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
                        */
-                       mostrar();
+                       estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");
+                       mostrar(y);
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
                            setPlazas(butaca);
                     if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
@@ -161,11 +172,12 @@ int Salas::leerEnDisco(int pos)
 }
 void Salas::mostrarDeDisco(){
     int pos=0;
+    int y=4;
     while(leerEnDisco(pos++)==1){
 
-        mostrar();
+        gotoxy(56,y);mostrar(y);
         cout<<endl;
-
+        y+=4;
     }
 
 
