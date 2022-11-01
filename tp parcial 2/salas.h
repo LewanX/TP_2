@@ -83,12 +83,7 @@ void  mostrar(int y){
            //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
 
 
-           gotoxy(12,y);cout<<idSala<<endl;
 
-           gotoxy(56,y);cout<<plazas<<endl;
-
-           plazas-=calcularVentas(idSala);
-           gotoxy(98,y);cout<<plazas<<endl;
 
 
        }
@@ -175,8 +170,14 @@ void Salas::mostrarDeDisco(){
     int y=4;
     while(leerEnDisco(pos++)==1){
 
-        gotoxy(56,y);mostrar(y);
-        cout<<endl;
+        //gotoxy(56,y);mostrar(y);
+        //cout<<endl;
+        gotoxy(12,y);cout<<idSala<<endl;
+
+           gotoxy(56,y);cout<<plazas<<endl;
+
+           plazas-=calcularVentas(idSala);
+           gotoxy(98,y);cout<<plazas<<endl;
         y+=4;
     }
 
