@@ -39,6 +39,7 @@ class ventas
       bool recuventa();
       bool backupventa();
       int LeerDeDiscobkp(int pos);
+      void ModificarVentas();
 
     bool cargarVentas()
       {
@@ -176,6 +177,26 @@ void ventas::EliminarDeDisco(){
         }
 
 }
+
+void ventas::ModificarVentas(){
+        int pos=0;
+        int Entradas, Nv;
+        cout<<"INTRODUCE EL NUMERO DE VENTA A LISTAR: ";cin>>Nv;
+        while(leerEnDisco(pos)==1){
+             if(getNventa()==Nv){
+                    if(getEstado()==true){
+
+                cout<<"INTRODUCE UNA NUEVA CANTIDAD DE ENTRADAS: ";cin>>Entradas;
+                           setCantEntradas(Entradas);
+                    if(ModificarEnDisco(pos)==1){cout<<"ENTRADAS MODIFICADA!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+    }
+
 int ventas::ModificarEnDisco(int pos)
 {
 

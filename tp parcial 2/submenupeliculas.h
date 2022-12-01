@@ -25,7 +25,7 @@ void SubMenuPeliculas(){
 
             case 1://AGREGAR PELICULA
                 reg.cargar();
-                if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO! ";}else{"ERROR AL GRABAR! ";}
+                if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO! ";}else{cout<<"ERROR AL GRABAR! ";}
                 system("pause");
             break;
 

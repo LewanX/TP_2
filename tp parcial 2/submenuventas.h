@@ -17,10 +17,11 @@ void SubMenuVentas(){
 
         gotoxy(45,8);cout<<"1) AGREGAR VENTA ";
         gotoxy(45,9);cout<<"2) MOSTRAR VENTAS ";
-        gotoxy(45,10);cout<<"3) ELIMINAR VENTAS ";
-        gotoxy(45,11);cout<<"-----------------------------";
-        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,10);cout<<"3) MODIFICAR VENTAS ";
+        gotoxy(45,11);cout<<"4) ELIMINAR VENTAS ";
+        gotoxy(45,12);cout<<"-----------------------------";
+        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -39,8 +40,13 @@ void SubMenuVentas(){
                 system("pause");
                     break;
             case 3:
+                lol.ModificarVentas();
+                system("pause");
+                    break;
+            case 4:
                 lol.EliminarDeDisco();
                 system("pause");
+                    break;
             case 0: return;
                     break;
 
