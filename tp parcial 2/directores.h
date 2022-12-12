@@ -24,6 +24,7 @@ class director
       ///disco
       void EliminarDeDisco();
       void ModificarNombre();
+      void ModificarNacionalidad();
       int ModificarEnDisco(int pos);
       void mostrarDeDisco();
       int grabarEnDisco();
@@ -167,7 +168,30 @@ void director::ModificarNombre(){
                     }
 
                 }
+                else {cout<<"EL ID INGRESADO NO EXISTE O IGRESO MAL EL DATO"<<endl;}
                 pos++;
+        }
+
+
+    }
+
+void director::ModificarNacionalidad(){
+        int pos=0;
+        char N[20];
+        int I;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>I;
+        while(leerEnDisco(pos)==1){
+             if(getidDirector()==I){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE : "<<getnombreDirector()<<endl;
+                        cout<<"NACIONALIDAD : "<<getNacionalidad()<<endl;
+                cout<<"INTRODUCE UNA NUEVA NACIONALIDAD PARA EL DIRECTOR: ";cin>>N;
+                           setNacionalidad(N);
+                    if(ModificarEnDisco(pos)==1){cout<<"NACIONALIDAD MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
         }
 
 

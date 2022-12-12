@@ -44,6 +44,8 @@ class pelicula
       int grabarEnDisco();
       int leerEnDisco(int);
       void ModificarNombrePelicula();
+      void ModificarGenero();
+      void ModificarIdioma();
       int LeerDeDiscobkp(int pos);
       bool backuppelicula();
       bool recupelicula();
@@ -106,7 +108,7 @@ void cargar()
     cin.getline(formato,3,'\n');
     fflush(stdin);
 
-    cout<<"INGRESE EL IDIOMA [ (1=Castellano) , (2=subtitulado) ] :"<<endl;
+    cout<<"INGRESE EL IDIOMA [ (1=CASTELLANO) , (2=SUBTITULADO) ] :"<<endl;
     cin>>idioma;
     fflush(stdin);
 
@@ -246,6 +248,57 @@ void pelicula::ModificarNombrePelicula(){
 
     }
 
+void pelicula::ModificarGenero(){
+        int pos=0;
+        char gene[30];
+        int Id;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidPelicula()==Id){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE DE LA PELICULA : "<<getNombrePelicula()<<endl;
+                        cout<<"GENERO: "<<getGenero()<<endl;
+                        cout<<"FORMATO: "<<getFormato()<<endl;
+                        cout<<"IDIOMA: "<<getIdioma()<<endl;
+                        cout<<"DURACION : "<<getDuracion()<<endl;
+                cout<<"INTRODUCE UN NUEVO GENERO DE LA PELICULA: ";cin>>gene;
+                           setGenero(gene);
+                    if(ModificarEnDisco(pos)==1){cout<<"GENERO MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+
+
+    }
+
+void pelicula::ModificarIdioma(){
+        int pos=0;
+        int idi;
+        int Id;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidPelicula()==Id){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE DE LA PELICULA : "<<getNombrePelicula()<<endl;
+                        cout<<"GENERO: "<<getGenero()<<endl;
+                        cout<<"FORMATO: "<<getFormato()<<endl;
+                        cout<<"IDIOMA: "<<getIdioma()<<endl;
+                        cout<<"DURACION : "<<getDuracion()<<endl;
+                cout<<"INTRODUCE UN NUEVO IDIOMA DE LA PELICULA [ (1=CASTELLANO) , (2=SUBTITULADO) ] : ";cin>>idi;
+                           setIdioma(idi);
+                    if(ModificarEnDisco(pos)==1){cout<<"IDIOMA MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+
+
+    }
 ///BACKUP
 int pelicula::LeerDeDiscobkp(int pos){
     FILE *A;

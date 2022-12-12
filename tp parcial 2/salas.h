@@ -117,9 +117,8 @@ void Salas::ModificarButacas(){
         while(leerEnDisco(pos)==1){
              if(getidSala()==Id){
                     if(getEstado()==true){
-                       /*cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
+                       cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
                        cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
-                       */
                        estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");
                        mostrar(y);
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
