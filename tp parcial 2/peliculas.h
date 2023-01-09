@@ -104,13 +104,25 @@ void cargar()
     cin.getline(genero,20,'\n');
     fflush(stdin);
 
-    cout<<"INGRESE EL FORMATO (2D,3D): "<<endl;
-    cin.getline(formato,3,'\n');
-    fflush(stdin);
+    cout<<"INGRESE EL FORMATO (2D o 3D): "<<endl;
+    cargarCadena(formato,3);
+    if(formatoValido(formato)==true){
+        cout<<"formato valido"<<endl;
+    }
+    while (formatoValido(formato)!=true){
+        cout <<"INGRESE UN FORMATO VALIDO (2D o 3D)"<<endl;
+        cargarCadena(formato,3);
+    }
+
 
     cout<<"INGRESE EL IDIOMA [ (1=CASTELLANO) , (2=SUBTITULADO) ] :"<<endl;
     cin>>idioma;
     fflush(stdin);
+
+    while(idioma<1 || idioma>2){
+        cout<<"INGRESE UN IDIOMA VALIDO :"<<endl;
+        cin>>idioma;
+    }
 
     cout<<"INGRESE LA DURACION [minutos]: "<<endl;
     cin>>duracion; ///en minutos
@@ -190,9 +202,9 @@ void pelicula::EliminarDeDisco(){
         }
 
 }
+
 int pelicula::ModificarEnDisco(int pos)
 {
-
     FILE *p;
     p=fopen("pelicula.dat","rb+");
     if (p==NULL) return -1;

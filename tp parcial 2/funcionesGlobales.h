@@ -1,7 +1,7 @@
 #ifndef FUNCIONESGLOBALES_H_INCLUDED
 #define FUNCIONESGLOBALES_H_INCLUDED
 
-void cargarCadena(char *pal, int tam);
+
 
 ///FIN PROTOTIPOS
 
@@ -225,6 +225,25 @@ return 0;
 
 }
 
+bool formatoValido(char *formato){
+if(strcmp(formato,"2d")==0){
+    return true;
+}
+
+if(strcmp(formato,"2D")==0){
+    return true;
+}
+
+if(strcmp(formato,"3d")==0){
+    return true;
+}
+
+if(strcmp(formato,"3D")==0){
+    return true;
+}
+
+return false;
+}
 
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED

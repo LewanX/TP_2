@@ -15,10 +15,12 @@ void SubMenuPeliculas(){
         gotoxy(45,8);cout<<"1) AGREGAR PELICULA ";
         gotoxy(45,9);cout<<"2) MOSTRAR PELICULAS ";
         gotoxy(45,10);cout<<"3) MODIFICAR NOMBRE DE PELICULA ";
-        gotoxy(45,11);cout<<"4) ELIMINAR PELICULA ";
-        gotoxy(45,12);cout<<"-----------------------------";
-        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,11);cout<<"4) MODIFICAR GENERO DE PELICULA ";
+        gotoxy(45,12);cout<<"5) MODIFICAR IDIOMA DE PELICULA ";
+        gotoxy(45,13);cout<<"6) ELIMINAR PELICULA ";
+        gotoxy(45,14);cout<<"-----------------------------";
+        gotoxy(45,15);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,16);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -36,7 +38,16 @@ void SubMenuPeliculas(){
             case 3: //ELIMINAR PELICULA
                 reg.ModificarNombrePelicula();
                 system("pause");
+            break;
             case 4: //ELIMINAR PELICULA
+                reg.ModificarGenero();
+                system("pause");
+            break;
+            case 5: //ELIMINAR PELICULA
+                reg.ModificarIdioma();
+                system("pause");
+            break;
+            case 6: //ELIMINAR PELICULA
                 reg.EliminarDeDisco();
                 system("pause");
             break;
