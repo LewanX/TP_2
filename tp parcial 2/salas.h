@@ -80,9 +80,17 @@ void cargar(){
 void  mostrar(int y){
     if(estado==true)
        {
+
            //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
+    gotoxy(10,y);
+    cout<<idSala;
 
+    gotoxy(50,y);
+    cout<<plazas;
 
+plazas-=calcularVentas(idSala);
+    gotoxy(90,y);
+    cout<<plazas;
 
 
 
@@ -110,18 +118,34 @@ void Salas::EliminarDeDisco(){
 }
 
 void Salas::ModificarButacas(){
+        int resto=0;
         int pos=0;
         int Id, butaca;
         int y=4;
+        bool estadoSala;
         cout<<"INTRODUCE EL ID DE SALA A LISTAR: ";cin>>Id;
         while(leerEnDisco(pos)==1){
              if(getidSala()==Id){
                     if(getEstado()==true){
-                       cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
-                       cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
+                       //cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
+                       //cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
                        estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");
                        mostrar(y);
+                       cout<<endl<<endl;
+                       cout<<plazas<<"HOLAHOLA";
+                       plazas-=calcularVentas(idSala);
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
+                    resto=butaca-plazas;
+                     while(resto<0){
+                        cout<<"INGRESE UN VALOR MAYOR A LAS BUTACAS VENDIDAS";
+                        cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
+                        resto=butaca-plazas;
+                        cout<<resto<<endl;
+                     }
+
+        return;
+
+
                            setPlazas(butaca);
                     if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
                         cout<<endl<<endl;
