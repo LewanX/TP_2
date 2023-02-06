@@ -121,13 +121,13 @@ return ventas;
 
 }
 
-void fechaPelicula(int id){
+int fechaPelicula(int id){
     pelicula reg;
     int pos=0;
         int diaFin,mesFin,anioFin;
         int diaIni,mesIni,anioIni;
     while(reg.leerEnDisco(pos++)==1){
-        if(reg.getidPelicula()==id){
+        if(reg.getidPelicula()==id && reg.getEstado()==true){
                 cout<<"ELIJA UNA FECHA  VALIDA "<<endl;
                     diaIni=reg.getFechaIni().getDia();
                     mesIni=reg.getFechaIni().getMes();
@@ -139,8 +139,10 @@ void fechaPelicula(int id){
 
                     cout<<"INICIO DE PROYECION:"<<diaIni<<"/"<<mesIni<<"/"<<anioIni<<endl;
                     cout<<"FINAL DE PROYECION :"<<diaFin<<"/"<<mesFin<<"/"<<anioFin<<endl;
-
-
+                    return 1;
+        }
+        else {
+            return 0;
         }
     }
 }

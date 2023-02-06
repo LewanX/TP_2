@@ -70,13 +70,17 @@ void mostrarVentas()
 }
 
 
-void cargar(){
+bool cargar(){
     estado=true;
     Nventa=autonumerico()+1;
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
-    cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;//falta validacion
+    cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
     cin>>idPelicula;
-    fechaPelicula(idPelicula);
+    if(fechaPelicula(idPelicula)==0){
+        cout<<"ESTA PELICULA NO ESTA DISPONIBLE"<<endl;
+        system("pause");
+        return false;
+    }
     fecha.Cargar();
     int diaAct=getFecha().getDia();
     int mesAct=getFecha().getMes();
@@ -136,7 +140,7 @@ void cargar(){
     Total=validacionPrecio(idPelicula, Pago);
     Total=Total*CantEntradas;
     cout<< Total<<endl;
-
+    return true;
 
 }
 

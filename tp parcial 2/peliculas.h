@@ -49,6 +49,7 @@ class pelicula
       int LeerDeDiscobkp(int pos);
       bool backuppelicula();
       bool recupelicula();
+      bool recuperarPeliculaPorID();
 
       bool cargarPeliculas()
       {
@@ -350,8 +351,27 @@ FILE *br;
     fclose(br);
     if(pos==0){return false;}
     return true;
-
  }
+
+bool pelicula::recuperarPeliculaPorID(){
+    int pos=0;
+        char id;
+        int Id;
+        cout<<"INTRODUCE EL ID DE PELICULA A RECUPERAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidPelicula()==Id){
+                    if(getEstado()==false){
+                        setEstado(true);
+                    if(ModificarEnDisco(pos)==1){cout<<"PELICULA RECUPERADA!"<<endl;}
+                        cout<<endl;
+                    }
+                    else{
+                        cout<<"ESTA PELICULA YA SE ENCUENTRA DISPONIBLE" <<endl;
+                    }
+                }
+                pos++;
+        }
+}
 
 
 #endif // PELICULAS_H_INCLUDED

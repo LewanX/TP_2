@@ -24,9 +24,10 @@ void SubmenuConfiguracion();
   gotoxy(40,15);cout<<"6) RESTAURAR DATOS DE SALAS";
   gotoxy(40,16);cout<<"7) RESTAURAR DATOS DE PELICULAS";
   gotoxy(40,17);cout<<"8) RESTAURAR DATOS DE VENTAS";
- gotoxy(40,18);cout<<"--------------------------------";
- gotoxy(40,19);cout<<"0) VOLVER AL MENU PRINCIPAL";
-  gotoxy(40,20);cout<<"SELECCIONE UNA DE LAS OPCIONES: ";
+  gotoxy(40,18);cout<<"9) RECUPERAR PELICULA POR ID";
+ gotoxy(40,19);cout<<"--------------------------------";
+ gotoxy(40,20);cout<<"0) VOLVER AL MENU PRINCIPAL";
+  gotoxy(40,21);cout<<"SELECCIONE UNA DE LAS OPCIONES: ";
         cin>>opc;
         system("cls");
         system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
@@ -67,6 +68,9 @@ void SubmenuConfiguracion();
             case 8:
 
             if(reg.recuventa()==true){cout<<"RECUPERACION DE VENTAS REALIZADA";}
+            break;
+            case 9:
+            obj.recuperarPeliculaPorID();
             break;
         case 0:
                 return;

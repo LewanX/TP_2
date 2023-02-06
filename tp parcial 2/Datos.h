@@ -37,13 +37,13 @@ public:
 
 
     void Mostrar(){
-        cout<<nombrePelicula<<endl;
-        cout<<recaudacionporpelicula<<endl;
+        cout<<"LA PELICULA MAS TAQUILLERO ES : "<<nombrePelicula<<endl;
+        cout<<"CON UNA RECAUDACION TOTAL DE : "<<recaudacionporpelicula<<endl;
 
     }
     void MostrarDirector(){
-         cout<<nombreDirector<<endl;
-        cout<<recaudacionporpelicula<<endl;
+         cout<<"EL DIRECTOR MAS TAQUILLERO ES : " <<nombreDirector<<endl;
+        cout<<"CON UNA RECAUDACION TOTAL DE : "<<recaudacionporpelicula<<endl;
     }
     //////////////////////////////PUNTO 1///////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////

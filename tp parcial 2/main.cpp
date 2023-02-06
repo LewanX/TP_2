@@ -47,10 +47,9 @@ int main(){
         system("cls");
         switch(opc){
             case 1: SubMenuDirector();
-
                     break;
             case 2: SubMenuSalas();
-                break;
+                    break;
             case 3: SubMenuPeliculas();
                     break;
             case 4: SubMenuVentas();
@@ -65,8 +64,6 @@ int main(){
                     break;
         }
         cout <<endl;
-
     }
-
     return 0;
 }
