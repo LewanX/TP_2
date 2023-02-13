@@ -83,7 +83,7 @@ void cargar()
     estado=true;
 
     //cin.getline(nombreDirector,30,'\n');
-    fflush(stdin);
+
 
 
 
@@ -96,20 +96,18 @@ void cargar()
         cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
         cin>>idPelicula;
     }
-    cin.ignore();
+
     cout<<"INGRESE EL NOMBRE DE LA PELICULA: " << endl;
-    cin.getline(nombrePelicula,30,'\n');
-    fflush(stdin);
+    cargarCadena(nombrePelicula,29);
 
     cout <<"INGRESE EL GENERO: "<<endl;
-    cin.getline(genero,20,'\n');
-    fflush(stdin);
+    cargarCadena(genero,19);
+
 
     cout<<"INGRESE EL FORMATO (2D o 3D): "<<endl;
     cargarCadena(formato,3);
-    if(formatoValido(formato)==true){
-        cout<<"formato valido"<<endl;
-    }
+
+
     while (formatoValido(formato)!=true){
         cout <<"INGRESE UN FORMATO VALIDO (2D o 3D)"<<endl;
         cargarCadena(formato,3);
@@ -118,7 +116,7 @@ void cargar()
 
     cout<<"INGRESE EL IDIOMA [ (1=CASTELLANO) , (2=SUBTITULADO) ] :"<<endl;
     cin>>idioma;
-    fflush(stdin);
+
 
     while(idioma<1 || idioma>2){
         cout<<"INGRESE UN IDIOMA VALIDO :"<<endl;
@@ -239,7 +237,7 @@ void pelicula::ModificarNombrePelicula(){
         int pos=0;
         char peli[30];
         int Id;
-        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>Id;
+        cout<<"INTRODUCE EL ID DE LA PELICULA A LISTAR: ";cin>>Id;
         while(leerEnDisco(pos)==1){
              if(getidPelicula()==Id){
                     if(getEstado()==true){
@@ -248,8 +246,9 @@ void pelicula::ModificarNombrePelicula(){
                         cout<<"FORMATO: "<<getFormato()<<endl;
                         cout<<"IDIOMA: "<<getIdioma()<<endl;
                         cout<<"DURACION : "<<getDuracion()<<endl;
-                cout<<"INTRODUCE UN NUEVO NOMBRE DE LA PELICULA: ";cin>>peli;
-                           setNombrePelicula(peli);
+                cout<<"INTRODUCE UN NUEVO NOMBRE DE LA PELICULA: ";
+                    cargarCadena(peli,29);
+                        setNombrePelicula(peli);
                     if(ModificarEnDisco(pos)==1){cout<<"NOMBRE MODIFICADO!"<<endl;}
                         cout<<endl<<endl;
                     }
