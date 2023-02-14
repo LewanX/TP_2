@@ -77,15 +77,11 @@ void mostrarPeliculas()
     fclose(p);
 }
 
-void cargar()
+bool cargar()
 {
+    if(validacionDatosPelicula()==true){
     precio=500;
     estado=true;
-
-    //cin.getline(nombreDirector,30,'\n');
-
-
-
 
     cout<<"INGRESE ID: "<<endl;
     cin>> idPelicula;
@@ -127,7 +123,7 @@ void cargar()
     cin>>duracion; ///en minutos
 
     cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
-    cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del directos
+    cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del director
     while(validacionDir(idDirector)==0){
         cout<<"ESTE DIRECTOR NO SE ENCUENTRA EN LOS REGISTROS"<<endl;
         system("pause");
@@ -152,7 +148,12 @@ void cargar()
         precio+=100;
     }
     cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
-
+    return true;;
+    }
+    else{
+        cout<<"PRIMERO SE DEBER CARGAR DIRECTORES O SALAS!!!"<<endl;
+        return false;
+    }
 }
 void mostrar()
 {

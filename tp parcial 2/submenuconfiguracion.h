@@ -38,40 +38,41 @@ void SubmenuConfiguracion();
         switch (opc)
         {
         case 1:
-
             if(aux.backupdirector()==true){cout<<"COPIA DE DIRECTOR REALIZADA";}
             break;
-        case 2:
 
+        case 2:
             if(salaux.backupsala()==true){cout<<"COPIA DE SALA REALIZADA";}
             break;
-        case 3:
 
+        case 3:
             if(obj.backuppelicula()==true){cout<<"COPIA DE PELICULA REALIZADA";}
             break;
-        case 4:
 
+        case 4:
             if(reg.backupventa()==true){cout<<"COPIA DE VENTA REALIZADA;";}
             break;
-        case 5:
 
+        case 5:
             if(aux.recudirector()==true){cout<<"RECUPERACION  DE DIRECTORES REALIZADA";}
             break;
-        case 6:
 
+        case 6:
             if(salaux.recusala()==true){cout<<"RECUPERACION DE SALAS  REALIZADA";}
             break;
-        case 7:
 
+        case 7:
             if(obj.recupelicula()==true){cout<<"RECUPERACION DE PELICULAS REALIZADA";}
             break;
-            case 8:
 
+        case 8:
             if(reg.recuventa()==true){cout<<"RECUPERACION DE VENTAS REALIZADA";}
             break;
-            case 9:
+
+        case 9:
             obj.recuperarPeliculaPorID();
             break;
+
         case 0:
                 return;
             break;

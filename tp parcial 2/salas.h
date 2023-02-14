@@ -49,21 +49,6 @@ public:
               return escribio;
 
       }
-/*
-void mostrarSalas()
-{
-    FILE *s;
-    s=fopen("salas.dat","rb");
-    if (s==NULL) return;
-    while(fread(this,sizeof (Salas),1,s)==1)
-    {
-        mostrarSalaCine();
-    }
-    fclose(s);
-}
-*/
-
-
 
 void cargar(){
     estado=true;
@@ -91,9 +76,6 @@ void  mostrar(int y){
 plazas-=calcularVentas(idSala);
     gotoxy(90,y);
     cout<<plazas;
-
-
-
        }
 
 }
@@ -195,6 +177,7 @@ void Salas::mostrarDeDisco(){
 
         //gotoxy(56,y);mostrar(y);
         //cout<<endl;
+        if(estado==true){
         gotoxy(12,y);cout<<idSala<<endl;
 
            gotoxy(56,y);cout<<plazas<<endl;
@@ -202,6 +185,7 @@ void Salas::mostrarDeDisco(){
            plazas-=calcularVentas(idSala);
            gotoxy(98,y);cout<<plazas<<endl;
         y+=4;
+        }
     }
 
 

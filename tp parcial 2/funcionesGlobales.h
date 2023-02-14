@@ -30,6 +30,33 @@ int validacionIDpelicula(int id)
         }
     return 0;
 }
+
+bool validacionDatosPelicula(){
+    Salas aux;
+    director obj;
+    bool Sala=false;
+    bool Dir=false;
+    int pos=0;
+    int pos1=0;
+    while(aux.leerEnDisco(pos++)){
+        if(aux.getEstado()==true){
+            Sala=true;
+        }
+    }
+    while(obj.leerEnDisco(pos1++)){
+        if(obj.getEstado()==true){
+            Dir=true;
+        }
+    }
+    if(Sala==true && Dir==true){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
 int validacionDir(int id){
     director aux;
         int pos=0;
@@ -41,9 +68,8 @@ int validacionDir(int id){
             }
         }
     return 0;
-
-
 }
+
 int validacionSala(int id){
     Salas aux;
     int pos=0;
@@ -170,7 +196,7 @@ int validacionFecha(int id, int dia, int mes, int anio)
 
 return -1;
 }
-int autonumerico(){
+int autonumericoVentas(){
 ventas obj;
 int pos=0;
 int c=0;
@@ -245,6 +271,18 @@ if(strcmp(formato,"3D")==0){
 }
 
 return false;
+}
+
+bool validacionDatosVenta(){
+    pelicula aux;
+    int pos=0;
+    while(aux.leerEnDisco(pos++)){
+        if(aux.getEstado()==true){
+            return true;
+        }
+    }
+        return false;
+
 }
 
 

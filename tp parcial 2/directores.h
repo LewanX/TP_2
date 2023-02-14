@@ -36,7 +36,6 @@ class director
 void cargar()
 {
     estado=true;
-    fflush(stdin);
     cout<<"INGRESAR EL ID DE DIRECTOR"<<endl;
     cin >>idDirector;
     while(validacionDir(idDirector)==1){
@@ -46,14 +45,10 @@ void cargar()
         cout<<"INGRESE EL ID DEL DIRECTOR : " <<endl;
         cin>>idDirector;
     }
-    cin.ignore();
     cout<<"INGRESAR EL NOMBRE DEL DIRECTOR " <<endl;
-    cin.getline(nombreDirector,30,'\n');
-    fflush(stdin);
+    cargarCadena(nombreDirector,29);
     cout<<"INGRESE LA NACIONALIDAD DEL DIRECTOR"<<endl;
-
-    cin.getline(Nacionalidad,20,'\n');
-    fflush(stdin);
+    cargarCadena(Nacionalidad,19);
     cout<<"FECHA DE NACIMIENTO DEL DIRECTOR"<<endl;
     FechaNacimiento.Cargar();
 }
@@ -217,7 +212,6 @@ FILE *br;
     if(br==NULL){return false;}
     while(LeerDeDiscobkp(pos)==1){
         fwrite(this,sizeof(director),1,br);
-        system("pause");
         pos++;
     }
     fclose(br);

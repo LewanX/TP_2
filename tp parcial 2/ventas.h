@@ -71,8 +71,9 @@ void mostrarVentas()
 
 
 bool cargar(){
+    if(validacionDatosVenta()==true){
     estado=true;
-    Nventa=autonumerico()+1;
+    Nventa=autonumericoVentas()+1;
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
     cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
     cin>>idPelicula;
@@ -141,7 +142,11 @@ bool cargar(){
     Total=Total*CantEntradas;
     cout<< Total<<endl;
     return true;
-
+    }
+    else{
+        cout<<"PRIMERO DEBE HABER PELICULAS CARGADAS"<<endl;
+        return false;
+    }
 }
 
 

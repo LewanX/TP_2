@@ -12,14 +12,20 @@ int validacionPrecio(int id, int pago);
 
 int NomDir(int id);
 
+bool validacionDatosPelicula();
+
 int calcularVentas(int id);
 int validacionFecha(int id, int dia, int mes, int anio);
-int autonumerico();
+int autonumericoVentas();
 int fechaPelicula(int id);
 int calcularPlazas(int id, int dia, int mes, int anio);
 int cantButacasSala(int id);
 
+bool validacionDatosVenta();
+
 bool formatoValido(char *formato);
+
+
 
 
 //int VentaAutonumerica();
