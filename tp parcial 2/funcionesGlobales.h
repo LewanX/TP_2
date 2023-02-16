@@ -30,8 +30,22 @@ int validacionIDpelicula(int id)
         }
     return 0;
 }
+int retornoNombrePelicula(int id)
+{
+    pelicula reg;
+        int pos=0;
+        while(reg.leerEnDisco(pos++)==1){
+            if(reg.getidPelicula()==id){
+                cout<<"PELICULA:"<<reg.getNombrePelicula()<<endl;
+                     return 1;
+
+            }
+        }
+    return 0;
+}
 
 bool validacionDatosPelicula(){
+
     Salas aux;
     director obj;
     bool Sala=false;
@@ -40,6 +54,7 @@ bool validacionDatosPelicula(){
     int pos1=0;
     while(aux.leerEnDisco(pos++)){
         if(aux.getEstado()==true){
+
             Sala=true;
         }
     }
@@ -49,6 +64,7 @@ bool validacionDatosPelicula(){
         }
     }
     if(Sala==true && Dir==true){
+
         return true;
     }
     else{
@@ -282,6 +298,19 @@ bool validacionDatosVenta(){
         }
     }
         return false;
+
+}
+string determinarTurno(int turno){
+    if(turno==1){
+        return "MATUTINO";
+    }
+    if(turno==2){
+        return "TARDE";
+    }
+    if(turno==3){
+        return "NOCHE";
+    }
+
 
 }
 

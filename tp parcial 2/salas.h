@@ -7,6 +7,7 @@ private:
     int tipo;
     int c=1;
     int plazas;
+    int taquillaPelicula[28][3]={0};
     bool estado;
 
 public:
@@ -26,6 +27,7 @@ public:
 
 
     ///disco
+   void mostrarSalas();
       void EliminarDeDisco();
       int ModificarEnDisco(int pos);
       int grabarEnDisco();
@@ -63,21 +65,12 @@ void cargar(){
     cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>plazas;
 }
 void  mostrar(int y){
-    if(estado==true)
-       {
-
-           //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
+    //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
     gotoxy(10,y);
     cout<<idSala;
-
-    gotoxy(50,y);
+    gotoxy(95,y);
     cout<<plazas;
-
-plazas-=calcularVentas(idSala);
-    gotoxy(90,y);
-    cout<<plazas;
-       }
-
+cout<<endl;
 }
 
 };
@@ -111,24 +104,19 @@ void Salas::ModificarButacas(){
                     if(getEstado()==true){
                        //cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
                        //cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
-                       estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");
+                       estructuraSala("ID SALA","CANTIDAD BUTACAS");
                        mostrar(y);
-                       cout<<endl<<endl;
-                       cout<<plazas<<"HOLAHOLA";
-                       plazas-=calcularVentas(idSala);
+
+                       //plazas-=calcularVentas(idSala);
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
-                    resto=butaca-plazas;
-                     while(resto<0){
+                    //resto=butaca-plazas;
+                     /*while(resto<0){
                         cout<<"INGRESE UN VALOR MAYOR A LAS BUTACAS VENDIDAS";
                         cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
                         resto=butaca-plazas;
                         cout<<resto<<endl;
-                     }
-
-        return;
-
-
-                           setPlazas(butaca);
+                     }*/
+                    setPlazas(butaca);
                     if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
                         cout<<endl<<endl;
                     }
@@ -177,20 +165,32 @@ void Salas::mostrarDeDisco(){
 
         //gotoxy(56,y);mostrar(y);
         //cout<<endl;
-        if(estado==true){
-        gotoxy(12,y);cout<<idSala<<endl;
+        mostrar(y);
 
-           gotoxy(56,y);cout<<plazas<<endl;
 
-           plazas-=calcularVentas(idSala);
-           gotoxy(98,y);cout<<plazas<<endl;
         y+=4;
-        }
+
+
     }
 
 
 
 }
+/*void Salas::mostrarSalas()
+{
+    int y=0;
+    FILE *p;
+    p=fopen("salas.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (Salas),1,p)==1)
+    {
+        mostrar(y);
+        y++;
+            }
+    fclose(p);
+}
+*/
+
 
 ///BACKUP
 

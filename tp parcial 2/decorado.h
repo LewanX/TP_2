@@ -29,12 +29,12 @@ void dibujarCuadro(int x1,int y1,int x2,int y2){
     gotoxy(x2,y1); cout<< "\277";
     gotoxy(x2,y2); cout<< "\331";
 }
-void estructuraSala(string option1,string option2,string option3)
+void estructuraSala(string option1,string option2)
 {
     dibujarCuadro(1,1,115,3);
     gotoxy(10,2);cout<<option1;//"IDSALA";
-                 gotoxy(50,2);cout<<option2;//"BUTACAS TOTALES";
-                 gotoxy(90,2); cout<<option3;//"BUTACAS DISPONIBLES";
+    gotoxy(90,2);cout<<option2;//"BUTACAS TOTALES";
+                 //"BUTACAS DISPONIBLES";
 
 }
 

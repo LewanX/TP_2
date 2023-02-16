@@ -76,7 +76,6 @@ void mostrarPeliculas()
     }
     fclose(p);
 }
-
 bool cargar()
 {
     if(validacionDatosPelicula()==true){
@@ -133,10 +132,10 @@ bool cargar()
     }
     cout<<endl;
 
-    cout<<"INGRESAR LA EMISION INICIAL DE LA PELICULA:"<<endl;
+    /*cout<<"INGRESAR LA EMISION INICIAL DE LA PELICULA:"<<endl;
     fechaIni.Cargar();
     cout<<"INGRESAR LA EMISION FINAL DE LA PELICULA:"<<endl;
-    fin.Cargar();
+    fin.Cargar();*/
     cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
     cin>>sala;
     while(validacionSala(sala)==0){
@@ -172,10 +171,10 @@ void mostrar()
         cout<<duracion<<" MINUTOS"<<endl;
         validacionDir(idDirector);
         cout<<endl;
-        cout<<"FECHA INICIAL DE LA PROYECCION: ";
-        fechaIni.Mostrar();
-        cout<<"FECHA FINAL DE LA PROYECCION: ";
-        fin.Mostrar();
+        //cout<<"FECHA INICIAL DE LA PROYECCION: ";
+        //fechaIni.Mostrar();
+        //cout<<"FECHA FINAL DE LA PROYECCION: ";
+        //fin.Mostrar();
         cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala<<endl;
         cout<<"PRECIO DE LA ENTRADA: ";
         cout<<precio<<endl;
@@ -312,6 +311,13 @@ void pelicula::ModificarIdioma(){
 
 
     }
+
+
+
+
+
+
+
 ///BACKUP
 int pelicula::LeerDeDiscobkp(int pos){
     FILE *A;

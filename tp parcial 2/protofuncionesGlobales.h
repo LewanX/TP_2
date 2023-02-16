@@ -25,6 +25,7 @@ bool validacionDatosVenta();
 
 bool formatoValido(char *formato);
 
+string determinarTurno(int turno);
 
 
 

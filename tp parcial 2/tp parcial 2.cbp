@@ -36,6 +36,7 @@
 		<Unit filename="Fecha.h" />
 		<Unit filename="decorado.h" />
 		<Unit filename="directores.h" />
+		<Unit filename="emision.h" />
 		<Unit filename="funcionesGlobales.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="peliculas.h" />
@@ -44,6 +45,7 @@
 		<Unit filename="submenuconfiguracion.h" />
 		<Unit filename="submenudatos.h" />
 		<Unit filename="submenudirector.h" />
+		<Unit filename="submenuemision.h" />
 		<Unit filename="submenupeliculas.h" />
 		<Unit filename="submenusalas.h" />
 		<Unit filename="submenuventas.h" />
