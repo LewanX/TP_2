@@ -449,7 +449,7 @@
 
 1664921743 c:\users\axel\documents\github\tp_2\tp parcial 2\submenuconfiguracion.h
 
-1675710602 source:c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\main.cpp
+1676661497 source:c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\main.cpp
 	<iostream>
 	<cstdio>
 	<string.h>
@@ -462,46 +462,52 @@
 	"salas.h"
 	"peliculas.h"
 	"ventas.h"
+	"emision.h"
 	"datos.h"
 	"submenusalas.h"
 	"submenudatos.h"
 	"submenupeliculas.h"
 	"submenudirector.h"
 	"submenuventas.h"
+	"submenuemision.h"
 	"funcionesGlobales.h"
 	"submenuconfiguracion.h"
 
-1675702804 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\decorado.h
+1676591085 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\decorado.h
 
-1676403618 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\protofuncionesglobales.h
+1676661402 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\protofuncionesglobales.h
 
 1675702804 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\fecha.h
 
 1676402300 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\directores.h
 
-1676401951 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\salas.h
+1676591085 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\salas.h
 
-1676401401 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\peliculas.h
+1676661402 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\peliculas.h
 
-1676403618 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\ventas.h
+1676661684 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\ventas.h
 
 1675710791 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\datos.h
 
-1675702804 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenusalas.h
+1676591085 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenusalas.h
 
 1675702804 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenudatos.h
 
-1676401374 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenupeliculas.h
+1676660362 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenupeliculas.h
 
 1675702804 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenudirector.h
 
-1676403361 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenuventas.h
+1676660523 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenuventas.h
 
-1676403618 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\funcionesglobales.h
+1676661402 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\funcionesglobales.h
 
-1676402221 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenuconfiguracion.h
+1676660411 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenuconfiguracion.h
 
 1676589983 c:\users\jason\documents\github\tp_2\tp parcial 2\emision.h
 
 1676589452 c:\users\jason\documents\github\tp_2\tp parcial 2\submenuemision.h
+
+1676661402 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\emision.h
+
+1676660133 c:\users\axel9\onedrive\documentos\github\tp_2\tp parcial 2\submenuemision.h
 

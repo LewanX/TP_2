@@ -78,25 +78,7 @@ bool cargar(){
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
     cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
     cin>>idPelicula;
-    /*if(fechaPelicula(idPelicula)==0){
-        cout<<"ESTA PELICULA NO ESTA DISPONIBLE"<<endl;
-        system("pause");
-        return false;
-    }
-    fecha.Cargar();
-    int diaAct=getFecha().getDia();
-    int mesAct=getFecha().getMes();
-    int anioAct=getFecha().getAnio();
-    while(validacionFecha(idPelicula,diaAct,mesAct,anioAct)==0){
-        cout <<"LA FECHA INGRESADA NO ES CORRECTA"<< endl;
-        system("pause");
-        system("cls");
-        fechaPelicula(idPelicula);
-        fecha.Cargar();
-        diaAct=getFecha().getDia();
-        mesAct=getFecha().getMes();
-        anioAct=getFecha().getAnio();
-    }*/
+
     while(validacionPrecio(idPelicula, Pago)==0){
         cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
         system("pause");
@@ -105,26 +87,9 @@ bool cargar(){
         cin>>idPelicula;
     }
 
-    //butacassala=cantButacasSala(idPelicula);
-    //butacasvendidas=calcularVentas(idPelicula);
-    //butacastotal=butacassala-butacasvendidas;
-    //cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
-    /*if(butacastotal<=0){
-        cout<<"LA SALA YA SE ENCUENTRA COMPLETA"<<endl;
-        system("pause");
-        system("cls");
-        return cargar();
-
-    }*/
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
-    while(CantEntradas<10){
-        cout <<" SE PUEDEN COMPRAR HASTA 10 ENTRADAS! "<< endl;
-        system("pause");
-        system("cls");
-        cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
-        cin>>CantEntradas;
-    }
+
     while(CantEntradas>butacastotal){
          cout <<"NO HAY SUFICIENTES BUTACAS!"<< endl;
         cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;

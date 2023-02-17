@@ -15,7 +15,7 @@ int NomDir(int id);
 bool validacionDatosPelicula();
 
 int calcularVentas(int id);
-int validacionFecha(int id, int dia, int mes, int anio);
+
 int autonumericoVentas();
 int fechaPelicula(int id);
 int calcularPlazas(int id, int dia, int mes, int anio);
@@ -25,7 +25,11 @@ bool validacionDatosVenta();
 
 bool formatoValido(char *formato);
 
+///EMISIONES
 string determinarTurno(int turno);
+int validacionIDsala(int salaid);
+int buscarButacas(int salaid)
+
 
 
 

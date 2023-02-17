@@ -19,11 +19,11 @@ void SubMenuEmision(){
 
         gotoxy(51,2);cout<<"MENU EMISION ";
 
-        gotoxy(45,8);cout<<"1) AGREGAR EMISION";
+        gotoxy(45,8);cout<<"1) AGREGAR EMISION ";
         gotoxy(45,9);cout<<"2) MOSTRAR EMISION ";
-        gotoxy(45,10);cout<<"3) ELIMINAR EMISION";
-        gotoxy(45,11);cout<<"4) MODIFICAR EMISION";
-        gotoxy(45,12);cout<<"5) ELIMINAR EMISION";
+        gotoxy(45,10);cout<<"3) ELIMINAR EMISION ";
+        gotoxy(45,11);cout<<"4) MODIFICAR EMISION ";
+        gotoxy(45,12);cout<<"5) ELIMINAR EMISION ";
         gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
         gotoxy(45,14);cout<<"--------------------------------------";
         gotoxy(45,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";

@@ -188,30 +188,7 @@ int fechaPelicula(int id){
         }
     }
 }
-int validacionFecha(int id, int dia, int mes, int anio)
-{
-    pelicula reg;
-        int pos=0, fechaIni, fechaFin, fechaActual;
-        while(reg.leerEnDisco(pos++)==1){
-            if(reg.getidPelicula()==id){
-                    fechaIni=(reg.getFechaIni().getAnio()*10000)+(reg.getFechaIni().getMes()*100)+reg.getFechaIni().getDia();
-                    fechaFin=(reg.getFechaFin().getAnio()*10000)+(reg.getFechaFin().getMes()*100)+reg.getFechaFin().getDia();
-                    fechaActual=(anio*10000)+(mes*100)+dia;
-                    if(fechaActual>=fechaIni && fechaActual<=fechaFin)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
-            }
 
-        }
-
-
-return -1;
-}
 int autonumericoVentas(){
 ventas obj;
 int pos=0;
@@ -310,9 +287,28 @@ string determinarTurno(int turno){
     if(turno==3){
         return "NOCHE";
     }
-
-
 }
 
+int validacionIDsala(int salaid){
+Salas aux;
+int pos=0;
+while(aux.leerEnDisco(pos++)){
+    if(aux.getidSala()==salaid && aux.getEstado()==true){
+        return 1;
+        }
+    }
+return 0;
+}
+
+int buscarButacas(int salaid){
+Salas aux;
+int pos=0;
+while(aux.leerEnDisco(pos++)){
+    if(aux.getidSala()==salaid){
+        return aux.getPlazas();
+    }
+}
+return -1;
+}
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED

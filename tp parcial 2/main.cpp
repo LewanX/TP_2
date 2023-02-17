@@ -39,8 +39,8 @@ int main(){
         gotoxy(45,8);cout<<"1) MENU DIRECTORES "<<endl;
         gotoxy(45,9);cout<<"2) MENU SALAS "<<endl;
         gotoxy(45,10);cout<<"3) MENU PELICULAS"<<endl;
-        gotoxy(45,11);cout<<"4) MENU VENTAS ENTRADAS"<<endl;
-        gotoxy(45,12);cout<<"5) MENU EMISION"<<endl;
+        gotoxy(45,11);cout<<"4) MENU EMISION"<<endl;
+        gotoxy(45,12);cout<<"5) MENU VENTAS ENTRADAS"<<endl;
         gotoxy(45,13);cout<<"6) MENU DATOS"<<endl;
         gotoxy(45,14);cout<<"7) MENU CONFIGURACION"<<endl;
         gotoxy(45,15);cout<<"-----------------------------"<<endl;
@@ -55,11 +55,10 @@ int main(){
                     break;
             case 3: SubMenuPeliculas();
                     break;
-            case 4: SubMenuVentas();
-            break;
-            case 5: SubMenuEmision();
+            case 4: SubMenuEmision();
                     break;
-
+            case 5: SubMenuVentas();
+                    break;
             case 6: SubMenuDatos();
                     break;
             case 7: SubmenuConfiguracion();

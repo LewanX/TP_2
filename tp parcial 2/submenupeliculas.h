@@ -13,18 +13,14 @@ void SubMenuPeliculas(){
             dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
         gotoxy(51,2);cout<<"MENU PELICULAS";
         gotoxy(45,8);cout<<"1) AGREGAR PELICULA ";
-        gotoxy(45,9);cout<<"2) AGREGAR EMISION ";
-
-        gotoxy(45,10);cout<<"3) MOSTRAR PELICULAS ";
-        gotoxy(45,11);cout<<"4) MOSTRAR EMISIONES ";
-
-        gotoxy(45,12);cout<<"5) MODIFICAR NOMBRE DE PELICULA ";
-        gotoxy(45,13);cout<<"6) MODIFICAR GENERO DE PELICULA ";
-        gotoxy(45,14);cout<<"7) MODIFICAR IDIOMA DE PELICULA ";
-        gotoxy(45,15);cout<<"8) ELIMINAR PELICULA ";
-        gotoxy(45,16);cout<<"-----------------------------";
-        gotoxy(45,17);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(45,18);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,9);cout<<"2) MOSTRAR PELICULAS ";
+        gotoxy(45,10);cout<<"3) MODIFICAR NOMBRE DE PELICULA ";
+        gotoxy(45,11);cout<<"4) MODIFICAR GENERO DE PELICULA ";
+        gotoxy(45,12);cout<<"5) MODIFICAR IDIOMA DE PELICULA ";
+        gotoxy(45,13);cout<<"6) ELIMINAR PELICULA ";
+        gotoxy(45,14);cout<<"-----------------------------";
+        gotoxy(45,15);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,16);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -39,31 +35,24 @@ void SubMenuPeliculas(){
                 system("pause");
             break;
 
-            case 2://AGREGAR ENISION
-
-                break;
-
-            case 3://MOSTRAR PELICULAS
+            case 2://MOSTRAR PELICULAS
                 reg.mostrarPeliculas();
                 system("pause");
             break;
 
-            case 4://MOSTRAR EMISION
-
-                break;
-            case 5: //MODIFICAR NOMBRE
+            case 3: //MODIFICAR NOMBRE
                 reg.ModificarNombrePelicula();
                 system("pause");
             break;
-            case 6: //MODIFICAR GENERO
+            case 4: //MODIFICAR GENERO
                 reg.ModificarGenero();
                 system("pause");
             break;
-            case 7: //MODIFICAR IDIOMA
+            case 5: //MODIFICAR IDIOMA
                 reg.ModificarIdioma();
                 system("pause");
             break;
-            case 8: //ELIMINAR PELICULA
+            case 6: //ELIMINAR PELICULA
                 reg.EliminarDeDisco();
                 system("pause");
             break;

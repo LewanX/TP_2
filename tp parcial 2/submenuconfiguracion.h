@@ -16,18 +16,18 @@ void SubmenuConfiguracion();
 
 
  gotoxy(51,2);cout<<"MENU CONFIGURACION";
- gotoxy(40,9);cout<<"1) COPIA DE SEGURIDAD DEL ARCHIVO DE DIRECTORES";
- gotoxy(40,10);cout<<"2) COPIA DE SEGURIDAD DEL ARCHIVO SALAS";
- gotoxy(40,11);cout<<"3) COPIA DE SEGURIDAD DEL ARCHIVO PELICULAS";
- gotoxy(40,12);cout<<"4) COPIA DE SEGURIDAD DEL ARCHIVO VENTAS";
- gotoxy(40,14);cout<<"5) RESTAURAR DATOS DE DIRECTORES";
-  gotoxy(40,15);cout<<"6) RESTAURAR DATOS DE SALAS";
-  gotoxy(40,16);cout<<"7) RESTAURAR DATOS DE PELICULAS";
-  gotoxy(40,17);cout<<"8) RESTAURAR DATOS DE VENTAS";
-  gotoxy(40,18);cout<<"9) RECUPERAR PELICULA POR ID";
- gotoxy(40,19);cout<<"--------------------------------";
- gotoxy(40,20);cout<<"0) VOLVER AL MENU PRINCIPAL";
-  gotoxy(40,21);cout<<"SELECCIONE UNA DE LAS OPCIONES: ";
+ gotoxy(40,8);cout<<"1) COPIA DE SEGURIDAD DEL ARCHIVO DE DIRECTORES";
+ gotoxy(40,9);cout<<"2) COPIA DE SEGURIDAD DEL ARCHIVO SALAS";
+ gotoxy(40,10);cout<<"3) COPIA DE SEGURIDAD DEL ARCHIVO PELICULAS";
+ gotoxy(40,11);cout<<"4) COPIA DE SEGURIDAD DEL ARCHIVO VENTAS";
+ gotoxy(40,12);cout<<"5) RESTAURAR DATOS DE DIRECTORES";
+  gotoxy(40,13);cout<<"6) RESTAURAR DATOS DE SALAS";
+  gotoxy(40,14);cout<<"7) RESTAURAR DATOS DE PELICULAS";
+  gotoxy(40,15);cout<<"8) RESTAURAR DATOS DE VENTAS";
+  gotoxy(40,16);cout<<"9) RECUPERAR PELICULA POR ID";
+ gotoxy(40,17);cout<<"--------------------------------";
+ gotoxy(40,18);cout<<"0) VOLVER AL MENU PRINCIPAL";
+  gotoxy(40,19);cout<<"SELECCIONE UNA DE LAS OPCIONES: ";
         cin>>opc;
         system("cls");
         system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS

@@ -7,9 +7,8 @@ private:
     int salaID;
     int turno;
     int Idpelicula;
-    int butacasDisponibles;
+    int butacasDisponibles=0;
     bool hayFuncion;
-
 
 public:
     int getDia(){return dia;}
@@ -48,27 +47,40 @@ public:
 
         cout<<"SELECCIONE UN DIA VALIDO DEL MES DE FEBRERO [1...28]: ";
             cin>>dia;
+            while(dia>=1 && dia<=28){
+                cout<<"INGRESE UN DIA VALIDO (1-28) " <<endl;
+                cin>>dia;
+            }
 
         cout<<"SELECCIONE UN TURNO [1:MATUTINO 2:TARDE 3:NOCHE]: ";
             cin>>turno;
+            while(turno!=1 || turno!=2 || turno!=3){
+                cout<<"SELECCIONE UN TURNO VALIDO [1:MATUTINO 2:TARDE 3:NOCHE]: ";
+                cin>>turno;
+            }
+
 
         cout<<"SELECCIONE EN QUE SALA QUIERE QUE SE EMITA LA PELICULA: ";
             cin>>salaID;
         system("pause");
+            while(validacionIDsala(salaID)==0){
+                cout<<"ESTA SALA NO EXISISTE !!!"<<endl;
+                cout<<"SELECCIONE EN QUE SALA QUIERE QUE SE EMITA LA PELICULA: ";
+                cin>>salaID;
+            }
+            butacasDisponibles=buscarButacas(salaID);
 
     }
 
     void emision::mostrar(){
         int dia;
         int pos=0;
-    cout<<"INGRESE UN DIA PARA VER PELICULAS DISPONIBLES: ";
+    cout<<"INGRESE UN DIA PARA VER PELICULAS DISPONIBLES [1-28]: ";
         cin>>dia;
     while(leerEnDisco(pos++)==1){
         if(getDia()==dia){
             mostrarDatos();
         }
-        //gotoxy(56,y);mostrar(y);
-        //cout<<endl;
 
     }
     }
