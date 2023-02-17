@@ -284,5 +284,47 @@ while(aux.leerEnDisco(pos++)){
 }
 return -1;
 }
+bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA ESTÁ OCUPADA EN SUS TRES TURNOS PARA DETERMINADO DIA
+    int pos=0;
+    int contadorTurno=0;
+        emision reg;
+        while(reg.leerEnDisco(pos++)){
 
+            if(reg.getDia()==dia && reg.getSalaId()==salaid){
+                    if((reg.getTurno()==1)  || (reg.getTurno()==2)  || (reg.getTurno()==3) ){
+                            cout<<"TIENE TURNO:"<<determinarTurno(reg.getTurno())<<endl;
+                        contadorTurno++;
+                    }
+
+            }
+
+
+        }
+        if(contadorTurno==3){
+            return true;
+        }else{
+        return false;
+        }
+
+}
+
+bool tieneTurno(int salaid,int dia,int turno){
+int pos=0;
+    int contadorTurno=0;
+        emision reg;
+        while(reg.leerEnDisco(pos++)){
+
+            if(reg.getDia()==dia && reg.getSalaId()==salaid){
+                    if((reg.getTurno()==turno)){
+                        return true;
+                    }
+
+            }
+
+
+        }
+        return false;
+
+
+}
 #endif // FUNCIONESGLOBALES_H_INCLUDED

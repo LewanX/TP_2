@@ -31,8 +31,8 @@ void SubMenuEmision(){
         system("cls");
         switch(opc){
             case 1:
-                reg.cargar();
-                 if(reg.grabarEnDisco()==1){cout<<"\nREGISTRO AGREGADO"<<endl;}else{cout<<"\nERROR AL GRABAR"<<endl;}
+
+                 if(reg.cargar()==true && reg.grabarEnDisco()==1){cout<<"\nREGISTRO AGREGADO"<<endl;}else{cout<<"\nERROR AL GRABAR"<<endl;}
                 system("pause");
             break;
             case 2:

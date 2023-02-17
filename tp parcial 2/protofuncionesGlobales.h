@@ -29,8 +29,8 @@ bool formatoValido(char *formato);
 string determinarTurno(int turno);
 int validacionIDsala(int salaid);
 int buscarButacas(int salaid);
-
-
+bool emisionSala(int salaidm, int dia);
+bool tieneTurno(int salaid, int dia,int turno);
 
 
 //int VentaAutonumerica();
