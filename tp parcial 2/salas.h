@@ -93,29 +93,17 @@ void Salas::EliminarDeDisco(){
 }
 
 void Salas::ModificarButacas(){
-        int resto=0;
         int pos=0;
         int Id, butaca;
         int y=4;
-        bool estadoSala;
         cout<<"INTRODUCE EL ID DE SALA A LISTAR: ";cin>>Id;
         while(leerEnDisco(pos)==1){
              if(getidSala()==Id){
                     if(getEstado()==true){
-                       //cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
-                       //cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
                        estructuraSala("ID SALA","CANTIDAD BUTACAS");
                        mostrar(y);
-
-                       //plazas-=calcularVentas(idSala);
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
-                    //resto=butaca-plazas;
-                     /*while(resto<0){
-                        cout<<"INGRESE UN VALOR MAYOR A LAS BUTACAS VENDIDAS";
-                        cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
-                        resto=butaca-plazas;
-                        cout<<resto<<endl;
-                     }*/
+
                     setPlazas(butaca);
                     if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
                         cout<<endl<<endl;

@@ -27,7 +27,6 @@ using namespace std;
 
 int main(){
     int opc;
-    director obj;
     ventas lol;
 
     while(true){

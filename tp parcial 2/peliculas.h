@@ -49,7 +49,7 @@ class pelicula
       int LeerDeDiscobkp(int pos);
       bool backuppelicula();
       bool recupelicula();
-      bool recuperarPeliculaPorID();
+      void recuperarPeliculaPorID();
 
       bool cargarPeliculas()
       {
@@ -350,9 +350,8 @@ FILE *br;
     return true;
  }
 
-bool pelicula::recuperarPeliculaPorID(){
+void pelicula::recuperarPeliculaPorID(){
     int pos=0;
-        char id;
         int Id;
         cout<<"INTRODUCE EL ID DE PELICULA A RECUPERAR: ";cin>>Id;
         while(leerEnDisco(pos)==1){

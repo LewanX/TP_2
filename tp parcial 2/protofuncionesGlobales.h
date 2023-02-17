@@ -28,7 +28,7 @@ bool formatoValido(char *formato);
 ///EMISIONES
 string determinarTurno(int turno);
 int validacionIDsala(int salaid);
-int buscarButacas(int salaid)
+int buscarButacas(int salaid);
 
 
 

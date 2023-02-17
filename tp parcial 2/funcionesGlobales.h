@@ -163,32 +163,6 @@ return ventas;
 
 }
 
-int fechaPelicula(int id){
-    pelicula reg;
-    int pos=0;
-        int diaFin,mesFin,anioFin;
-        int diaIni,mesIni,anioIni;
-    while(reg.leerEnDisco(pos++)==1){
-        if(reg.getidPelicula()==id && reg.getEstado()==true){
-                cout<<"ELIJA UNA FECHA  VALIDA "<<endl;
-                    diaIni=reg.getFechaIni().getDia();
-                    mesIni=reg.getFechaIni().getMes();
-                    anioIni=reg.getFechaIni().getAnio();
-
-                    diaFin=reg.getFechaFin().getDia();
-                    mesFin=reg.getFechaFin().getMes();
-                    anioFin=reg.getFechaFin().getAnio();
-
-                    cout<<"INICIO DE PROYECION:"<<diaIni<<"/"<<mesIni<<"/"<<anioIni<<endl;
-                    cout<<"FINAL DE PROYECION :"<<diaFin<<"/"<<mesFin<<"/"<<anioFin<<endl;
-                    return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-}
-
 int autonumericoVentas(){
 ventas obj;
 int pos=0;
