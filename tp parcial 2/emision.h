@@ -7,7 +7,7 @@ private:
     int salaID;
     int turno;
     int Idpelicula;
-    int butacasDisponibles=0;
+    int butacasDisponibles=0,butacasDescontadas=0,butacasTotales=0;
     bool hayFuncion;
 
 public:
@@ -24,12 +24,12 @@ public:
   void mostrarDeDisco();
 
   void mostrarDatos(){
-       cout<<dia<<" FEBRERO"<<endl;
-  cout<<"ID SALA: "<<salaID<<endl;
-  cout<<"ID PELICULA: "<<Idpelicula<<endl;
-  cout<<"TURNO: "<<determinarTurno(turno)<<endl;
- cout<<"BUTACAS DISPONIBLES: "<<butacasDisponibles<<endl<<endl;;
-
+    cout<<dia<<" FEBRERO"<<endl;
+    cout<<"ID SALA: "<<salaID<<endl;
+    cout<<"ID PELICULA: "<<Idpelicula<<endl;
+    cout<<"TURNO: "<<determinarTurno(turno)<<endl;
+    cout<<"BUTACAS DISPONIBLES: "<<butacasDisponibles<<endl;
+    cout<<"BUTACAS DISPONIBLES: "<<butacasTotales<<endl<<endl;
   }
 };
 
@@ -50,15 +50,10 @@ public:
                 cout<<"INGRESE UN DIA VALIDO (1-28) " <<endl;
                 cin>>dia;
             }
-
-
-        if(emisionSala(salaID,dia)==true){
-
+            if(emisionSala(salaID,dia)==true){
                 cout<<"ESTA SALA CUENTA CON TODOS LOS TURNOS OCUPADOS PARA EL DIA "<<dia<<", POR FAVOR ELIJA OTRA"<<endl;
                 return false;
-
             }
-
             cout<<"SELECCIONE UN TURNO [1:MATUTINO 2:TARDE 3:NOCHE]: ";
             cin>>turno;
             while((turno != 1) && (turno != 2) && (turno != 3)){
@@ -71,28 +66,23 @@ public:
                     cin>>turno;
             }
 
-
-        cout<<"INGRESE EL ID DE PELICULA A AGREGAR EMISION: ";
+            cout<<"INGRESE EL ID DE PELICULA A AGREGAR EMISION: ";
             cin>>Idpelicula;
 
-
-
-        if(validacionIDpelicula(Idpelicula)==0){
+            while(validacionIDpelicula(Idpelicula)==0){
             cout<<"ESTA PELICULA NO EXISTE: "<<endl;
-            return false;//elaborar
-        }
-
-
-
-
-
-
+            system("cls");
+            cout<<"INGRESE EL ID DE PELICULA A AGREGAR EMISION: ";
+            cin>>Idpelicula;
+            }
 
             //validarDatos(dia,Idpelicula,turno,salaID);
-
             butacasDisponibles=buscarButacas(salaID);
+            /*
+            butacasDescontadas=descontarButacas(salaID,turno);
+            butacasTotales=butacasDisponibles-butacasTotales;
             return true;
-
+*/
     }
 
     void emision::mostrar(){

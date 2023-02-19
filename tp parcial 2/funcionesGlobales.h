@@ -284,6 +284,19 @@ while(aux.leerEnDisco(pos++)){
 }
 return -1;
 }
+/*
+int descontarButacas(int salaID,int turno){
+emision obj;
+ventas aux;
+int pos=0;
+while(obj.leerEnDisco(pos++)){
+        if(obj.getSalaId()==salaID && obj.getTurno()==turno){
+            return aux.getCantEntradas();
+        }
+
+}
+}
+*/
 bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA ESTÁ OCUPADA EN SUS TRES TURNOS PARA DETERMINADO DIA
     int pos=0;
     int contadorTurno=0;

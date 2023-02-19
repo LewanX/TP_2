@@ -70,7 +70,7 @@ void  mostrar(int y){
     cout<<idSala;
     gotoxy(95,y);
     cout<<plazas;
-cout<<endl;
+    cout<<endl;
 }
 
 };
