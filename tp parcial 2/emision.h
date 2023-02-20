@@ -81,8 +81,9 @@ public:
             /*
             butacasDescontadas=descontarButacas(salaID,turno);
             butacasTotales=butacasDisponibles-butacasTotales;
+            */
             return true;
-*/
+
     }
 
     void emision::mostrar(){

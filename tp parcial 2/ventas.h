@@ -73,9 +73,35 @@ void mostrarVentas()
 
 bool cargar(){
     if(validacionDatosVenta()==true){
+            int dia,sala,turno;
+
     estado=true;
     Nventa=autonumericoVentas()+1;
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
+
+    cout<<"INGRESE EL DIA : ";
+    cin>>dia;
+
+    cout<<"ESTE DIA CUENTA CON LAS SIGUIENTES PELICULAS EN EMISION"<<endl;
+    if(mostrarEmisionesPelicula(dia)==0){
+     cout<<"ESTE DIA NO CUENTA CON EMISIONES EN ESE DIA:";
+     return false;
+    }
+
+    cout<<"INGRESE EL ID DE PELICULA";
+    cin>>idPelicula;
+    while(validarPelicula(dia,idPelicula)==false){
+        cout<<"PORFAVOR INGRESE UN ID DE PELICULA VALIDO:";
+        cin>>idPelicula;
+        cout<<endl;
+    }
+
+
+
+    cout<<"INGRESE EL TURNO";
+    cin>>turno;
+
+
     cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
     cin>>idPelicula;
 

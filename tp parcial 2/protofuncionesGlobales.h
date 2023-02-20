@@ -29,10 +29,12 @@ bool formatoValido(char *formato);
 string determinarTurno(int turno);
 int validacionIDsala(int salaid);
 int buscarButacas(int salaid);
-///int descontarButacas(int salaID,int turno);
+int descontarButacas(int dia,int salaID,int turno);
 bool emisionSala(int salaidm, int dia);
 bool tieneTurno(int salaid, int dia,int turno);
-
-
+///VENTAS
+bool mostrarEmisionesPelicula(int dia);
+bool validarPelicula(int dia,int IDpelicula);
+void TurnoDePelicula(int salaID,int dia,int PeliculaID);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

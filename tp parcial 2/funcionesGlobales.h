@@ -284,8 +284,8 @@ while(aux.leerEnDisco(pos++)){
 }
 return -1;
 }
-/*
-int descontarButacas(int salaID,int turno){
+
+int descontarButacas(int dia,int salaID,int turno){
 emision obj;
 ventas aux;
 int pos=0;
@@ -296,12 +296,12 @@ while(obj.leerEnDisco(pos++)){
 
 }
 }
-*/
+
 bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA ESTÁ OCUPADA EN SUS TRES TURNOS PARA DETERMINADO DIA
     int pos=0;
     int contadorTurno=0;
         emision reg;
-        while(reg.leerEnDisco(pos++)){
+        while(reg.leerEnDisco(pos++)==1){
 
             if(reg.getDia()==dia && reg.getSalaId()==salaid){
                     if((reg.getTurno()==1)  || (reg.getTurno()==2)  || (reg.getTurno()==3) ){
@@ -325,7 +325,7 @@ bool tieneTurno(int salaid,int dia,int turno){
 int pos=0;
     int contadorTurno=0;
         emision reg;
-        while(reg.leerEnDisco(pos++)){
+        while(reg.leerEnDisco(pos++)==1){
 
             if(reg.getDia()==dia && reg.getSalaId()==salaid){
                     if((reg.getTurno()==turno)){
@@ -339,5 +339,65 @@ int pos=0;
         return false;
 
 
+}
+
+///VENTAS
+string obtenerNombrePelicula(int id){
+pelicula reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getidPelicula()==id){
+        return reg.getNombrePelicula();
+    }
+
+
+
+}
+}
+void TurnoDePelicula(int SalaID,int dia,int PeliculaId){
+int pos=0;
+
+emision reg;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getSalaId()==SalaID && reg.getIdPelicula()==PeliculaId){
+        cout<<"TURNO:"<<determinarTurno(reg.getTurno())<<endl;
+    }
+}
+
+}
+bool mostrarEmisionesPelicula(int dia){
+    emision reg;
+    int pos=0;
+    bool tienePeliculas=false;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getDia()==dia){
+                tienePeliculas=true;
+            cout<<"ID PELICULA:"<<reg.getIdPelicula()<<endl;
+            cout<<"NOMBRE PELICULA:"<<obtenerNombrePelicula(reg.getIdPelicula())<<endl;
+            cout<<"SALA NUM:"<<reg.getSalaId()<<endl;
+            cout<<"TURNO:"<<determinarTurno(reg.getTurno());
+             //TurnoDePelicula(reg.getSalaId(),dia,reg.getIdPelicula());
+            cout<<endl<<endl;
+        }
+
+
+    }
+
+return tienePeliculas;
+
+
+}
+bool validarPelicula(int dia,int IDpelicula){
+emision reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia){
+        if(reg.getIdPelicula()!=IDpelicula){
+            return false;
+        }
+    }
+
+}
+return true;
 }
 #endif // FUNCIONESGLOBALES_H_INCLUDED
