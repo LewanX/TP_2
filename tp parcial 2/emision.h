@@ -19,14 +19,17 @@ public:
 
 
     ///SETS
-   void setbutacasDisponibles(int butacasD){butacasDisponibles=butacasD;}
+  void setbutacasDisponibles(int butacasD){butacasDisponibles=butacasD;}
   bool cargar();
   void mostrar();
   void mostrarDatos(int);
   int grabarEnDisco();
   int leerEnDisco(int);
   void mostrarDeDisco();
-    int ModificarEnDisco(int);
+  int ModificarEnDisco(int);
+  int LeerDeDiscobkp(int pos);
+  bool backupemision();
+  bool recuemisiones();
   void mostrarDatos(){
     cout<<dia<<" FEBRERO"<<endl;
     cout<<"ID SALA: "<<salaID<<endl;
@@ -78,7 +81,7 @@ public:
             cout<<"INGRESE EL ID DE PELICULA A AGREGAR EMISION: ";
             cin>>Idpelicula;
             }
-butacasDisponibles=buscarButacas(salaID);
+            butacasDisponibles=buscarButacas(salaID);
            /* ///validarDatos(dia,Idpelicula,turno,salaID);
 
             butacasDescontadas=descontarButacas(salaID,turno);
@@ -131,5 +134,47 @@ int emision::ModificarEnDisco(int pos)
     fclose(p);
     return escribio;
 }
+
+///BACKUP
+
+int emision :: LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/emision.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(emision)*pos,0);
+    int leyo=fread(this,sizeof(emision),1,A);
+    fclose(A);
+    return leyo;
+}
+
+bool emision::backupemision(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/emision.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(emision),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+
+ bool emision::recuemisiones(){
+int pos=0;
+FILE *br;
+    br=fopen("emision.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(emision),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
 
 #endif // EMISION_H_INCLUDED

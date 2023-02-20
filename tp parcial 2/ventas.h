@@ -98,17 +98,12 @@ bool cargar(){
         cout<<endl;
     }
 
-
-
     cout<<"INGRESE EL TURNO [1:MATUTINO 2:TARDE 3:NOCHE] : ";
     cin>>turno;
     while(validarTurno(dia,idPelicula,turno)==false){
         cout<<"INGRESE UN TURNO VALIDO [1:MATUTINO 2:TARDE 3:NOCHE]: "<<endl;
         cin>>turno;
     }
-
-
-
 
     /*while(validacionPrecio(idPelicula, Pago)==0){
         cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
