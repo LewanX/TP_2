@@ -37,5 +37,7 @@ bool tieneTurno(int salaid, int dia,int turno);
 bool mostrarEmisionesPelicula(int dia);
 bool validarPelicula(int dia,int IDpelicula);
 void TurnoDePelicula(int salaID,int dia,int PeliculaID);
+bool validarTurno(int dia,int idPelicula,int turno);
+bool validarButacas(int dia,int idPelicula,int turno,int butacas);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

@@ -15,14 +15,18 @@ public:
     int getSalaId(){return salaID;}
     int getTurno(){return turno;}
     int getIdPelicula(){return Idpelicula;}
+    int getbutacasDisponibles(){return butacasDisponibles;}
 
+
+    ///SETS
+   void setbutacasDisponibles(int butacasD){butacasDisponibles=butacasD;}
   bool cargar();
   void mostrar();
   void mostrarDatos(int);
   int grabarEnDisco();
   int leerEnDisco(int);
   void mostrarDeDisco();
-
+    int ModificarEnDisco(int);
   void mostrarDatos(){
     cout<<dia<<" FEBRERO"<<endl;
     cout<<"ID SALA: "<<salaID<<endl;
@@ -74,9 +78,9 @@ public:
             cout<<"INGRESE EL ID DE PELICULA A AGREGAR EMISION: ";
             cin>>Idpelicula;
             }
-
+butacasDisponibles=buscarButacas(salaID);
            /* ///validarDatos(dia,Idpelicula,turno,salaID);
-            butacasDisponibles=buscarButacas(salaID);
+
             butacasDescontadas=descontarButacas(salaID,turno);
             butacasTotales=butacasDisponibles-butacasTotales;
             */
@@ -116,6 +120,16 @@ int emision::grabarEnDisco()
     fclose(p);
     return escribio;
 }
+int emision::ModificarEnDisco(int pos)
+{
 
+    FILE *p;
+    p=fopen("emision.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(emision)*pos,0);
+    int escribio=fwrite(this,sizeof(emision),1,p);
+    fclose(p);
+    return escribio;
+}
 
 #endif // EMISION_H_INCLUDED

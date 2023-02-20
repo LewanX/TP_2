@@ -100,25 +100,33 @@ bool cargar(){
 
 
 
-    cout<<"INGRESE EL TURNO";
+    cout<<"INGRESE EL TURNO [1:MATUTINO 2:TARDE 3:NOCHE] : ";
     cin>>turno;
+    while(validarTurno(dia,idPelicula,turno)==false){
+        cout<<"INGRESE UN TURNO VALIDO [1:MATUTINO 2:TARDE 3:NOCHE]: "<<endl;
+        cin>>turno;
+    }
 
 
-    cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
-    cin>>idPelicula;
 
-    while(validacionPrecio(idPelicula, Pago)==0){
+
+    /*while(validacionPrecio(idPelicula, Pago)==0){
         cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
         system("pause");
         system("cls");
         cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
         cin>>idPelicula;
-    }
+    }*/
 
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
+    while(validarButacas(dia,idPelicula,turno,CantEntradas)==false){
+         cout<<"DATOS INCORRECTOS VUELVA A INTENTAR: ";
+    cin>>CantEntradas;
+    }
 
-    while(CantEntradas>butacastotal){
+
+    /*while(CantEntradas>butacastotal){
          cout <<"NO HAY SUFICIENTES BUTACAS!"<< endl;
         cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
         system("pause");
@@ -127,8 +135,8 @@ bool cargar(){
         cin>>CantEntradas;
 
 
-    }
-    cout<<"INGRESE EL ID DE SALA DONDE VER LA PELICULA"<<endl;
+    }*/
+   /* cout<<"INGRESE EL ID DE SALA DONDE VER LA PELICULA"<<endl;
     cin>>sala;
     while(verificarSala(sala)==1){
         cout<<"ESTA SALA SE PUEDE UTILIZAR"<<endl;
@@ -145,7 +153,9 @@ bool cargar(){
     else{
         cout<<"PRIMERO DEBE HABER PELICULAS CARGADAS"<<endl;
         return false;
-    }
+    }*/
+}
+return true;
 }
 
 
@@ -169,7 +179,7 @@ void mostrar()
 }
 
 };
-void ventas::EliminarDeDisco(){
+void ventas :: EliminarDeDisco(){
        int pos=0;
        int idV;
         cout<<"INTRODUZCA EL ID DE VENTA A ELIMINAR: ";cin>>idV;
@@ -237,7 +247,7 @@ int ventas::leerEnDisco(int pos)
     return leyo;
 }
 ///BACKUP
-int ventas::LeerDeDiscobkp(int pos){
+int ventas :: LeerDeDiscobkp(int pos){
     FILE *A;
         A=fopen("backup/ventas.bkp","rb");
             if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
@@ -263,6 +273,7 @@ FILE *b;
     if(pos==0){return false;}
     return true;
 }
+
  bool ventas::recuventa(){
 int pos=0;
 FILE *br;

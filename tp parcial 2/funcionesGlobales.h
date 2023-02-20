@@ -417,12 +417,54 @@ emision reg;
 int pos=0;
 while(reg.leerEnDisco(pos++)==1){
     if(reg.getDia()==dia){
-        if(reg.getIdPelicula()!=IDpelicula){
-            return false;
+        if(reg.getIdPelicula() == IDpelicula){
+            return true;
         }
     }
 
 }
-return true;
+
+return false;
+}
+
+bool validarTurno(int dia,int idPelicula,int turno){
+
+emision reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula){
+        if(reg.getTurno()==turno){
+            return true;
+        }
+    }
+
+
+}
+return false;
+}
+bool validarButacas(int dia,int idPelicula,int turno,int butacas){
+emision reg;
+int pos=0;
+int resta=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+       if(butacas <= reg.getbutacasDisponibles())
+
+        resta=reg.getbutacasDisponibles()-butacas;
+
+        reg.setbutacasDisponibles(resta);
+        if(reg.ModificarEnDisco(pos)==1){
+            return true;
+        }
+
+
+    }
+
+
+
+}
+return false;
+
+
 }
 #endif // FUNCIONESGLOBALES_H_INCLUDED
