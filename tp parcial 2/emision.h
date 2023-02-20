@@ -29,7 +29,6 @@ public:
     cout<<"ID PELICULA: "<<Idpelicula<<endl;
     cout<<"TURNO: "<<determinarTurno(turno)<<endl;
     cout<<"BUTACAS DISPONIBLES: "<<butacasDisponibles<<endl;
-    cout<<"BUTACAS DISPONIBLES: "<<butacasTotales<<endl<<endl;
   }
 };
 
@@ -76,9 +75,8 @@ public:
             cin>>Idpelicula;
             }
 
-            //validarDatos(dia,Idpelicula,turno,salaID);
+            ///validarDatos(dia,Idpelicula,turno,salaID);
             butacasDisponibles=buscarButacas(salaID);
-            /*
             butacasDescontadas=descontarButacas(salaID,turno);
             butacasTotales=butacasDisponibles-butacasTotales;
             */
