@@ -11,9 +11,9 @@ int validacionSala(int id);
 int validacionPrecio(int id, int pago);
 
 int NomDir(int id);
-
+int validarVenta(int salaid);
 bool validacionDatosPelicula();
-
+int verificarSala(int sala);
 int calcularVentas(int id);
 
 int autonumericoVentas();
@@ -29,7 +29,7 @@ bool formatoValido(char *formato);
 string determinarTurno(int turno);
 int validacionIDsala(int salaid);
 int buscarButacas(int salaid);
-///int descontarButacas(int salaID,int turno);
+int descontarButacas(int salaID,int turno);
 bool emisionSala(int salaidm, int dia);
 bool tieneTurno(int salaid, int dia,int turno);
 

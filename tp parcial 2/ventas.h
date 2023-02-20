@@ -5,7 +5,7 @@ class ventas
 {
     private:
 
-      int butacastotal=0,butacasvendidas=0,butacassala=0,Nventa, CantEntradas, Importe=150, Pago,fila,asiento, idPelicula;
+      int butacastotal=0,Nventa, CantEntradas, Importe=150, Pago,idPelicula,sala;
       fechaAct fecha;
       int Total;
        Salas aux;
@@ -19,6 +19,7 @@ class ventas
       void setCantEntradas (int CantE){CantEntradas=CantE;}
       void setImporte (int Imp){Importe=Imp;}
       void setPago (int P){Pago=P;}
+      void setSala (int S){sala=S;}
       void setFecha(fechaAct F) {fecha=F;}
       void setEstado(bool e){estado=e;}
       ///gets()
@@ -27,6 +28,7 @@ class ventas
       int getCantEntradas (){return CantEntradas;}
       int getImporte (){return Importe;}
       int getTotal (){return Total;}
+      int getSala (){return sala;}
       int getPago (){return Pago;}
       fechaAct getFecha () {return fecha;}
 
@@ -99,6 +101,11 @@ bool cargar(){
         cin>>CantEntradas;
 
 
+    }
+    cout<<"INGRESE EL ID DE SALA DONDE VER LA PELICULA"<<endl;
+    cin>>sala;
+    while(verificarSala(sala)==1){
+        cout<<"ESTA SALA SE PUEDE UTILIZAR"<<endl;
     }
     cout<<endl;
     cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
