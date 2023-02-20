@@ -75,7 +75,7 @@ public:
             cin>>Idpelicula;
             }
 
-            ///validarDatos(dia,Idpelicula,turno,salaID);
+           /* ///validarDatos(dia,Idpelicula,turno,salaID);
             butacasDisponibles=buscarButacas(salaID);
             butacasDescontadas=descontarButacas(salaID,turno);
             butacasTotales=butacasDisponibles-butacasTotales;

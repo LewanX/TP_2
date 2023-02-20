@@ -295,8 +295,8 @@ while(aux.leerEnDisco(pos++)){
 return -1;
 }
 
-int descontarButacas(int dia,int salaID,int turno){
-int descontarButacas(int salaID,int turno){
+//int descontarButacas(int dia,int salaID,int turno){
+/*int descontarButacas(int salaID,int turno){
 emision obj;
 ventas aux;
 int pos=0;
@@ -309,8 +309,8 @@ while(obj.leerEnDisco(pos++)){
 
 }
 }
-
-int validarVenta(int salaid){
+*/
+/*int validarVenta(int salaid){
 ventas aux;
 int pos=0;
 while (aux.leerEnDisco(pos++)){
@@ -320,6 +320,7 @@ while (aux.leerEnDisco(pos++)){
 }
 return 0;
 }
+*/
 
 bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA EST� OCUPADA EN SUS TRES TURNOS PARA DETERMINADO DIA
     int pos=0;
