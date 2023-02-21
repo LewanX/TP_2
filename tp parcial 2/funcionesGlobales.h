@@ -99,6 +99,7 @@ int validacionSala(int id){
         }
         return 0;
 }
+/*
 int validacionPrecio(int id, int pago){
  ventas aux;
  pelicula obj;
@@ -125,6 +126,7 @@ int validacionPrecio(int id, int pago){
 return 0;
 
 }
+*/
 int NomDir(int id){
     director aux;
         int pos=0;
@@ -148,30 +150,7 @@ while(aux.leerEnDisco(pos++)){
 return 0;
 
 }
-int calcularVentas(int id){
-    ventas obj;
-    pelicula reg;
-    int ventas=0;
-    int pos=0;
-    int pos2=0;
-        while(reg.leerEnDisco(pos++)==1){
 
-            if(reg.getSala()==id){
-                    while(obj.leerEnDisco(pos2++)==1){
-                            if(obj.getidPelicula()==reg.getidPelicula()){
-                    ventas+=obj.getCantEntradas();
-                    }
-
-                   }
-
-            }
-
-
-
-        }
-return ventas;
-
-}
 
 int autonumericoVentas(){
 ventas obj;
@@ -204,31 +183,7 @@ int calcularPlazas(int id,int dia, int mes, int anio){
 
     return canttotal;
 }
-int cantButacasSala(int id){
-    pelicula reg;
-    Salas aux;
-    int cantbutacas=0;
-        int pos=0;
-        int pos2=0;
-    while(reg.leerEnDisco(pos++)==1){
-        if(reg.getidPelicula()==id){
 
-            while(aux.leerEnDisco(pos2++)==1){
-                if(aux.getidSala()==reg.getSala()){
-                    cantbutacas=aux.getPlazas();
-                    return cantbutacas;
-
-                }
-
-
-
-            }
-
-        }
-    }
-return 0;
-
-}
 
 bool formatoValido(char *formato){
 if(strcmp(formato,"2d")==0){
@@ -271,6 +226,7 @@ string determinarTurno(int turno){
     if(turno==3){
         return "NOCHE";
     }
+    return "NADA";
 }
 
 int validacionIDsala(int salaid){
@@ -348,7 +304,7 @@ bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA EST� OCUPADA EN SU
 
 bool tieneTurno(int salaid,int dia,int turno){
 int pos=0;
-    int contadorTurno=0;
+
         emision reg;
         while(reg.leerEnDisco(pos++)==1){
 
@@ -378,6 +334,7 @@ while(reg.leerEnDisco(pos++)==1){
 
 
 }
+return "NADA";
 }
 void TurnoDePelicula(int SalaID,int dia,int PeliculaId){
 int pos=0;
@@ -442,29 +399,39 @@ while(reg.leerEnDisco(pos++)==1){
 }
 return false;
 }
+
 bool validarButacas(int dia,int idPelicula,int turno,int butacas){
 emision reg;
 int pos=0;
 int resta=0;
 while(reg.leerEnDisco(pos++)==1){
     if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
-       if(butacas <= reg.getbutacasDisponibles())
-
+       if(butacas <= reg.getbutacasDisponibles()){
         resta=reg.getbutacasDisponibles()-butacas;
-
         reg.setbutacasDisponibles(resta);
-        if(reg.ModificarEnDisco(pos)==1){
+
+        if(reg.ModificarEnDisco(pos-1)==1){
             return true;
         }
 
+        }
 
     }
 
-
-
 }
 return false;
+}
 
+int salaDeVentas(int dia, int turno,int idPelicula){
+emision reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+        return reg.getSalaId();
+    }
 
 }
+return -1;
+}
+
 #endif // FUNCIONESGLOBALES_H_INCLUDED

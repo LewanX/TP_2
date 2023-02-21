@@ -5,7 +5,7 @@ class ventas
 {
     private:
 
-      int butacastotal=0,Nventa, CantEntradas, Importe=150, Pago,idPelicula,sala;
+      int butacastotal=0,Nventa, CantEntradas, Importe=150, Pago,idPelicula,sala,turno,dia;
       fechaAct fecha;
       int Total;
        Salas aux;
@@ -75,7 +75,6 @@ void mostrarVentas()
 
 bool cargar(){
     if(validacionDatosVenta()==true){
-            int dia,sala,turno;
 
     estado=true;
     Nventa=autonumericoVentas()+1;
@@ -105,14 +104,6 @@ bool cargar(){
         cin>>turno;
     }
 
-    /*while(validacionPrecio(idPelicula, Pago)==0){
-        cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
-        system("pause");
-        system("cls");
-        cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
-        cin>>idPelicula;
-    }*/
-
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
     while(validarButacas(dia,idPelicula,turno,CantEntradas)==false){
@@ -120,37 +111,10 @@ bool cargar(){
     cin>>CantEntradas;
     }
 
-
-    /*while(CantEntradas>butacastotal){
-         cout <<"NO HAY SUFICIENTES BUTACAS!"<< endl;
-        cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
-        system("pause");
-        system("cls");
-        cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
-        cin>>CantEntradas;
-
-
-    }*/
-   /* cout<<"INGRESE EL ID DE SALA DONDE VER LA PELICULA"<<endl;
-    cin>>sala;
-    while(verificarSala(sala)==1){
-        cout<<"ESTA SALA SE PUEDE UTILIZAR"<<endl;
-    }
-    cout<<endl;
-    cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
-    cin >>Pago;
-    cout<<"EL IMPORTE ES DE: ";
-    Total=validacionPrecio(idPelicula, Pago);
-    Total=Total*CantEntradas;
-    cout<< Total<<endl;
-    return true;
-    }
-    else{
-        cout<<"PRIMERO DEBE HABER PELICULAS CARGADAS"<<endl;
-        return false;
-    }*/
 }
+    sala=salaDeVentas(dia,turno,idPelicula);
 return true;
+
 }
 
 
@@ -158,21 +122,22 @@ void mostrar()
 {
     if(estado==true)
     {
+    cout<<"NUMERO DE VENTA: "<<Nventa<<endl;
     cout<<"ID DE LA PELICULA: ";
     cout<<idPelicula<<endl;
-    cout<<"NUMERO DE VENTA: "<<Nventa<<endl;
+    cout<<"DIA DE EMISION: ";
+    cout<<dia<<endl;
+    cout<<"TURNO DE LA EMISION: ";
+    cout<<determinarTurno(turno)<<endl;
+    cout<<"SALA DE LA EMISION: ";
+    cout<<sala<<endl;
     cout<<"CANTIDAD DE ENTRADAS: ";
     cout<<CantEntradas<<endl;
-    cout<<"METODO DE PAGO: ";
-    cout<<Pago<<endl;
     cout<<"IMPORTE: ";
     cout<< Total<<endl;
-    fecha.Mostrar();
     cout <<" "<<endl<<endl;
     }
-
 }
-
 };
 void ventas :: EliminarDeDisco(){
        int pos=0;
@@ -212,7 +177,6 @@ void ventas::ModificarVentas(){
 
 int ventas::ModificarEnDisco(int pos)
 {
-
     FILE *p;
     p=fopen("ventas.dat","rb+");
     if (p==NULL) return -1;

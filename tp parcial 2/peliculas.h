@@ -4,7 +4,7 @@
 class pelicula
 {
     private:
-      int idPelicula,idDirector, duracion, precio, sala, idioma;
+      int idPelicula,idDirector, duracion,idioma;
       char nombrePelicula[30], genero[20], formato[3];
       Fecha fechaIni;
       fechaFin fin;
@@ -18,8 +18,6 @@ class pelicula
       void setFormato (const char *f) {strcpy(formato,f);}
       void setIdioma (int I) {idioma=I;}
       void setDuracion (int d) {duracion=d;}
-      void setPrecio (int p) {precio=p;}
-      void setSala (int s) {sala=s;}
       void setFechaIni (Fecha I) {fechaIni=I;}
       void setFechaFin(fechaFin FI) {fin=FI;}
       void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
@@ -31,8 +29,6 @@ class pelicula
       const char *getFormato () {return formato;}
       int getIdioma() {return idioma;}
       int getDuracion () {return duracion;}
-      int getPrecio () {return precio;}
-      int getSala () {return sala;}
       const char *getNombrePelicula (){return nombrePelicula;}
       const char *getGenero (){return genero;}
       Fecha getFechaIni () {return fechaIni;}
@@ -79,7 +75,6 @@ void mostrarPeliculas()
 bool cargar()
 {
     if(validacionDatosPelicula()==true){
-    precio=500;
     estado=true;
 
     cout<<"INGRESE ID: "<<endl;
@@ -98,17 +93,6 @@ bool cargar()
     cout <<"INGRESE EL GENERO: "<<endl;
     cargarCadena(genero,19);
 
-
-    cout<<"INGRESE EL FORMATO (2D o 3D): "<<endl;
-    cargarCadena(formato,3);
-
-
-    while (formatoValido(formato)!=true){
-        cout <<"INGRESE UN FORMATO VALIDO (2D o 3D)"<<endl;
-        cargarCadena(formato,3);
-    }
-
-
     cout<<"INGRESE EL IDIOMA [ (1=CASTELLANO) , (2=SUBTITULADO) ] :"<<endl;
     cin>>idioma;
 
@@ -118,7 +102,7 @@ bool cargar()
         cin>>idioma;
     }
 
-    cout<<"INGRESE LA DURACION [minutos]: "<<endl;
+    cout<<"INGRESE LA DURACION [MINUTOS]: "<<endl;
     cin>>duracion; ///en minutos
 
     cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
@@ -131,18 +115,7 @@ bool cargar()
         cin>>idDirector;
     }
     cout<<endl;
-    cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
-    cin>>sala;
-    while(validacionSala(sala)==0){
-        cout<<"ESTA ID DE SALA NO EXISTE"<<endl;
-        cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
-        cin>>sala;
-    }
-    if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
-        precio+=100;
-    }
-    cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
-    return true;;
+    return true;
     }
     else{
         cout<<"PRIMERO SE DEBER CARGAR DIRECTORES O SALAS!!!"<<endl;
@@ -166,9 +139,6 @@ void mostrar()
         cout<<duracion<<" MINUTOS"<<endl;
         validacionDir(idDirector);
         cout<<endl;
-        cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala<<endl;
-        cout<<"PRECIO DE LA ENTRADA: ";
-        cout<<precio<<endl;
         cout<<""<<endl<<endl;
 
     }
