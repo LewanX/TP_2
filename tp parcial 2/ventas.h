@@ -125,7 +125,7 @@ void mostrar()
     cout<<"CANTIDAD DE ENTRADAS: ";
     cout<<CantEntradas<<endl;
     cout<<"IMPORTE: ";
-    cout<< Total<<"$"<<endl;
+    cout<<"$ "<<Total<<endl;
     cout <<" "<<endl<<endl;
     }
 }

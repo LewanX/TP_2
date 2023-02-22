@@ -206,7 +206,7 @@ return false;
 }
 
 bool validacionDatosVenta(){
-    pelicula aux;
+    emision aux;
     int pos=0;
     while(aux.leerEnDisco(pos++)){
         if(aux.getEstado()==true){
@@ -227,6 +227,15 @@ string determinarTurno(int turno){
         return "NOCHE";
     }
     return "NADA";
+}
+
+int autonumericoEmision(){
+emision aux;
+int pos=0,cont=1;
+while(aux.leerEnDisco(pos++)==1){
+    cont++;
+}
+return cont;
 }
 
 int validacionIDsala(int salaid){
@@ -302,6 +311,23 @@ bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA EST� OCUPADA EN SU
 
 }
 
+bool verificarTurnoSala(int salaid,int dia,int turno){
+    int pos=0;
+        emision reg;
+        while(reg.leerEnDisco(pos++)==1){
+
+            if(reg.getDia()==dia && reg.getSalaId()!=salaid && reg.getTurno()==turno){
+                    if((reg.getTurno()==1)  || (reg.getTurno()==2)  || (reg.getTurno()==3) ){
+                            cout<<"EL TURNO: "<<determinarTurno(reg.getTurno())<<" YA ESTA OCUPADO !!!"<<endl;
+                            return false;
+                    }
+
+            }
+        }
+        return true;
+
+}
+
 bool tieneTurno(int salaid,int dia,int turno){
 int pos=0;
 
@@ -309,7 +335,7 @@ int pos=0;
         while(reg.leerEnDisco(pos++)==1){
 
             if(reg.getDia()==dia && reg.getSalaId()==salaid){
-                    if((reg.getTurno()==turno)){
+                    if(reg.getTurno()==turno){
                         return true;
                     }
 

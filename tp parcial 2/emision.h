@@ -3,17 +3,19 @@
 class emision
 {
 private:
+    int IDemision;
     int dia;
     int salaID;
     int turno;
     int Idpelicula,precio;
     char formato[3];
     int butacasDisponibles=0,butacasDescontadas=0,butacasTotales=0;
-    bool hayFuncion;
+    bool hayFuncion, estado;
 
 public:
 
     ///GETS
+    int getIDemision(){return IDemision;}
     int getDia(){return dia;}
     int getPrecio(){return precio;}
     int getSalaId(){return salaID;}
@@ -21,7 +23,10 @@ public:
     int getIdPelicula(){return Idpelicula;}
     const char *getFormato() {return formato;}
     int getbutacasDisponibles(){return butacasDisponibles;}
+    bool getEstado () {return estado;}
     ///SETS
+
+    void setIDEmision (int IDE){IDemision=IDE;}
     void setDia(int D){dia=D;}
     void setPrecio(int P){precio=P;}
     void setSalaID (int SaID){salaID=SaID;}
@@ -29,6 +34,7 @@ public:
     void setIDPelicula (int IDP){Idpelicula=IDP;}
     void setFormato (const char *F){strcpy(formato,F);}
     void setbutacasDisponibles(int butacasD){butacasDisponibles=butacasD;}
+    void setEstado (bool E){estado=E;}
     ///FUNCIONES
   bool cargar();
   void mostrar();
@@ -40,8 +46,10 @@ public:
   int LeerDeDiscobkp(int pos);
   bool backupemision();
   bool recuemisiones();
+  bool ModificarDia();
   void mostrarDatos(){
     cout<<dia<<" FEBRERO"<<endl;
+    cout<<"ID DE EMISION: "<<IDemision<<endl;
     cout<<"ID SALA: "<<salaID<<endl;
     cout<<"ID PELICULA: "<<Idpelicula<<endl;
     cout<<"TURNO: "<<determinarTurno(turno)<<endl;
@@ -54,7 +62,9 @@ public:
 
 
  bool emision::cargar(){
-
+        estado=true;
+        IDemision=autonumericoEmision();
+        cout<<"ID DE LA EMISION: "<<IDemision<<endl;
         cout<<"SELECCIONE EN QUE SALA QUIERE QUE SE EMITA LA PELICULA: ";
             cin>>salaID;
             while(validacionIDsala(salaID)==0){
@@ -103,10 +113,6 @@ public:
             }
             cout<<"INGRESE UN PRECIO: ";
             cin>>precio;
-           // if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
-            //precio+=900;
-            //}
-
 
             return true;
 
@@ -118,12 +124,49 @@ public:
     cout<<"INGRESE UN DIA PARA VER PELICULAS DISPONIBLES [1-28]: ";
         cin>>dia;
     while(leerEnDisco(pos++)==1){
-        if(getDia()==dia){
+        if(getDia()==dia && getEstado()==true){
             mostrarDatos();
         }
 
     }
     }
+/// MODS
+
+bool emision::ModificarDia(){
+        int pos=0;
+        int dia,idEmi;
+        cout <<"INTRODUZCA UN ID DE EMISION A MODIFICAR"<<endl;
+        cin>> idEmi;
+        while(leerEnDisco(pos++)==1){
+             if(getIDemision()==idEmi){
+                    if(getEstado()==true){
+                cout<<"ESTE ID DE EMISION CONTIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrarDatos();
+                        cout<<""<<endl;
+                        cout<<"INGRESE UN NUEVO VALOR PARA EL DIA: "<<endl;
+                        cin>>dia;
+                        while(dia<1 && dia>28){
+                        cout<<"INGRESE UN DIA VALIDO!!!";
+                        cin>>dia;
+                        }
+                        if(verificarTurnoSala(getSalaId(),dia,getTurno())==false){
+                                setDia(dia);
+                                if(ModificarEnDisco(pos-1)==1){cout<<"DIA MODIFICADO!"<<endl;
+                                return true;}
+
+                        }
+                        else{
+                            cout <<"LOS TURNOS PARA ESTE DIA YA ESTAN OCUPADOS"<<endl;
+                        }
+
+                    }
+
+                }
+
+        }
+        return false;
+    }
+
 ///DISCO
     int emision::leerEnDisco(int pos)
 {

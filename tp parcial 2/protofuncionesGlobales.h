@@ -26,6 +26,7 @@ bool validacionDatosVenta();
 bool formatoValido(char *formato);
 
 ///EMISIONES
+int autonumericoEmision();
 string determinarTurno(int turno);
 int validacionIDsala(int salaid);
 int buscarButacas(int salaid);
@@ -33,6 +34,7 @@ int descontarButacas(int dia,int salaID,int turno);
 int descontarButacas(int salaID,int turno);
 bool emisionSala(int salaidm, int dia);
 bool tieneTurno(int salaid, int dia,int turno);
+bool verificarTurnoSala(int salaid,int dia,int turno);
 ///VENTAS
 bool mostrarEmisionesPelicula(int dia);
 bool validarPelicula(int dia,int IDpelicula);
