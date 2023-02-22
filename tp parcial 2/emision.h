@@ -36,7 +36,8 @@ public:
     void setbutacasDisponibles(int butacasD){butacasDisponibles=butacasD;}
     void setEstado (bool E){estado=E;}
     ///FUNCIONES
-  bool cargar();
+    void EliminarDeDisco();
+    bool cargar();
   void mostrar();
   void mostrarDatos(int);
   int grabarEnDisco();
@@ -297,5 +298,21 @@ FILE *br;
     return true;
 
  }
+ void emision::EliminarDeDisco(){
+       int pos=0;
+       int idD;
+        cout<<"INTRODUZCA EL ID DE EMISION A ELIMINAR: ";cin>>idD;
+        while(leerEnDisco(pos)==1){
+                if(getIDemision()==idD){
+                        cout<<"EL ID DE EMISION TIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrarDatos();
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+}
 
 #endif // EMISION_H_INCLUDED

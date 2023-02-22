@@ -16,6 +16,7 @@ private:
     ventas reg;
     pelicula aux;
     director obj;
+    emision lol;
 public:
     ///sets
     void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
@@ -47,12 +48,19 @@ public:
     }
     //////////////////////////////PUNTO 1///////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/*
+     ventas reg;
+    pelicula aux;
+    director obj;
+    emision lol;
+
+*/
 float recpeli(int id){
     int pos=0;
     float canttotal=0;
-        while(aux.leerEnDisco(pos++)==1){
-                if(aux.getidPelicula()==id){
-                    canttotal+=calcularRecaudacion(aux.getidPelicula());
+        while(reg.leerEnDisco(pos++)==1){
+                if(reg.getidPelicula()==id){
+                    canttotal+=reg.getTotal();
                 }
 
             }
