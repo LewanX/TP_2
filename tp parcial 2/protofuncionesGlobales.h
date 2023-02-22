@@ -34,16 +34,16 @@ int descontarButacas(int dia,int salaID,int turno);
 int descontarButacas(int salaID,int turno);
 bool emisionSala(int salaidm, int dia);
 bool tieneTurno(int salaid, int dia,int turno);
-
+bool verificarCambioDia(int salaid,int dia,int turno);
 bool verificarTurnoSala(int Sala,int Dia,int Turno);
 ///VENTAS
 bool mostrarEmisionesPelicula(int dia);
 bool validarPelicula(int dia,int IDpelicula);
+bool validarPeliculaSala(int dia,int idPelicula,int sala);
 void TurnoDePelicula(int salaID,int dia,int PeliculaID);
 bool validarTurno(int dia,int idPelicula,int turno);
-bool validarButacas(int idEmision,int butacas);
+bool validarButacas(int dia,int idPelicula,int turno,int butacas);
 int salaDeVentas(int dia, int turno,int idPelicula);
 int obtenerPrecioPelicula(int dia,int idPelicula,int turno);
-bool validarEmision(int idEmision);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

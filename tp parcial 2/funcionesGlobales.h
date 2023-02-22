@@ -388,7 +388,7 @@ bool mostrarEmisionesPelicula(int dia){
             cout<<"ID PELICULA:"<<reg.getIdPelicula()<<endl;
             cout<<"NOMBRE PELICULA:"<<obtenerNombrePelicula(reg.getIdPelicula())<<endl;
             cout<<"SALA NUM:"<<reg.getSalaId()<<endl;
-            cout<<"TURNO:"<<determinarTurno(reg.getTurno());
+            cout<<"TURNO:"<<determinarTurno(reg.getTurno())<<endl;
             cout<<"BUTACAS DISPONIBLES:"<<reg.getbutacasDisponibles()<<endl;
              //TurnoDePelicula(reg.getSalaId(),dia,reg.getIdPelicula());
             cout<<endl<<endl;
@@ -415,7 +415,24 @@ while(reg.leerEnDisco(pos++)==1){
 
 return false;
 }
+bool validarPeliculaSala(int dia,int idPelicula,int sala)
+{
+emision reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia){
+        if(reg.getIdPelicula() == idPelicula){
+                if(reg.getSalaId()==sala){
+                        return true;
+                }
 
+        }
+    }
+
+}
+
+return false;
+}
 bool validarTurno(int dia,int idPelicula,int turno){
 
 emision reg;

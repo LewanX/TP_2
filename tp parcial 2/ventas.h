@@ -65,53 +65,52 @@ class ventas
 
 bool cargar(){
     if(validacionDatosVenta()==true){
-int idEmision=0;
+
     estado=true;
     Nventa=autonumericoVentas()+1;
     cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
 
     cout<<"INGRESE EL DIA : ";
     cin>>dia;
-     while(dia<=0 && dia>28){
-                cout<<"INGRESE UN DIA VALIDO (1-28) " <<endl;
-                cin>>dia;
-            }
 
     cout<<"ESTE DIA CUENTA CON LAS SIGUIENTES PELICULAS EN EMISION"<<endl;
     if(mostrarEmisionesPelicula(dia)==0){
-     cout<<"ESTE DIA NO CUENTA CON EMISIONES EN ESE DIA:";
+     cout<<"ESTE DIA NO CUENTA CON EMISIONES EN ESE DIA: ";
      return false;
     }
 
-    cout<<"INGRESE EL ID DE EMISION";
-    //cin>>idPelicula;
-    cin>>idEmision;
-    while(validarEmision(idEmision)==false){
-        cout<<"PORFAVOR INGRESE UN ID DE EMISION VALIDO:";
-        cin>>idEmision;
-        cout<<endl;
-    }
-    /*while(validarPelicula(dia,idPelicula)==false){
-        cout<<"PORFAVOR INGRESE UN ID DE PELICULA VALIDO:";
+    cout<<"INGRESE EL ID DE PELICULA: ";
+    cin>>idPelicula;
+    while(validarPelicula(dia,idPelicula)==false){
+        cout<<"PORFAVOR INGRESE UN ID DE PELICULA VALIDO: ";
         cin>>idPelicula;
         cout<<endl;
-    }*/
+    }
 
-    //cout<<"INGRESE EL TURNO [1:MATUTINO 2:TARDE 3:NOCHE] : ";
-    //cin>>turno;
+    cout<<"INGRESE EL ID DE LA SALA: ";
+    cin>>sala;
+      while(validarPeliculaSala(dia,idPelicula,sala)==false){
+        cout<<"PORFAVOR INGRESE UN ID DE SALA VALIDO: ";
+        cin>>sala;
+        cout<<endl;
+    }
 
-    /*while(validarTurno(dia,idPelicula,turno)==false){
+
+
+    cout<<"INGRESE EL TURNO [1:MATUTINO 2:TARDE 3:NOCHE] : ";
+    cin>>turno;
+    while(validarTurno(dia,idPelicula,turno)==false){
         cout<<"INGRESE UN TURNO VALIDO [1:MATUTINO 2:TARDE 3:NOCHE]: "<<endl;
         cin>>turno;
-    }*/
+    }
 
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
-    while(validarButacas(idEmision,CantEntradas)==false){
+    while(validarButacas(dia,idPelicula,turno,CantEntradas)==false){
          cout<<"DATOS INCORRECTOS VUELVA A INTENTAR: ";
     cin>>CantEntradas;
     }
- Total=CantEntradas*obtenerPrecioPelicula(dia,idPelicula,turno);
+    Total=CantEntradas*obtenerPrecioPelicula(dia,idPelicula,turno);
     sala=salaDeVentas(dia,turno,idPelicula);
 return true;
 }
