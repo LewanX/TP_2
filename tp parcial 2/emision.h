@@ -6,15 +6,16 @@ private:
     int dia;
     int salaID;
     int turno;
-    int Idpelicula,precio=800;
+    int Idpelicula,precio;
     char formato[3];
     int butacasDisponibles=0,butacasDescontadas=0,butacasTotales=0;
     bool hayFuncion;
 
 public:
 
-    ///SET
+    ///GETS
     int getDia(){return dia;}
+    int getPrecio(){return precio;}
     int getSalaId(){return salaID;}
     int getTurno(){return turno;}
     int getIdPelicula(){return Idpelicula;}
@@ -22,6 +23,7 @@ public:
     int getbutacasDisponibles(){return butacasDisponibles;}
     ///SETS
     void setDia(int D){dia=D;}
+    void setPrecio(int P){precio=P;}
     void setSalaID (int SaID){salaID=SaID;}
     void setTurno (int T){turno=T;}
     void setIDPelicula (int IDP){Idpelicula=IDP;}
@@ -99,10 +101,12 @@ public:
             cout <<"INGRESE UN FORMATO VALIDO (2D o 3D)"<<endl;
             cargarCadena(formato,2);
             }
-            if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
-            precio+=100;
-            }
-            cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
+            cout<<"INGRESE UN PRECIO: ";
+            cin>>precio;
+           // if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
+            //precio+=900;
+            //}
+
 
             return true;
 

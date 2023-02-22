@@ -358,6 +358,7 @@ bool mostrarEmisionesPelicula(int dia){
             cout<<"NOMBRE PELICULA:"<<obtenerNombrePelicula(reg.getIdPelicula())<<endl;
             cout<<"SALA NUM:"<<reg.getSalaId()<<endl;
             cout<<"TURNO:"<<determinarTurno(reg.getTurno());
+            cout<<"BUTACAS DISPONIBLES:"<<reg.getbutacasDisponibles()<<endl;
              //TurnoDePelicula(reg.getSalaId(),dia,reg.getIdPelicula());
             cout<<endl<<endl;
         }
@@ -433,5 +434,16 @@ while(reg.leerEnDisco(pos++)==1){
 }
 return -1;
 }
+int obtenerPrecioPelicula(int dia,int idPelicula,int turno){
+emision reg;
+int pos=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+        return reg.getPrecio();
+    }
 
+}
+return -1;
+
+}
 #endif // FUNCIONESGLOBALES_H_INCLUDED

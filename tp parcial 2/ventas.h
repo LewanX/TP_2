@@ -5,9 +5,9 @@ class ventas
 {
     private:
 
-      int butacastotal=0,Nventa, CantEntradas, Importe=150, Pago,idPelicula,sala,turno,dia;
+      int butacastotal=0,Nventa, CantEntradas, Total=0, Pago,idPelicula,sala,turno,dia;
       fechaAct fecha;
-      int Total;
+
        Salas aux;
        pelicula obj;
        bool estado;
@@ -17,7 +17,7 @@ class ventas
       void setidPelicula (int id){idPelicula=id;}
       void setNventa (int Nv){Nventa=Nv;}
       void setCantEntradas (int CantE){CantEntradas=CantE;}
-      void setImporte (int Imp){Importe=Imp;}
+      void setTotal (int Tot){Total=Tot;}
       void setPago (int P){Pago=P;}
       void setSala (int S){sala=S;}
       void setFecha(fechaAct F) {fecha=F;}
@@ -26,7 +26,7 @@ class ventas
       int getidPelicula(){return idPelicula;}
       int getNventa (){return Nventa;}
       int getCantEntradas (){return CantEntradas;}
-      int getImporte (){return Importe;}
+
       int getTotal (){return Total;}
       int getSala (){return sala;}
       int getPago (){return Pago;}
@@ -60,17 +60,7 @@ class ventas
 
 
 
-void mostrarVentas()
-{
-    FILE *p;
-    p=fopen("ventas.dat","rb");
-    if (p==NULL) return;
-    while(fread(this,sizeof (ventas),1,p)==1)
-    {
-        mostrar();
-    }
-    fclose(p);
-}
+
 
 
 bool cargar(){
@@ -110,11 +100,12 @@ bool cargar(){
          cout<<"DATOS INCORRECTOS VUELVA A INTENTAR: ";
     cin>>CantEntradas;
     }
-
-}
+ Total=CantEntradas*obtenerPrecioPelicula(dia,idPelicula,turno);
     sala=salaDeVentas(dia,turno,idPelicula);
 return true;
+}
 
+return false;
 }
 
 
@@ -134,9 +125,20 @@ void mostrar()
     cout<<"CANTIDAD DE ENTRADAS: ";
     cout<<CantEntradas<<endl;
     cout<<"IMPORTE: ";
-    cout<< Total<<endl;
+    cout<< Total<<"$"<<endl;
     cout <<" "<<endl<<endl;
     }
+}
+void mostrarVentas()
+{
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (ventas),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
 }
 };
 void ventas :: EliminarDeDisco(){
