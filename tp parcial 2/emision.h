@@ -47,6 +47,7 @@ public:
   bool backupemision();
   bool recuemisiones();
   bool ModificarDia();
+  bool ModificarTurno();
   void mostrarDatos(){
     cout<<dia<<" FEBRERO"<<endl;
     cout<<"ID DE EMISION: "<<IDemision<<endl;
@@ -131,6 +132,50 @@ public:
     }
     }
 /// MODS
+bool emision::ModificarTurno(){
+        int pos=0;
+        int turno,idEmi;
+        cout <<"INTRODUZCA UN ID DE EMISION A MODIFICAR"<<endl;
+        cin>> idEmi;
+        while(leerEnDisco(pos++)==1){
+             if(getIDemision()==idEmi){
+                    if(getEstado()==true){
+                        cout<<"ESTE ID DE EMISION CONTIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrarDatos();
+                        cout<<""<<endl;
+
+
+                        cout<<"INGRESE UN NUEVO VALOR PARA EL TURNO: "<<endl;
+                        cin>>turno;
+
+
+
+
+
+
+                        if(verificarTurnoSala(getSalaId(),getDia(),turno)==true){
+
+
+                                setTurno(turno);
+                                if(ModificarEnDisco(pos-1)==1){cout<<"TURNO MODIFICADO!"<<endl;
+                                return true;
+
+
+                                }
+
+                        }
+                        else{
+                            cout <<"EL TURNO YA ESTA OCUPADO "<<endl;
+                        }
+
+                    }
+
+                }
+
+        }
+        return false;
+    }
+
 
 bool emision::ModificarDia(){
         int pos=0;
@@ -140,23 +185,35 @@ bool emision::ModificarDia(){
         while(leerEnDisco(pos++)==1){
              if(getIDemision()==idEmi){
                     if(getEstado()==true){
-                cout<<"ESTE ID DE EMISION CONTIENE LOS SIGUIENTES DATOS"<<endl;
+                        cout<<"ESTE ID DE EMISION CONTIENE LOS SIGUIENTES DATOS"<<endl;
                         mostrarDatos();
                         cout<<""<<endl;
+
+
                         cout<<"INGRESE UN NUEVO VALOR PARA EL DIA: "<<endl;
                         cin>>dia;
+
+
                         while(dia<1 && dia>28){
                         cout<<"INGRESE UN DIA VALIDO!!!";
                         cin>>dia;
                         }
-                        if(verificarTurnoSala(getSalaId(),dia,getTurno())==false){
+
+
+
+                        if(verificarTurnoSala(getSalaId(),dia,getTurno())==true){
+
+
                                 setDia(dia);
                                 if(ModificarEnDisco(pos-1)==1){cout<<"DIA MODIFICADO!"<<endl;
-                                return true;}
+                                return true;
+
+
+                                }
 
                         }
                         else{
-                            cout <<"LOS TURNOS PARA ESTE DIA YA ESTAN OCUPADOS"<<endl;
+                            cout <<"EL TURNO Y SALA YA ESTAN OCUPADOS PARA ESE DIA"<<endl;
                         }
 
                     }

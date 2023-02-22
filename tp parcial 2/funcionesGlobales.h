@@ -310,23 +310,27 @@ bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA EST� OCUPADA EN SU
         }
 
 }
-
-bool verificarTurnoSala(int salaid,int dia,int turno){
+bool verificarTurnoSala(int Sala,int Dia,int Turno){
     int pos=0;
         emision reg;
         while(reg.leerEnDisco(pos++)==1){
-
-            if(reg.getDia()==dia && reg.getSalaId()!=salaid && reg.getTurno()==turno){
-                    if((reg.getTurno()==1)  || (reg.getTurno()==2)  || (reg.getTurno()==3) ){
-                            cout<<"EL TURNO: "<<determinarTurno(reg.getTurno())<<" YA ESTA OCUPADO !!!"<<endl;
-                            return false;
+       if(reg.getEstado()==true){
+       if(reg.getDia()==Dia){
+                if(reg.getSalaId()==Sala){
+                    if(reg.getTurno()==Turno){
+                        return false;
                     }
 
+                }
             }
+    }
         }
         return true;
 
+
+
 }
+
 
 bool tieneTurno(int salaid,int dia,int turno){
 int pos=0;
@@ -380,6 +384,7 @@ bool mostrarEmisionesPelicula(int dia){
     while(reg.leerEnDisco(pos++)==1){
         if(reg.getDia()==dia){
                 tienePeliculas=true;
+
             cout<<"ID PELICULA:"<<reg.getIdPelicula()<<endl;
             cout<<"NOMBRE PELICULA:"<<obtenerNombrePelicula(reg.getIdPelicula())<<endl;
             cout<<"SALA NUM:"<<reg.getSalaId()<<endl;
