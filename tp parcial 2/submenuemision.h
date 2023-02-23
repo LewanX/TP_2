@@ -23,10 +23,11 @@ void SubMenuEmision(){
         gotoxy(45,9);cout<<"2) MOSTRAR EMISION ";
         gotoxy(45,10);cout<<"3) MODIFICAR DIA DE EMISION ";
         gotoxy(45,11);cout<<"4) MODIFICAR TURNO DE EMISION ";
-        gotoxy(45,12);cout<<"5) ELIMINAR EMISION ";
-        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
-        gotoxy(45,14);cout<<"--------------------------------------";
-        gotoxy(45,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        gotoxy(45,12);cout<<"5) MODIFICAR PRECIO DE EMISION ";
+        gotoxy(45,13);cout<<"6) ELIMINAR EMISION ";
+        gotoxy(45,14);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,15);cout<<"--------------------------------------";
+        gotoxy(45,16);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
         cin>>opc;
         system("cls");
         switch(opc){
@@ -48,7 +49,11 @@ void SubMenuEmision(){
 
                 system("pause");
             break;
-            case 5:
+             case 5: reg.ModificarPrecio();
+
+                system("pause");
+            break;
+            case 6:
                 reg.EliminarDeDisco();
 
                 system("pause");

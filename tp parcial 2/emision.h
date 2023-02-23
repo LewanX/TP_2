@@ -43,6 +43,7 @@ public:
   int grabarEnDisco();
   int leerEnDisco(int);
   void mostrarDeDisco();
+  bool ModificarPrecio();
   int ModificarEnDisco(int);
   int LeerDeDiscobkp(int pos);
   bool backupemision();
@@ -133,6 +134,48 @@ public:
     }
     }
 /// MODS
+bool emision::ModificarPrecio(){
+        int pos=0;
+        int idEmi;
+        cout <<"INTRODUZCA UN ID DE EMISION A MODIFICAR"<<endl;
+        cin>> idEmi;
+        while(leerEnDisco(pos++)==1){
+             if(getIDemision()==idEmi){
+                    if(getEstado()==true){
+                        cout<<"ESTE ID DE EMISION CONTIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrarDatos();
+                        cout<<""<<endl;
+
+
+                        cout<<"INGRESE UN NUEVO VALOR PARA EL PRECIO: "<<endl;
+                        cin>>precio;
+                        while(precio<=0){
+                            cout<<"INGRESE UN NUEVO VALOR MAYOR A CERO: "<<endl;
+                        cin>>precio;
+                        }
+
+
+                                setPrecio(precio);
+                                if(ModificarEnDisco(pos-1)==1){cout<<"PRECIO MODIFICADO!"<<endl;
+                                return true;
+
+
+                                }
+
+                        }
+                        else{
+                            cout <<"EL TURNO YA ESTA OCUPADO "<<endl;
+                        }
+
+                    }
+
+                }
+            return false;
+        }
+
+
+
+
 bool emision::ModificarTurno(){
         int pos=0;
         int turno,idEmi;
