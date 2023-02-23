@@ -466,7 +466,7 @@ while(reg.leerEnDisco(pos++)==1){
             reg.setbutacasDisponibles(reg.getbutacasDisponibles()+resta);
            }
            if(butacas==butacasVendidas){
-            reg.setbutacasDisponibles(butacas);
+            reg.setbutacasDisponibles(reg.getbutacasDisponibles());
            }
         //resta=reg.getbutacasDisponibles()-butacas;
 
