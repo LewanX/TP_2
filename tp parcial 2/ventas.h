@@ -22,10 +22,14 @@ class ventas
       void setSala (int S){sala=S;}
       void setFecha(fechaAct F) {fecha=F;}
       void setEstado(bool e){estado=e;}
+      void setDia(int D){dia=D;}
+      void setTurno(int T){turno=T;}
       ///gets()
       int getidPelicula(){return idPelicula;}
       int getNventa (){return Nventa;}
       int getCantEntradas (){return CantEntradas;}
+      int getDia(){return dia;}
+      int getTurno(){return turno;}
 
       int getTotal (){return Total;}
       int getSala (){return sala;}
@@ -114,7 +118,7 @@ bool cargar(){
     sala=salaDeVentas(dia,turno,idPelicula);
 return true;
 }
-
+cout<<"NO EXISTEN EMISIONES!"<<endl;
 return false;
 }
 
@@ -177,7 +181,13 @@ void ventas::ModificarVentas(){
                     if(getEstado()==true){
 
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE ENTRADAS: ";cin>>Entradas;
+
+                           while(actualizarButacasDisponibles(getDia(),getidPelicula(),getTurno(),Entradas,getCantEntradas())==false){
+                            cout<<"DATOS INCORRECTOS, VUELVA A INTRODUCIR: ";
+                            cin>>Entradas;
+                           }
                            setCantEntradas(Entradas);
+                           setTotal(Entradas*obtenerPrecioPelicula(getDia(),getidPelicula(),getTurno()));
                     if(ModificarEnDisco(pos)==1){cout<<"ENTRADAS MODIFICADA!"<<endl;}
                         cout<<endl<<endl;
                     }

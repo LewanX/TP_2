@@ -208,12 +208,15 @@ return false;
 bool validacionDatosVenta(){
     emision aux;
     int pos=0;
-    while(aux.leerEnDisco(pos++)){
+    while(aux.leerEnDisco(pos++)==1){
+
         if(aux.getEstado()==true){
             return true;
         }
     }
+
         return false;
+
 
 }
 string determinarTurno(int turno){
@@ -448,7 +451,39 @@ while(reg.leerEnDisco(pos++)==1){
 }
 return false;
 }
+bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas){
+emision reg;
+int pos=0;
+int resta=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+       if(butacas <= reg.getbutacasDisponibles()){
+           if(butacasVendidas<butacas){
+            resta=butacas-butacasVendidas;
+            reg.setbutacasDisponibles(reg.getbutacasDisponibles()-resta);
+           }else{
+            resta=butacasVendidas-butacas;
+            reg.setbutacasDisponibles(reg.getbutacasDisponibles()+resta);
+           }
+           if(butacas==butacasVendidas){
+            reg.setbutacasDisponibles(butacas);
+           }
+        //resta=reg.getbutacasDisponibles()-butacas;
 
+
+        if(reg.ModificarEnDisco(pos-1)==1){
+            return true;
+        }
+
+        }
+
+    }
+
+}
+return false;
+
+
+}
 bool validarButacas(int dia,int idPelicula,int turno,int butacas){
 emision reg;
 int pos=0;

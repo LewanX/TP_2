@@ -45,5 +45,6 @@ bool validarTurno(int dia,int idPelicula,int turno);
 bool validarButacas(int dia,int idPelicula,int turno,int butacas);
 int salaDeVentas(int dia, int turno,int idPelicula);
 int obtenerPrecioPelicula(int dia,int idPelicula,int turno);
+bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

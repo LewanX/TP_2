@@ -26,6 +26,7 @@ void SubMenuVentas(){
         switch(opc){
 
             case 1:
+
                 if(lol.cargar()==true && lol.grabarEnDisco()==true)
             {
                 cout << "REGISTRO AGREGADO! "<<endl;
