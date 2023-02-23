@@ -110,7 +110,7 @@ bool cargar(){
 
      cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
     cin>>CantEntradas;
-    while(validarButacas(dia,idPelicula,turno,CantEntradas)==false){
+    while(validarButacas(dia,idPelicula,turno,CantEntradas,sala)==false){
          cout<<"DATOS INCORRECTOS VUELVA A INTENTAR: ";
     cin>>CantEntradas;
     }
@@ -165,7 +165,10 @@ void ventas :: EliminarDeDisco(){
                         mostrar();
                         cout<<endl<<endl;
                         setEstado(false);
-                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                        if(ModificarEnDisco(pos)==1){
+                        restaurarButacasDisponibles(getDia(),getidPelicula(),getTurno(),getCantEntradas(),getSala());
+
+                        cout<<"REGISTRO ELIMINADO! ";}
                 }
             pos++;
         }
@@ -182,7 +185,7 @@ void ventas::ModificarVentas(){
 
                 cout<<"INTRODUCE UNA NUEVA CANTIDAD DE ENTRADAS: ";cin>>Entradas;
 
-                           while(actualizarButacasDisponibles(getDia(),getidPelicula(),getTurno(),Entradas,getCantEntradas())==false){
+                           while(actualizarButacasDisponibles(getDia(),getidPelicula(),getTurno(),Entradas,getCantEntradas(),getSala())==false){
                             cout<<"DATOS INCORRECTOS, VUELVA A INTRODUCIR: ";
                             cin>>Entradas;
                            }

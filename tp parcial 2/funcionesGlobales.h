@@ -99,34 +99,7 @@ int validacionSala(int id){
         }
         return 0;
 }
-/*
-int validacionPrecio(int id, int pago){
- ventas aux;
- pelicula obj;
- Salas reg;
- int importe;
- int pos=0;
 
- while (obj.leerEnDisco(pos++)==1)
- {
-     if(obj.getidPelicula()==id){
-        importe=obj.getPrecio();
-        if(pago==1){
-            importe=importe*0.95;
-        }else if(pago==2){
-            importe=importe*1.20;
-        }else{
-
-            importe=importe*1.05;
-        }
-
-        return importe;
-     }
- }
-return 0;
-
-}
-*/
 int NomDir(int id){
     director aux;
         int pos=0;
@@ -451,12 +424,39 @@ while(reg.leerEnDisco(pos++)==1){
 }
 return false;
 }
-bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas){
+bool restaurarButacasDisponibles(int dia,int idPelicula,int turno,int CantEntradas,int sala){
+
 emision reg;
 int pos=0;
 int resta=0;
 while(reg.leerEnDisco(pos++)==1){
-    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno && reg.getSalaId()==sala){
+
+
+        reg.setbutacasDisponibles(reg.getbutacasDisponibles() + CantEntradas);
+
+        if(reg.ModificarEnDisco(pos-1)==1){
+            return true;
+        }
+
+        }
+
+    }
+
+
+return false;
+
+
+}
+
+
+
+bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas,int sala){
+emision reg;
+int pos=0;
+int resta=0;
+while(reg.leerEnDisco(pos++)==1){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno && reg.getSalaId()==sala){
        if(butacas <= reg.getbutacasDisponibles()){
            if(butacasVendidas<butacas){
             resta=butacas-butacasVendidas;
@@ -468,7 +468,7 @@ while(reg.leerEnDisco(pos++)==1){
            if(butacas==butacasVendidas){
             reg.setbutacasDisponibles(reg.getbutacasDisponibles());
            }
-        //resta=reg.getbutacasDisponibles()-butacas;
+
 
 
         if(reg.ModificarEnDisco(pos-1)==1){
@@ -484,12 +484,12 @@ return false;
 
 
 }
-bool validarButacas(int dia,int idPelicula,int turno,int butacas){
+bool validarButacas(int dia,int idPelicula,int turno,int butacas,int sala){
 emision reg;
 int pos=0;
 int resta=0;
 while(reg.leerEnDisco(pos++)==1){
-    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno){
+    if(reg.getDia()==dia && reg.getIdPelicula()==idPelicula && reg.getTurno()==turno && reg.getSalaId()==sala){
        if(butacas <= reg.getbutacasDisponibles()){
         resta=reg.getbutacasDisponibles()-butacas;
         reg.setbutacasDisponibles(resta);

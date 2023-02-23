@@ -114,9 +114,13 @@ public:
             cout <<"INGRESE UN FORMATO VALIDO (2D o 3D)"<<endl;
             cargarCadena(formato,2);
             }
-            cout<<"INGRESE UN PRECIO: ";
+            cout<<"INGRESE UN PRECIO (NUMERICO) : ";
             cin>>precio;
-
+            while(precio <1 ){
+                 cout<<"INGRESE UN PRECIO VALIDO: ";
+            cin>>precio;
+            }
+    system("pause");
             return true;
 
     }

@@ -42,9 +42,10 @@ bool validarPelicula(int dia,int IDpelicula);
 bool validarPeliculaSala(int dia,int idPelicula,int sala);
 void TurnoDePelicula(int salaID,int dia,int PeliculaID);
 bool validarTurno(int dia,int idPelicula,int turno);
-bool validarButacas(int dia,int idPelicula,int turno,int butacas);
+bool validarButacas(int dia,int idPelicula,int turno,int butacas,int sala);
 int salaDeVentas(int dia, int turno,int idPelicula);
 int obtenerPrecioPelicula(int dia,int idPelicula,int turno);
-bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas);
+bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas,int sala);
+bool restaurarButacasDisponibles(int dia,int idPelicula,int turno,int CantEntradas,int sala);
 //int VentaAutonumerica();
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED
