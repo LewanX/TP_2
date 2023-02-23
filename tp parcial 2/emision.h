@@ -192,11 +192,6 @@ bool emision::ModificarTurno(){
                         cout<<"INGRESE UN NUEVO VALOR PARA EL TURNO: "<<endl;
                         cin>>turno;
 
-
-
-
-
-
                         if(verificarTurnoSala(getSalaId(),getDia(),turno)==true){
 
 

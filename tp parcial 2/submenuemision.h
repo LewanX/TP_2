@@ -41,15 +41,24 @@ void SubMenuEmision(){
                 system("pause");
             break;
 
-            case 3: reg.ModificarDia();
+            case 3:
+                if(reg.ModificarDia()!=true){
+                    cout<<"DATO NO ENCONTRADO"<<endl;
+                }
 
                 system("pause");
             break;
-             case 4: reg.ModificarTurno();
+             case 4:
+                 if(reg.ModificarTurno()!=true){
+                  cout<<"DATO NO ENCONTRADO"<<endl;
+                 }
 
                 system("pause");
             break;
-             case 5: reg.ModificarPrecio();
+             case 5:
+                 if(reg.ModificarPrecio()!=true){
+                     cout<<"DATO NO ENCONTRADO"<<endl;
+                 }
 
                 system("pause");
             break;
