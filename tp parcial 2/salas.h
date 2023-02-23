@@ -151,8 +151,7 @@ void Salas::mostrarDeDisco(){
     int y=4;
     while(leerEnDisco(pos++)==1){
 
-        //gotoxy(56,y);mostrar(y);
-        //cout<<endl;
+
         mostrar(y);
 
 
@@ -164,20 +163,7 @@ void Salas::mostrarDeDisco(){
 
 
 }
-/*void Salas::mostrarSalas()
-{
-    int y=0;
-    FILE *p;
-    p=fopen("salas.dat","rb");
-    if (p==NULL) return;
-    while(fread(this,sizeof (Salas),1,p)==1)
-    {
-        mostrar(y);
-        y++;
-            }
-    fclose(p);
-}
-*/
+
 
 
 ///BACKUP

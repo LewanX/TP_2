@@ -34,7 +34,7 @@ int main(){
     dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
     dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
 
-        gotoxy(51,2); printf("MENU PRINCIPAL "); //// 10 puntos
+        gotoxy(51,2); printf("MENU PRINCIPAL ");
         gotoxy(45,8);cout<<"1) MENU DIRECTORES "<<endl;
         gotoxy(45,9);cout<<"2) MENU SALAS "<<endl;
         gotoxy(45,10);cout<<"3) MENU PELICULAS"<<endl;

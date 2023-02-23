@@ -236,32 +236,7 @@ while(aux.leerEnDisco(pos++)){
 return -1;
 }
 
-//int descontarButacas(int dia,int salaID,int turno){
-/*int descontarButacas(int salaID,int turno){
-emision obj;
-ventas aux;
-int pos=0;
-while(obj.leerEnDisco(pos++)){
-        if(obj.getSalaId()==salaID && obj.getTurno()==turno){
-            if(validarVenta(salaID)==1){
-                return aux.getCantEntradas();
-            }
-        }
 
-}
-}
-*/
-/*int validarVenta(int salaid){
-ventas aux;
-int pos=0;
-while (aux.leerEnDisco(pos++)){
-    if(aux.getSala()==salaid){
-        return 1;
-    }
-}
-return 0;
-}
-*/
 
 bool emisionSala(int salaid,int dia){//CORROBORA SI LA SALA EST� OCUPADA EN SUS TRES TURNOS PARA DETERMINADO DIA
     int pos=0;

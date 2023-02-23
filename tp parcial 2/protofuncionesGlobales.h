@@ -16,7 +16,7 @@ bool validacionDatosPelicula();
 int verificarSala(int sala);
 int calcularVentas(int id);
 
-int autonumericoVentas();
+
 int fechaPelicula(int id);
 int calcularPlazas(int id, int dia, int mes, int anio);
 int cantButacasSala(int id);
@@ -37,6 +37,7 @@ bool tieneTurno(int salaid, int dia,int turno);
 bool verificarCambioDia(int salaid,int dia,int turno);
 bool verificarTurnoSala(int Sala,int Dia,int Turno);
 ///VENTAS
+int autonumericoVentas();
 bool mostrarEmisionesPelicula(int dia);
 bool validarPelicula(int dia,int IDpelicula);
 bool validarPeliculaSala(int dia,int idPelicula,int sala);
@@ -47,5 +48,5 @@ int salaDeVentas(int dia, int turno,int idPelicula);
 int obtenerPrecioPelicula(int dia,int idPelicula,int turno);
 bool actualizarButacasDisponibles(int dia,int idPelicula,int turno,int butacas,int butacasVendidas,int sala);
 bool restaurarButacasDisponibles(int dia,int idPelicula,int turno,int CantEntradas,int sala);
-//int VentaAutonumerica();
+
 #endif // PROTOFUNCIONESGLOBALES_H_INCLUDED

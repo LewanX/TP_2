@@ -40,7 +40,7 @@ void SubMenuDatos(){
                 system("pause");
                     break;
 
-            case 5: reg.RecaudacionCine(); ///funca
+            case 5: reg.RecaudacionCine();
                     system("pause");
                     break;
             case 0: return ;
